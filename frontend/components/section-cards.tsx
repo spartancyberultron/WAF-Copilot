@@ -1,4 +1,4 @@
-import { IconTrendingDown, IconTrendingUp } from "@tabler/icons-react"
+import { IconAlertTriangle, IconShield, IconTrendingUp, IconTrendingDown, IconBug, IconPackage } from "@tabler/icons-react"
 
 import { Badge } from "@/components/ui/badge"
 import {
@@ -10,91 +10,147 @@ import {
   CardTitle,
 } from "@/components/ui/card"
 
-export function SectionCards() {
+// CVE data type
+interface CVE {
+  id: string
+  description: string
+  dependency_name: string
+  cvss_v3_score: number | null
+  cvss_v3_vector: string | null
+  cvss_v2_score: number | null
+  cvss_v2_vector: string | null
+  published_date: string
+  last_modified_date: string
+  references: string[]
+}
+
+interface SectionCardsProps {
+  cveData: CVE[]
+}
+
+export function SectionCards({ cveData }: SectionCardsProps) {
+  // Calculate CVE statistics
+  const totalCVEs = cveData.length
+  
+  // Severity breakdown
+  const criticalCVEs = cveData.filter(cve => cve.cvss_v3_score && cve.cvss_v3_score >= 9.0).length
+  const highCVEs = cveData.filter(cve => cve.cvss_v3_score && cve.cvss_v3_score >= 7.0 && cve.cvss_v3_score < 9.0).length
+  const mediumCVEs = cveData.filter(cve => cve.cvss_v3_score && cve.cvss_v3_score >= 4.0 && cve.cvss_v3_score < 7.0).length
+  
+  // Average CVSS score
+  const validScores = cveData.filter(cve => cve.cvss_v3_score !== null).map(cve => cve.cvss_v3_score!)
+  const averageCVSS = validScores.length > 0 ? (validScores.reduce((sum, score) => sum + score, 0) / validScores.length).toFixed(1) : "N/A"
+  
+  // Unique dependencies affected
+  const uniqueDependencies = new Set(cveData.map(cve => cve.dependency_name)).size
+  
+  // Recent CVEs (last 30 days)
+  const thirtyDaysAgo = new Date()
+  thirtyDaysAgo.setDate(thirtyDaysAgo.getDate() - 30)
+  const recentCVEs = cveData.filter(cve => new Date(cve.published_date) > thirtyDaysAgo).length
+  
+  // Most common dependency types
+  const dependencyCounts = cveData.reduce((acc, cve) => {
+    acc[cve.dependency_name] = (acc[cve.dependency_name] || 0) + 1
+    return acc
+  }, {} as Record<string, number>)
+  
+  const topDependency = Object.entries(dependencyCounts)
+    .sort(([,a], [,b]) => b - a)[0] || ["None", 0]
+
   return (
     <div className="*:data-[slot=card]:from-primary/5 *:data-[slot=card]:to-card dark:*:data-[slot=card]:bg-card grid grid-cols-1 gap-4 px-4 *:data-[slot=card]:bg-gradient-to-t *:data-[slot=card]:shadow-xs lg:px-6 @xl/main:grid-cols-2 @5xl/main:grid-cols-4">
       <Card className="@container/card">
         <CardHeader>
-          <CardDescription>Total Revenue</CardDescription>
+          <CardDescription>Critical Vulnerabilities</CardDescription>
           <CardTitle className="text-2xl font-semibold tabular-nums @[250px]/card:text-3xl">
-            $1,250.00
+            {criticalCVEs}
           </CardTitle>
           <CardAction>
             <Badge variant="outline">
-              <IconTrendingUp />
-              +12.5%
+              <IconAlertTriangle className="size-3" />
+              CVSS ≥ 9.0
             </Badge>
           </CardAction>
         </CardHeader>
         <CardFooter className="flex-col items-start gap-1.5 text-sm">
           <div className="line-clamp-1 flex gap-2 font-medium">
-            Trending up this month <IconTrendingUp className="size-4" />
+            {criticalCVEs > 0 ? `${criticalCVEs} critical vulnerabilities found` : "No critical vulnerabilities"} 
+            <IconAlertTriangle className="size-4" />
           </div>
           <div className="text-muted-foreground">
-            Visitors for the last 6 months
+            {criticalCVEs > 0 ? "Immediate attention required" : "Good security posture"}
           </div>
         </CardFooter>
       </Card>
+      
       <Card className="@container/card">
         <CardHeader>
-          <CardDescription>New Customers</CardDescription>
+          <CardDescription>High Severity CVEs</CardDescription>
           <CardTitle className="text-2xl font-semibold tabular-nums @[250px]/card:text-3xl">
-            1,234
+            {highCVEs}
           </CardTitle>
           <CardAction>
             <Badge variant="outline">
-              <IconTrendingDown />
-              -20%
+              <IconBug className="size-3" />
+              CVSS 7.0-8.9
             </Badge>
           </CardAction>
         </CardHeader>
         <CardFooter className="flex-col items-start gap-1.5 text-sm">
           <div className="line-clamp-1 flex gap-2 font-medium">
-            Down 20% this period <IconTrendingDown className="size-4" />
+            {highCVEs} high-risk vulnerabilities <IconBug className="size-4" />
           </div>
           <div className="text-muted-foreground">
-            Acquisition needs attention
+            {highCVEs > 0 ? "Priority patching needed" : "No high severity issues"}
           </div>
         </CardFooter>
       </Card>
+      
       <Card className="@container/card">
         <CardHeader>
-          <CardDescription>Active Accounts</CardDescription>
+          <CardDescription>Average CVSS Score</CardDescription>
           <CardTitle className="text-2xl font-semibold tabular-nums @[250px]/card:text-3xl">
-            45,678
+            {averageCVSS}
           </CardTitle>
           <CardAction>
             <Badge variant="outline">
-              <IconTrendingUp />
-              +12.5%
+              <IconShield className="size-3" />
+              Risk Level
             </Badge>
           </CardAction>
         </CardHeader>
         <CardFooter className="flex-col items-start gap-1.5 text-sm">
           <div className="line-clamp-1 flex gap-2 font-medium">
-            Strong user retention <IconTrendingUp className="size-4" />
+            {averageCVSS !== "N/A" && parseFloat(averageCVSS) >= 7.0 ? "High risk environment" : "Moderate risk level"} 
+            <IconShield className="size-4" />
           </div>
-          <div className="text-muted-foreground">Engagement exceed targets</div>
+          <div className="text-muted-foreground">
+            Based on {validScores.length} scored vulnerabilities
+          </div>
         </CardFooter>
       </Card>
+      
       <Card className="@container/card">
         <CardHeader>
-          <CardDescription>Growth Rate</CardDescription>
+          <CardDescription>Dependencies Affected</CardDescription>
           <CardTitle className="text-2xl font-semibold tabular-nums @[250px]/card:text-3xl">
-            4.5%
+            {uniqueDependencies}
           </CardTitle>
           <CardAction>
             <Badge variant="outline">
-              <IconTrendingUp />
-              +4.5%
+              <IconPackage className="size-3" />
+              Unique
             </Badge>
           </CardAction>
         </CardHeader>
         <CardFooter className="flex-col items-start gap-1.5 text-sm">
           <div className="line-clamp-1 flex gap-2 font-medium">
-            Steady performance increase <IconTrendingUp className="size-4" />
+            Top: {topDependency[0]} ({topDependency[1]} CVEs) <IconPackage className="size-4" />
           </div>
-          <div className="text-muted-foreground">Meets growth projections</div>
+          <div className="text-muted-foreground">
+            Across {totalCVEs} total vulnerabilities
+          </div>
         </CardFooter>
       </Card>
     </div>
