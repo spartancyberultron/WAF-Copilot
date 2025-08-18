@@ -1,51 +1,102 @@
-Hi Nikhil,  
-
-Here’s the code for the two functions you requested (`generate_cve_description_and_mermaid` and `generate_waf_rule`).  
-
-
-```python
-# utils.py
-import json
 import os
+from openai import OpenAI
 
-def generate_cve_description_and_mermaid(cve_id):
-    """Generate CVE description & Mermaid.js flowchart."""
-    file_path = os.path.join(os.path.dirname(__file__), "all_cves.json")
-    with open(file_path, "r", encoding="utf-8") as f:
-        cve_data = json.load(f)
+# Initialize OpenAI client
+client = OpenAI(api_key=os.getenv("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
+"))
 
-    cve_info = next((c for c in cve_data if c.get("cve_id") == cve_id), None)
-    if not cve_info:
-        return {"error": f"CVE {cve_id} not found"}
+def generate_cve_description_and_mermaid(cve_id: str, description: str, severity: str):
+    """
+    Generate CVE explanation and Mermaid.js flowchart using LLM.
+    Args:
+        cve_id (str): CVE identifier
+        description (str): CVE description text
+        severity (str): Severity level
+    Returns:
+        dict: { "explanation": ..., "mermaid": ... }
+    """
+    prompt = f"""
+    You are a security expert. 
+    Given this CVE input:
+    - CVE ID: {cve_id}
+    - Description: {description}
+    - Severity: {severity}
 
-    description = f"CVE ID: {cve_info.get('cve_id')}\nDescription: {cve_info.get('description', 'No description available')}\nSeverity: {cve_info.get('severity', 'Unknown')}"
+    1. Generate a clear and professional explanation of this CVE.
+    2. Generate Mermaid.js flowchart code that visually represents:
+       - CVE discovery
+       - Severity
+       - Description
+       - Mitigation steps
 
-    mermaid_code = f"""
-    graph TD
-        A[CVE Discovered] --> B[Severity: {cve_info.get('severity', 'Unknown')}]
-        B --> C[Description: {cve_info.get('description', 'No description available')}]
-        C --> D[Mitigation Steps]
+    Return ONLY a JSON object with keys:
+    - explanation
+    - mermaid
     """
 
-    return {
-        "description": description,
-        "mermaid": mermaid_code
-    }
+    response = client.chat.completions.create(
+        model="gpt-4o-mini",
+        messages=[{"role": "user", "content": prompt}],
+        response_format={"type": "json_schema", "json_schema": {
+            "name": "cve_explanation_mermaid",
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "explanation": {"type": "string"},
+                    "mermaid": {"type": "string"}
+                },
+                "required": ["explanation", "mermaid"]
+            }
+        }}
+    )
 
-def generate_waf_rule(cve_id):
-    """Generate generic WAF rule for CVE."""
-    file_path = os.path.join(os.path.dirname(__file__), "all_cves.json")
-    with open(file_path, "r", encoding="utf-8") as f:
-        cve_data = json.load(f)
+    return response.choices[0].message.parsed
 
-    cve_info = next((c for c in cve_data if c.get("cve_id") == cve_id), None)
-    if not cve_info:
-        return {"error": f"CVE {cve_id} not found"}
 
-    waf_rule = f"""
-    # Generic WAF rule for {cve_id}
-    SecRule REQUEST_URI "@contains {cve_info.get('exploit_keyword', 'vulnerable_path')}" \
-        "id:1001,phase:2,deny,status:403,msg:'Blocked {cve_id} exploit attempt'"
+def generate_waf_rule(cve_id: str, description: str, severity: str, mode: str, waf: str):
+    """
+    Generate WAF rule using LLM.
+    Args:
+        cve_id (str): CVE identifier
+        description (str): CVE description
+        severity (str): CVSS/impact level
+        mode (str): "JSON" or "cURL"
+        waf (str): Target WAF provider ("AWS", "Azure", "GCP", "Cloudflare")
+    Returns:
+        dict: { "waf_rule": ... }
+    """
+    prompt = f"""
+    You are a WAF security engineer. 
+    Create a WAF rule for this CVE:
+
+    - CVE ID: {cve_id}
+    - Description: {description}
+    - Severity: {severity}
+    - Output Mode: {mode} (either JSON or cURL)
+    - Target WAF: {waf}
+
+    The WAF rule should:
+    - Block malicious requests exploiting this CVE
+    - Be valid syntax for the chosen WAF
+    - Be returned ONLY in the requested mode ({mode})
+
+    Return ONLY a JSON object with key:
+    - waf_rule
     """
 
-    return {"waf_rule": waf_rule}
+    response = client.chat.completions.create(
+        model="gpt-4o-mini",
+        messages=[{"role": "user", "content": prompt}],
+        response_format={"type": "json_schema", "json_schema": {
+            "name": "waf_rule_schema",
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "waf_rule": {"type": "string"}
+                },
+                "required": ["waf_rule"]
+            }
+        }}
+    )
+
+    return response.choices[0].message.parsed
