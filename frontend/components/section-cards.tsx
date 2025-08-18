@@ -22,6 +22,7 @@ interface CVE {
   published_date: string
   last_modified_date: string
   references: string[]
+  threat_feed: string
 }
 
 interface SectionCardsProps {
@@ -56,6 +57,15 @@ export function SectionCards({ cveData }: SectionCardsProps) {
   }, {} as Record<string, number>)
   
   const topDependency = Object.entries(dependencyCounts)
+    .sort(([,a], [,b]) => b - a)[0] || ["None", 0]
+  
+  // Threat feed statistics
+  const threatFeedCounts = cveData.reduce((acc, cve) => {
+    acc[cve.threat_feed] = (acc[cve.threat_feed] || 0) + 1
+    return acc
+  }, {} as Record<string, number>)
+  
+  const topThreatFeed = Object.entries(threatFeedCounts)
     .sort(([,a], [,b]) => b - a)[0] || ["None", 0]
 
   return (
@@ -133,23 +143,23 @@ export function SectionCards({ cveData }: SectionCardsProps) {
       
       <Card className="@container/card">
         <CardHeader>
-          <CardDescription>Dependencies Affected</CardDescription>
+          <CardDescription>Threat Feeds</CardDescription>
           <CardTitle className="text-2xl font-semibold tabular-nums @[250px]/card:text-3xl">
-            {uniqueDependencies}
+            {Object.keys(threatFeedCounts).length}
           </CardTitle>
           <CardAction>
             <Badge variant="outline">
-              <IconPackage className="size-3" />
-              Unique
+              <IconShield className="size-3" />
+              Sources
             </Badge>
           </CardAction>
         </CardHeader>
         <CardFooter className="flex-col items-start gap-1.5 text-sm">
           <div className="line-clamp-1 flex gap-2 font-medium">
-            Top: {topDependency[0]} ({topDependency[1]} CVEs) <IconPackage className="size-4" />
+            Top: {topThreatFeed[0]} ({topThreatFeed[1]} CVEs) <IconShield className="size-4" />
           </div>
           <div className="text-muted-foreground">
-            Across {totalCVEs} total vulnerabilities
+            From {Object.keys(threatFeedCounts).length} threat feeds
           </div>
         </CardFooter>
       </Card>

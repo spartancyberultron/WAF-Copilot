@@ -1,0 +1,1986 @@
+[
+  {
+    "id": "CVE-2015-9501",
+    "description": "The Artificial Intelligence theme before 1.2.4 for WordPress has XSS because Genericons HTML files are unnecessarily placed under the web root.",
+    "dependency_name": "Artificial Intelligence",
+    "cvss_v3_score": 6.1,
+    "cvss_v3_vector": null,
+    "cvss_v2_score": null,
+    "cvss_v2_vector": null,
+    "published_date": "2019-10-22T22:15:10.120",
+    "last_modified_date": "2024-11-21T02:40:47.180",
+    "references": [
+      "https://github.com/duchenerc/artificial-intelligence/commit/c70631b1f80518411df2f88476041351110c6eac",
+      "https://wpvulndb.com/vulnerabilities/7994",
+      "https://github.com/duchenerc/artificial-intelligence/commit/c70631b1f80518411df2f88476041351110c6eac",
+      "https://wpvulndb.com/vulnerabilities/7994"
+    ],
+    "threat_feed": "AI/ML"
+  },
+  {
+    "id": "CVE-2023-37468",
+    "description": "Feedbacksystem is a personalized feedback system for students using artificial intelligence. Passwords of users using LDAP login are stored in clear text in the database. The LDAP users password is passed unencrypted in the LoginController.scala and stored in the database when logging in for the first time. Users using only local login or the cas login are not affected. This issue has been patched in version 1.19.2.\n\n",
+    "dependency_name": "Artificial Intelligence",
+    "cvss_v3_score": 6.0,
+    "cvss_v3_vector": null,
+    "cvss_v2_score": null,
+    "cvss_v2_vector": null,
+    "published_date": "2023-07-13T21:15:09.253",
+    "last_modified_date": "2024-11-21T08:11:46.300",
+    "references": [
+      "https://github.com/thm-mni-ii/feedbacksystem/commit/8d896125263e1efb1b70990987c7704426325bcf",
+      "https://github.com/thm-mni-ii/feedbacksystem/releases/tag/v1.9.2",
+      "https://github.com/thm-mni-ii/feedbacksystem/security/advisories/GHSA-g28r-8wg3-7349",
+      "https://github.com/thm-mni-ii/feedbacksystem/commit/8d896125263e1efb1b70990987c7704426325bcf",
+      "https://github.com/thm-mni-ii/feedbacksystem/releases/tag/v1.9.2",
+      "https://github.com/thm-mni-ii/feedbacksystem/security/advisories/GHSA-g28r-8wg3-7349"
+    ],
+    "threat_feed": "AI/ML"
+  },
+  {
+    "id": "CVE-2023-46248",
+    "description": "Cody is an artificial intelligence (AI) coding assistant. The Cody AI VSCode extension versions 0.10.0 through 0.14.0 are vulnerable to Remote Code Execution under certain conditions. An attacker in control of a malicious repository could modify the Cody configuration file `.vscode/cody.json` and overwrite Cody commands. If a user with the extension installed opens this malicious repository and runs a Cody command such as /explain or /doc, this could allow arbitrary code execution on the user's machine. The vulnerability is rated as critical severity, but with low exploitability. It requires the user to have a malicious repository loaded and execute the overwritten command in VS Code. The issue is exploitable regardless of the user blocking code execution on a repository through VS Code Workspace Trust. The issue was found during a regular 3rd party penetration test. The maintainers of Cody do not have evidence of open source repositories having malicious `.vscode/cody.json` files to exploit this vulnerability. The issue is fixed in version 0.14.1 of the Cody VSCode extension. In case users can't promptly upgrade, they should not open any untrusted repositories with the Cody extension loaded.",
+    "dependency_name": "Artificial Intelligence",
+    "cvss_v3_score": 9.0,
+    "cvss_v3_vector": null,
+    "cvss_v2_score": null,
+    "cvss_v2_vector": null,
+    "published_date": "2023-10-31T16:15:09.777",
+    "last_modified_date": "2024-11-21T08:28:09.850",
+    "references": [
+      "https://github.com/sourcegraph/cody/pull/1414",
+      "https://github.com/sourcegraph/cody/security/advisories/GHSA-8wmq-fwv7-xmwq",
+      "https://github.com/sourcegraph/cody/pull/1414",
+      "https://github.com/sourcegraph/cody/security/advisories/GHSA-8wmq-fwv7-xmwq"
+    ],
+    "threat_feed": "AI/ML"
+  },
+  {
+    "id": "CVE-2023-49795",
+    "description": "MindsDB connects artificial intelligence models to real time data. Versions prior to 23.11.4.1 contain a server-side request forgery vulnerability in `file.py`. This can lead to limited information disclosure. Users should use MindsDB's `staging` branch or v23.11.4.1, which contain a fix for the issue.\n",
+    "dependency_name": "Artificial Intelligence",
+    "cvss_v3_score": 6.5,
+    "cvss_v3_vector": null,
+    "cvss_v2_score": null,
+    "cvss_v2_vector": null,
+    "published_date": "2023-12-11T19:15:09.070",
+    "last_modified_date": "2024-11-21T08:33:51.503",
+    "references": [
+      "https://github.com/mindsdb/mindsdb/commit/8d13c9c28ebcf3b36509eb679378004d4648d8fe",
+      "https://github.com/mindsdb/mindsdb/security/advisories/GHSA-34mr-6q8x-g9r6",
+      "https://github.com/mindsdb/mindsdb/commit/8d13c9c28ebcf3b36509eb679378004d4648d8fe",
+      "https://github.com/mindsdb/mindsdb/security/advisories/GHSA-34mr-6q8x-g9r6"
+    ],
+    "threat_feed": "AI/ML"
+  },
+  {
+    "id": "CVE-2023-49796",
+    "description": "MindsDB connects artificial intelligence models to real time data. Versions prior to 23.11.4.1 contain a limited file write vulnerability in `file.py` Users should use MindsDB's `staging` branch or v23.11.4.1, which contain a fix for the issue.",
+    "dependency_name": "Artificial Intelligence",
+    "cvss_v3_score": 5.3,
+    "cvss_v3_vector": null,
+    "cvss_v2_score": null,
+    "cvss_v2_vector": null,
+    "published_date": "2023-12-11T21:15:07.460",
+    "last_modified_date": "2024-11-21T08:33:51.630",
+    "references": [
+      "https://github.com/mindsdb/mindsdb/commit/8d13c9c28ebcf3b36509eb679378004d4648d8fe",
+      "https://github.com/mindsdb/mindsdb/security/advisories/GHSA-crhp-7c74-cg4c",
+      "https://github.com/mindsdb/mindsdb/commit/8d13c9c28ebcf3b36509eb679378004d4648d8fe",
+      "https://github.com/mindsdb/mindsdb/security/advisories/GHSA-crhp-7c74-cg4c"
+    ],
+    "threat_feed": "AI/ML"
+  },
+  {
+    "id": "CVE-2023-50731",
+    "description": "MindsDB is a SQL Server for artificial intelligence. Prior to version 23.11.4.1, the `put` method in `mindsdb/mindsdb/api/http/namespaces/file.py` does not validate the user-controlled name value, which is used in a temporary file name, which is afterwards opened for writing on lines 122-125, which leads to path injection. Later in the method, the temporary directory is deleted on line 151, but since we can write outside of the directory using the path injection vulnerability, the potentially dangerous file is not deleted. Arbitrary file contents can be written due to `f.write(chunk)` on line 125. Mindsdb does check later on line 149 in the `save_file` method in `file-controller.py` which calls the `_handle_source` method in `file_handler.py` if a file is of one of the types `csv`, `json`, `parquet`, `xls`, or `xlsx`. However, since the check happens after the file has already been written, the files will still exist (and will not be removed due to the path injection described earlier), just the `_handle_source` method will return an error. The same user-controlled source source is used also in another path injection sink on line 138. This leads to another path injection, which allows an attacker to delete any `zip` or `tar.gz` files on the server.",
+    "dependency_name": "Artificial Intelligence",
+    "cvss_v3_score": 9.1,
+    "cvss_v3_vector": null,
+    "cvss_v2_score": null,
+    "cvss_v2_vector": null,
+    "published_date": "2023-12-22T21:15:08.150",
+    "last_modified_date": "2024-11-21T08:37:13.950",
+    "references": [
+      "https://github.com/mindsdb/mindsdb/blob/1821da719f34c022890c9ff25810218e71c5abbc/mindsdb/api/http/namespaces/file.py#L122-L125",
+      "https://github.com/mindsdb/mindsdb/blob/1821da719f34c022890c9ff25810218e71c5abbc/mindsdb/api/http/namespaces/file.py#L138",
+      "https://github.com/mindsdb/mindsdb/security/advisories/GHSA-j8w6-2r9h-cxhj",
+      "https://securitylab.github.com/advisories/GHSL-2023-182_GHSL-2023-184_mindsdb_mindsdb/",
+      "https://github.com/mindsdb/mindsdb/blob/1821da719f34c022890c9ff25810218e71c5abbc/mindsdb/api/http/namespaces/file.py#L122-L125",
+      "https://github.com/mindsdb/mindsdb/blob/1821da719f34c022890c9ff25810218e71c5abbc/mindsdb/api/http/namespaces/file.py#L138",
+      "https://github.com/mindsdb/mindsdb/security/advisories/GHSA-j8w6-2r9h-cxhj",
+      "https://securitylab.github.com/advisories/GHSL-2023-182_GHSL-2023-184_mindsdb_mindsdb/"
+    ],
+    "threat_feed": "AI/ML"
+  },
+  {
+    "id": "CVE-2024-24759",
+    "description": "MindsDB is a platform for building artificial intelligence from enterprise data. Prior to version 23.12.4.2, a threat actor can bypass the server-side request forgery protection on the whole website with DNS Rebinding. The vulnerability can also lead to denial of service. Version 23.12.4.2 contains a patch.",
+    "dependency_name": "Artificial Intelligence",
+    "cvss_v3_score": 9.3,
+    "cvss_v3_vector": null,
+    "cvss_v2_score": null,
+    "cvss_v2_vector": null,
+    "published_date": "2024-09-05T17:15:12.380",
+    "last_modified_date": "2024-09-06T13:06:18.623",
+    "references": [
+      "https://github.com/mindsdb/mindsdb/commit/5f7496481bd3db1d06a2d2e62c0dce960a1fe12b",
+      "https://github.com/mindsdb/mindsdb/security/advisories/GHSA-4jcv-vp96-94xr"
+    ],
+    "threat_feed": "AI/ML"
+  },
+  {
+    "id": "CVE-2024-47066",
+    "description": "Lobe Chat is an open-source artificial intelligence chat framework. Prior to version 1.19.13, server-side request forgery protection implemented in `src/app/api/proxy/route.ts` does not consider redirect and could be bypassed when attacker provides an external malicious URL which redirects to internal resources like a private network or loopback address. Version 1.19.13 contains an improved fix for the issue.",
+    "dependency_name": "Artificial Intelligence",
+    "cvss_v3_score": 9.0,
+    "cvss_v3_vector": null,
+    "cvss_v2_score": null,
+    "cvss_v2_vector": null,
+    "published_date": "2024-09-23T16:15:06.670",
+    "last_modified_date": "2024-09-30T18:03:58.750",
+    "references": [
+      "https://github.com/lobehub/lobe-chat/blob/main/src/app/api/proxy/route.ts",
+      "https://github.com/lobehub/lobe-chat/commit/e960a23b0c69a5762eb27d776d33dac443058faf",
+      "https://github.com/lobehub/lobe-chat/security/advisories/GHSA-3fc8-2r3f-8wrg",
+      "https://github.com/lobehub/lobe-chat/security/advisories/GHSA-mxhq-xw3g-rphc"
+    ],
+    "threat_feed": "AI/ML"
+  },
+  {
+    "id": "CVE-2024-45599",
+    "description": "Cursor is an artificial intelligence code editor. Prior to version 0.41.0, if a user on macOS has granted Cursor access to the camera or microphone, any program that is run on the machine is able to access the camera or the microphone without explicitly being granted access, through a DyLib Injection using DYLD_INSERT_LIBRARIES environment variable. The usage of `com.apple.security.cs.allow-dyld-environment-variables` and `com.apple.security.cs.disable-library-validation` allows an external dynamic library to be injected into the application using DYLD_INSERT_LIBRARIES environment variable. \nMoreover, the entitlement `com.apple.security.device.camera` allows the application to use the host camera and `com.apple.security.device.audio-input` allows the application to use the microphone. This means that untrusted code that is executed on the user's machine can access the camera or the microphone, if the user has already given permission for Cursor to do so. In version 0.41.0, the entitlements have been split by process: the main process gets the camera and microphone entitlements, but not the DyLib entitlements, whereas the extension host process gets the DyLib entitlements but not the camera or microphone entitlements. As a workaround, do not explicitly give Cursor the permission to access the camera or microphone if untrusted users can run arbitrary commands on the affected machine.",
+    "dependency_name": "Artificial Intelligence",
+    "cvss_v3_score": 3.8,
+    "cvss_v3_vector": null,
+    "cvss_v2_score": null,
+    "cvss_v2_vector": null,
+    "published_date": "2024-09-25T01:15:44.157",
+    "last_modified_date": "2024-09-26T13:32:02.803",
+    "references": [
+      "https://github.com/getcursor/cursor/security/advisories/GHSA-x352-xv29-r74m"
+    ],
+    "threat_feed": "AI/ML"
+  },
+  {
+    "id": "CVE-2024-52294",
+    "description": "Khoj is a self-hostable artificial intelligence app. Prior to version 1.29.10, an Insecure Direct Object Reference (IDOR) vulnerability in the update_subscription endpoint allows any authenticated user to manipulate other users' Stripe subscriptions by simply modifying the email parameter in the request. The vulnerability exists in the subscription endpoint at `/api/subscription`. The endpoint uses an email parameter as a direct reference to user subscriptions without verifying object ownership. While authentication is required, there is no authorization check to verify if the authenticated user owns the referenced subscription. The issue was fixed in version 1.29.10. Support for arbitrarily presenting an email for update has been deprecated.",
+    "dependency_name": "Artificial Intelligence",
+    "cvss_v3_score": 4.3,
+    "cvss_v3_vector": null,
+    "cvss_v2_score": null,
+    "cvss_v2_vector": null,
+    "published_date": "2024-12-30T17:15:09.467",
+    "last_modified_date": "2024-12-30T17:15:09.467",
+    "references": [
+      "https://github.com/khoj-ai/khoj/commit/47d3c8c23597900af708bdc60aced3ae5d2064c1",
+      "https://github.com/khoj-ai/khoj/security/advisories/GHSA-hq4h-w933-jm6c",
+      "https://github.com/khoj-ai/khoj/security/advisories/GHSA-hq4h-w933-jm6c"
+    ],
+    "threat_feed": "AI/ML"
+  },
+  {
+    "id": "CVE-2025-27496",
+    "description": "Snowflake, a platform for using artificial intelligence in the context of cloud computing, has a vulnerability in the Snowflake JDBC driver (\"Driver\") in versions 3.0.13 through 3.23.0 of the driver. When the logging level was set to DEBUG, the Driver would log locally the client-side encryption master key of the target stage during the execution of GET/PUT commands. This key by itself does not grant access to any sensitive data without additional access authorizations,  and is not logged server-side by Snowflake. Snowflake fixed the issue in version 3.23.1.",
+    "dependency_name": "Artificial Intelligence",
+    "cvss_v3_score": 3.3,
+    "cvss_v3_vector": null,
+    "cvss_v2_score": null,
+    "cvss_v2_vector": null,
+    "published_date": "2025-03-13T19:15:52.050",
+    "last_modified_date": "2025-03-13T19:15:52.050",
+    "references": [
+      "https://github.com/snowflakedb/snowflake-jdbc/commit/ef81582ce2f1dbc3c8794a696c94f4fe65fad507",
+      "https://github.com/snowflakedb/snowflake-jdbc/security/advisories/GHSA-q298-375f-5q63"
+    ],
+    "threat_feed": "AI/ML"
+  },
+  {
+    "id": "CVE-2025-31490",
+    "description": "AutoGPT is a platform that allows users to create, deploy, and manage continuous artificial intelligence agents that automate complex workflows. Prior to 0.6.1, AutoGPT allows SSRF due to DNS Rebinding in requests wrapper. AutoGPT is built with a wrapper around Python's requests library, hardening the application against SSRF. The code for this wrapper can be found in autogpt_platform/backend/backend/util/request.py. The requested hostname of a URL which is being requested is validated, ensuring that it does not resolve to any local ipv4 or ipv6 addresses. However, this check is not sufficient, as a DNS server may initially respond with a non-blocked address, with a TTL of 0. This means that the initial resolution would appear as a non-blocked address. In this case, validate_url() will return the url as successful. After validate_url() has successfully returned the url, the url is then passed to the real request() function. When the real request() function is called with the validated url, request() will once again resolve the address of the hostname, because the record will not have been cached (due to TTL 0). This resolution may be in the \"invalid range\". This type of attack is called a \"DNS Rebinding Attack\". This vulnerability is fixed in 0.6.1.",
+    "dependency_name": "Artificial Intelligence",
+    "cvss_v3_score": 7.5,
+    "cvss_v3_vector": null,
+    "cvss_v2_score": null,
+    "cvss_v2_vector": null,
+    "published_date": "2025-04-14T23:15:21.713",
+    "last_modified_date": "2025-08-05T17:04:28.387",
+    "references": [
+      "https://github.com/Significant-Gravitas/AutoGPT/commit/66ebe4376eab3434af90808796b54c2139847b37",
+      "https://github.com/Significant-Gravitas/AutoGPT/security/advisories/GHSA-wvjg-9879-3m7w"
+    ],
+    "threat_feed": "AI/ML"
+  },
+  {
+    "id": "CVE-2025-31491",
+    "description": "AutoGPT is a platform that allows users to create, deploy, and manage continuous artificial intelligence agents that automate complex workflows. Prior to 0.6.1, AutoGPT allows of leakage of cross-domain cookies and protected headers in requests redirect. AutoGPT uses a wrapper around the requests python library, located in autogpt_platform/backend/backend/util/request.py. In this wrapper, redirects are specifically NOT followed for the first request. If the wrapper is used with allow_redirects set to True (which is the default), any redirect is not followed by the initial request, but rather re-requested by the wrapper using the new location. However, there is a fundamental flaw in manually re-requesting the new location: it does not account for security-sensitive headers which should not be sent cross-origin, such as the Authorization and Proxy-Authorization header, and cookies. For example in autogpt_platform/backend/backend/blocks/github/_api.py, an Authorization header is set when retrieving data from the GitHub API. However, if GitHub suffers from an open redirect vulnerability (such as the made-up example of https://api.github.com/repos/{owner}/{repo}/issues/comments/{comment_id}/../../../../../redirect/?url=https://joshua.hu/), and the script can be coerced into visiting it with the Authorization header, the GitHub credentials in the Authorization header will be leaked. This allows leaking auth headers and private cookies. This vulnerability is fixed in 0.6.1.",
+    "dependency_name": "Artificial Intelligence",
+    "cvss_v3_score": 8.6,
+    "cvss_v3_vector": null,
+    "cvss_v2_score": null,
+    "cvss_v2_vector": null,
+    "published_date": "2025-04-15T00:15:14.607",
+    "last_modified_date": "2025-08-05T17:04:15.657",
+    "references": [
+      "https://github.com/Significant-Gravitas/AutoGPT/security/advisories/GHSA-ggcm-93qg-gfhp"
+    ],
+    "threat_feed": "AI/ML"
+  },
+  {
+    "id": "CVE-2025-31494",
+    "description": "AutoGPT is a platform that allows users to create, deploy, and manage continuous artificial intelligence agents that automate complex workflows. The AutoGPT Platform's WebSocket API transmitted node execution updates to subscribers based on the graph_id+graph_version. Additionally, there was no check prohibiting users from subscribing with another user's graph_id+graph_version. As a result, node execution updates from one user's graph execution could be received by another user within the same instance. This vulnerability does not occur between different instances or between users and non-users of the platform. Single-user instances are not affected. In private instances with a user white-list, the impact is limited by the fact that all potential unintended recipients of these node execution updates must have been admitted by the administrator. This vulnerability is fixed in 0.6.1.",
+    "dependency_name": "Artificial Intelligence",
+    "cvss_v3_score": 3.5,
+    "cvss_v3_vector": null,
+    "cvss_v2_score": null,
+    "cvss_v2_vector": null,
+    "published_date": "2025-04-15T00:15:14.740",
+    "last_modified_date": "2025-05-28T16:14:42.303",
+    "references": [
+      "https://github.com/Significant-Gravitas/AutoGPT/pull/9660",
+      "https://github.com/Significant-Gravitas/AutoGPT/releases/tag/autogpt-platform-beta-v0.6.1",
+      "https://github.com/Significant-Gravitas/AutoGPT/security/advisories/GHSA-958f-37vw-jx8f"
+    ],
+    "threat_feed": "AI/ML"
+  },
+  {
+    "id": "CVE-2025-46571",
+    "description": "Open WebUI is a self-hosted artificial intelligence platform designed to operate entirely offline. Prior to version 0.6.6, low privileged users can upload HTML files which contain JavaScript code via the `/api/v1/files/` backend endpoint. This endpoint returns a file id, which can be used to open the file in the browser and trigger the JavaScript code in the user's browser. Under the default settings, files uploaded by low-privileged users can only be viewed by admins or themselves, limiting the impact of this vulnerability. A link to such a file can be sent to an admin, and if clicked, will give the low-privileged user complete control over the admin's account, ultimately enabling RCE via functions. Version 0.6.6 contains a fix for the issue.",
+    "dependency_name": "Artificial Intelligence",
+    "cvss_v3_score": 5.4,
+    "cvss_v3_vector": null,
+    "cvss_v2_score": null,
+    "cvss_v2_vector": null,
+    "published_date": "2025-05-05T19:15:57.050",
+    "last_modified_date": "2025-06-17T20:18:30.580",
+    "references": [
+      "https://github.com/open-webui/open-webui/blob/main/backend/open_webui/routers/files.py#L434-L438",
+      "https://github.com/open-webui/open-webui/commit/ef2aeb7c0eb976bac759e59ac359c94a5b8dc7e0",
+      "https://github.com/open-webui/open-webui/security/advisories/GHSA-8gh5-qqh8-hq3x"
+    ],
+    "threat_feed": "AI/ML"
+  },
+  {
+    "id": "CVE-2025-46719",
+    "description": "Open WebUI is a self-hosted artificial intelligence platform designed to operate entirely offline. Prior to version 0.6.6, a vulnerability in the way certain html tags in chat messages are rendered allows attackers to inject JavaScript code into a chat transcript. The JavaScript code will be executed in the user's browser every time that chat transcript is opened, allowing attackers to retrieve the user's access token and gain full control over their account. Chat transcripts can be shared with other users in the same server, or with the whole open-webui community if \"Enable Community Sharing\" is enabled in the admin panel. If this exploit is used against an admin user, it is possible to achieve Remote Code Execution on the server where the open-webui backend is hosted. This can be done by creating a new function which contains malicious python code. This vulnerability also affects chat transcripts uploaded to `https://openwebui.com/c/<user>/<chat_id>`, allowing for wormable stored XSS in https[:]//openwebui[.]com. Version 0.6.6 contains a patch for the issue.",
+    "dependency_name": "Artificial Intelligence",
+    "cvss_v3_score": 5.4,
+    "cvss_v3_vector": null,
+    "cvss_v2_score": null,
+    "cvss_v2_vector": null,
+    "published_date": "2025-05-05T19:15:57.197",
+    "last_modified_date": "2025-06-17T20:18:16.003",
+    "references": [
+      "https://github.com/open-webui/open-webui/blob/main/src/lib/components/chat/Messages/Markdown/MarkdownTokens.svelte#L269-L279",
+      "https://github.com/open-webui/open-webui/commit/6fd082d55ffaf6eb226efdeebc7155e3693d2d01",
+      "https://github.com/open-webui/open-webui/security/advisories/GHSA-9f4f-jv96-8766",
+      "https://github.com/open-webui/open-webui/security/advisories/GHSA-9f4f-jv96-8766"
+    ],
+    "threat_feed": "AI/ML"
+  },
+  {
+    "id": "CVE-2025-47777",
+    "description": "5ire is a cross-platform desktop artificial intelligence assistant and model context protocol client. Versions prior to 0.11.1 are vulnerable to stored cross-site scripting in chatbot responses due to insufficient sanitization. This, in turn, can lead to Remote Code Execution (RCE) via unsafe Electron protocol handling and exposed Electron APIs. All users of 5ire client versions prior to patched releases, particularly those interacting with untrusted chatbots or pasting external content, are affected. Version 0.11.1 contains a patch for the issue.",
+    "dependency_name": "Artificial Intelligence",
+    "cvss_v3_score": 9.6,
+    "cvss_v3_vector": null,
+    "cvss_v2_score": null,
+    "cvss_v2_vector": null,
+    "published_date": "2025-05-14T16:15:28.957",
+    "last_modified_date": "2025-05-16T14:43:56.797",
+    "references": [
+      "https://github.com/nanbingxyz/5ire/commit/56601e012095194a4be0d4cb6da6b5b3cb53dea8",
+      "https://github.com/nanbingxyz/5ire/security/advisories/GHSA-mr8w-mmvv-6hq8",
+      "https://positive.security/blog/url-open-rce",
+      "https://shabarkin.notion.site/1-click-RCE-in-Electron-Applications-501c2e96e7934610979cd3c72e844a22",
+      "https://www.electronjs.org/docs/latest/tutorial/security",
+      "https://www.youtube.com/watch?v=ROFYhS9E9eU"
+    ],
+    "threat_feed": "AI/ML"
+  },
+  {
+    "id": "CVE-2025-53944",
+    "description": "AutoGPT is a platform that allows users to create, deploy, and manage continuous artificial intelligence agents. In v0.6.15 and below, the external API's get_graph_execution_results endpoint has an authorization bypass vulnerability. While it correctly validates user access to the graph_id, it fails to verify ownership of the graph_exec_id parameter, allowing authenticated users to access any execution results by providing arbitrary execution IDs. The internal API implements proper validation for both parameters. This is fixed in v0.6.16.",
+    "dependency_name": "Artificial Intelligence",
+    "cvss_v3_score": 7.7,
+    "cvss_v3_vector": null,
+    "cvss_v2_score": null,
+    "cvss_v2_vector": null,
+    "published_date": "2025-07-30T15:15:35.210",
+    "last_modified_date": "2025-08-05T14:40:34.370",
+    "references": [
+      "https://github.com/Significant-Gravitas/AutoGPT/commit/309114a727baa2063357810d444e9a119f8dd7f6",
+      "https://github.com/Significant-Gravitas/AutoGPT/releases/tag/autogpt-platform-beta-v0.6.16",
+      "https://github.com/Significant-Gravitas/AutoGPT/security/advisories/GHSA-x77j-qg2x-fgg6",
+      "https://github.com/Significant-Gravitas/AutoGPT/security/advisories/GHSA-x77j-qg2x-fgg6"
+    ],
+    "threat_feed": "AI/ML"
+  },
+  {
+    "id": "CVE-2018-3823",
+    "description": "X-Pack Machine Learning versions before 6.2.4 and 5.6.9 had a cross-site scripting (XSS) vulnerability. Users with manage_ml permissions could create jobs containing malicious data as part of their configuration that could allow the attacker to obtain sensitive information from or perform destructive actions on behalf of other ML users viewing the results of the jobs.",
+    "dependency_name": "Machine Learning",
+    "cvss_v3_score": 5.4,
+    "cvss_v3_vector": null,
+    "cvss_v2_score": null,
+    "cvss_v2_vector": null,
+    "published_date": "2018-09-19T19:29:00.220",
+    "last_modified_date": "2024-11-21T04:06:06.327",
+    "references": [
+      "https://discuss.elastic.co/t/elastic-stack-6-2-4-and-5-6-9-security-update/128422",
+      "https://www.elastic.co/community/security",
+      "https://discuss.elastic.co/t/elastic-stack-6-2-4-and-5-6-9-security-update/128422",
+      "https://www.elastic.co/community/security"
+    ],
+    "threat_feed": "AI/ML"
+  },
+  {
+    "id": "CVE-2018-3824",
+    "description": "X-Pack Machine Learning versions before 6.2.4 and 5.6.9 had a cross-site scripting (XSS) vulnerability. If an attacker is able to inject data into an index that has a ML job running against it, then when another user views the results of the ML job it could allow the attacker to obtain sensitive information from or perform destructive actions on behalf of that other ML user.",
+    "dependency_name": "Machine Learning",
+    "cvss_v3_score": 6.1,
+    "cvss_v3_vector": null,
+    "cvss_v2_score": null,
+    "cvss_v2_vector": null,
+    "published_date": "2018-09-19T19:29:00.360",
+    "last_modified_date": "2024-11-21T04:06:06.450",
+    "references": [
+      "https://discuss.elastic.co/t/elastic-stack-6-2-4-and-5-6-9-security-update/128422",
+      "https://www.elastic.co/community/security",
+      "https://discuss.elastic.co/t/elastic-stack-6-2-4-and-5-6-9-security-update/128422",
+      "https://www.elastic.co/community/security"
+    ],
+    "threat_feed": "AI/ML"
+  },
+  {
+    "id": "CVE-2018-17247",
+    "description": "Elasticsearch Security versions 6.5.0 and 6.5.1 contain an XXE flaw in Machine Learning's find_file_structure API. If a policy allowing external network access has been added to Elasticsearch's Java Security Manager then an attacker could send a specially crafted request capable of leaking content of local files on the Elasticsearch node. This could allow a user to access information that they should not have access to.",
+    "dependency_name": "Machine Learning",
+    "cvss_v3_score": 5.9,
+    "cvss_v3_vector": null,
+    "cvss_v2_score": null,
+    "cvss_v2_vector": null,
+    "published_date": "2018-12-20T22:29:00.427",
+    "last_modified_date": "2024-11-21T03:54:09.417",
+    "references": [
+      "http://www.securityfocus.com/bid/106294",
+      "https://discuss.elastic.co/t/elastic-stack-6-5-2-security-update/159594",
+      "https://www.elastic.co/community/security",
+      "http://www.securityfocus.com/bid/106294",
+      "https://discuss.elastic.co/t/elastic-stack-6-5-2-security-update/159594",
+      "https://www.elastic.co/community/security"
+    ],
+    "threat_feed": "AI/ML"
+  },
+  {
+    "id": "CVE-2019-8760",
+    "description": "This issue was addressed by improving Face ID machine learning models. This issue is fixed in iOS 13. A 3D model constructed to look like the enrolled user may authenticate via Face ID.",
+    "dependency_name": "Machine Learning",
+    "cvss_v3_score": 6.8,
+    "cvss_v3_vector": null,
+    "cvss_v2_score": null,
+    "cvss_v2_vector": null,
+    "published_date": "2019-12-18T18:15:39.257",
+    "last_modified_date": "2024-11-21T04:50:25.597",
+    "references": [
+      "https://support.apple.com/HT210606",
+      "https://support.apple.com/HT210606"
+    ],
+    "threat_feed": "AI/ML"
+  },
+  {
+    "id": "CVE-2019-20634",
+    "description": "An issue was discovered in Proofpoint Email Protection through 2019-09-08. By collecting scores from Proofpoint email headers, it is possible to build a copy-cat Machine Learning Classification model and extract insights from this model. The insights gathered allow an attacker to craft emails that receive preferable scores, with a goal of delivering malicious emails.",
+    "dependency_name": "Machine Learning",
+    "cvss_v3_score": 3.7,
+    "cvss_v3_vector": null,
+    "cvss_v2_score": null,
+    "cvss_v2_vector": null,
+    "published_date": "2020-03-30T21:15:12.373",
+    "last_modified_date": "2024-11-21T04:38:55.730",
+    "references": [
+      "https://github.com/moohax/Proof-Pudding",
+      "https://github.com/moohax/Talks/blob/master/slides/DerbyCon19.pdf",
+      "https://www.proofpoint.com/us/security/CVE-2019-20634",
+      "https://www.proofpoint.com/us/security/security-advisories/pfpt-sn-2020-0001",
+      "https://atlas.mitre.org/studies/AML.CS0008",
+      "https://github.com/moohax/Proof-Pudding",
+      "https://github.com/moohax/Talks/blob/master/slides/DerbyCon19.pdf",
+      "https://www.proofpoint.com/us/security/CVE-2019-20634",
+      "https://www.proofpoint.com/us/security/security-advisories/pfpt-sn-2020-0001"
+    ],
+    "threat_feed": "AI/ML"
+  },
+  {
+    "id": "CVE-2021-29512",
+    "description": "TensorFlow is an end-to-end open source platform for machine learning. If the `splits` argument of `RaggedBincount` does not specify a valid `SparseTensor`(https://www.tensorflow.org/api_docs/python/tf/sparse/SparseTensor), then an attacker can trigger a heap buffer overflow. This will cause a read from outside the bounds of the `splits` tensor buffer in the implementation of the `RaggedBincount` op(https://github.com/tensorflow/tensorflow/blob/8b677d79167799f71c42fd3fa074476e0295413a/tensorflow/core/kernels/bincount_op.cc#L430-L433). Before the `for` loop, `batch_idx` is set to 0. The user controls the `splits` array, making it contain only one element, 0. Thus, the code in the `while` loop would increment `batch_idx` and then try to read `splits(1)`, which is outside of bounds. The fix will be included in TensorFlow 2.5.0. We will also cherrypick this commit on TensorFlow 2.4.2 and TensorFlow 2.3.3, as these are also affected.",
+    "dependency_name": "Machine Learning",
+    "cvss_v3_score": 2.5,
+    "cvss_v3_vector": null,
+    "cvss_v2_score": null,
+    "cvss_v2_vector": null,
+    "published_date": "2021-05-14T19:15:07.753",
+    "last_modified_date": "2024-11-21T06:01:16.970",
+    "references": [
+      "https://github.com/tensorflow/tensorflow/commit/eebb96c2830d48597d055d247c0e9aebaea94cd5",
+      "https://github.com/tensorflow/tensorflow/security/advisories/GHSA-4278-2v5v-65r4",
+      "https://github.com/tensorflow/tensorflow/commit/eebb96c2830d48597d055d247c0e9aebaea94cd5",
+      "https://github.com/tensorflow/tensorflow/security/advisories/GHSA-4278-2v5v-65r4"
+    ],
+    "threat_feed": "AI/ML"
+  },
+  {
+    "id": "CVE-2021-29554",
+    "description": "TensorFlow is an end-to-end open source platform for machine learning. An attacker can cause a denial of service via a FPE runtime error in `tf.raw_ops.DenseCountSparseOutput`. This is because the implementation(https://github.com/tensorflow/tensorflow/blob/efff014f3b2d8ef6141da30c806faf141297eca1/tensorflow/core/kernels/count_ops.cc#L123-L127) computes a divisor value from user data but does not check that the result is 0 before doing the division. Since `data` is given by the `values` argument, `num_batch_elements` is 0. The fix will be included in TensorFlow 2.5.0. We will also cherrypick this commit on TensorFlow 2.4.2, and TensorFlow 2.3.3, as these are also affected.",
+    "dependency_name": "Machine Learning",
+    "cvss_v3_score": 2.5,
+    "cvss_v3_vector": null,
+    "cvss_v2_score": null,
+    "cvss_v2_vector": null,
+    "published_date": "2021-05-14T19:15:07.800",
+    "last_modified_date": "2024-11-21T06:01:22.210",
+    "references": [
+      "https://github.com/tensorflow/tensorflow/commit/da5ff2daf618591f64b2b62d9d9803951b945e9f",
+      "https://github.com/tensorflow/tensorflow/security/advisories/GHSA-qg48-85hg-mqc5",
+      "https://github.com/tensorflow/tensorflow/commit/da5ff2daf618591f64b2b62d9d9803951b945e9f",
+      "https://github.com/tensorflow/tensorflow/security/advisories/GHSA-qg48-85hg-mqc5"
+    ],
+    "threat_feed": "AI/ML"
+  },
+  {
+    "id": "CVE-2021-29513",
+    "description": "TensorFlow is an end-to-end open source platform for machine learning. Calling TF operations with tensors of non-numeric types when the operations expect numeric tensors result in null pointer dereferences. The conversion from Python array to C++ array(https://github.com/tensorflow/tensorflow/blob/ff70c47a396ef1e3cb73c90513da4f5cb71bebba/tensorflow/python/lib/core/ndarray_tensor.cc#L113-L169) is vulnerable to a type confusion. The fix will be included in TensorFlow 2.5.0. We will also cherrypick this commit on TensorFlow 2.4.2, TensorFlow 2.3.3, TensorFlow 2.2.3 and TensorFlow 2.1.4, as these are also affected and still in supported range.",
+    "dependency_name": "Machine Learning",
+    "cvss_v3_score": 2.5,
+    "cvss_v3_vector": null,
+    "cvss_v2_score": null,
+    "cvss_v2_vector": null,
+    "published_date": "2021-05-14T20:15:11.190",
+    "last_modified_date": "2024-11-21T06:01:17.100",
+    "references": [
+      "https://github.com/tensorflow/tensorflow/commit/030af767d357d1b4088c4a25c72cb3906abac489",
+      "https://github.com/tensorflow/tensorflow/security/advisories/GHSA-452g-f7fp-9jf7",
+      "https://github.com/tensorflow/tensorflow/commit/030af767d357d1b4088c4a25c72cb3906abac489",
+      "https://github.com/tensorflow/tensorflow/security/advisories/GHSA-452g-f7fp-9jf7"
+    ],
+    "threat_feed": "AI/ML"
+  },
+  {
+    "id": "CVE-2021-29514",
+    "description": "TensorFlow is an end-to-end open source platform for machine learning. If the `splits` argument of `RaggedBincount` does not specify a valid `SparseTensor`(https://www.tensorflow.org/api_docs/python/tf/sparse/SparseTensor), then an attacker can trigger a heap buffer overflow. This will cause a read from outside the bounds of the `splits` tensor buffer in the implementation of the `RaggedBincount` op(https://github.com/tensorflow/tensorflow/blob/8b677d79167799f71c42fd3fa074476e0295413a/tensorflow/core/kernels/bincount_op.cc#L430-L446). Before the `for` loop, `batch_idx` is set to 0. The attacker sets `splits(0)` to be 7, hence the `while` loop does not execute and `batch_idx` remains 0. This then results in writing to `out(-1, bin)`, which is before the heap allocated buffer for the output tensor. The fix will be included in TensorFlow 2.5.0. We will also cherrypick this commit on TensorFlow 2.4.2 and TensorFlow 2.3.3, as these are also affected.",
+    "dependency_name": "Machine Learning",
+    "cvss_v3_score": 2.5,
+    "cvss_v3_vector": null,
+    "cvss_v2_score": null,
+    "cvss_v2_vector": null,
+    "published_date": "2021-05-14T20:15:11.247",
+    "last_modified_date": "2024-11-21T06:01:17.233",
+    "references": [
+      "https://github.com/tensorflow/tensorflow/commit/eebb96c2830d48597d055d247c0e9aebaea94cd5",
+      "https://github.com/tensorflow/tensorflow/security/advisories/GHSA-8h46-5m9h-7553",
+      "https://github.com/tensorflow/tensorflow/commit/eebb96c2830d48597d055d247c0e9aebaea94cd5",
+      "https://github.com/tensorflow/tensorflow/security/advisories/GHSA-8h46-5m9h-7553"
+    ],
+    "threat_feed": "AI/ML"
+  },
+  {
+    "id": "CVE-2021-29515",
+    "description": "TensorFlow is an end-to-end open source platform for machine learning. The implementation of `MatrixDiag*` operations(https://github.com/tensorflow/tensorflow/blob/4c4f420e68f1cfaf8f4b6e8e3eb857e9e4c3ff33/tensorflow/core/kernels/linalg/matrix_diag_op.cc#L195-L197) does not validate that the tensor arguments are non-empty. The fix will be included in TensorFlow 2.5.0. We will also cherrypick this commit on TensorFlow 2.4.2, TensorFlow 2.3.3, TensorFlow 2.2.3 and TensorFlow 2.1.4, as these are also affected and still in supported range.",
+    "dependency_name": "Machine Learning",
+    "cvss_v3_score": 2.5,
+    "cvss_v3_vector": null,
+    "cvss_v2_score": null,
+    "cvss_v2_vector": null,
+    "published_date": "2021-05-14T20:15:11.300",
+    "last_modified_date": "2024-11-21T06:01:17.353",
+    "references": [
+      "https://github.com/tensorflow/tensorflow/commit/a7116dd3913c4a4afd2a3a938573aa7c785fdfc6",
+      "https://github.com/tensorflow/tensorflow/security/advisories/GHSA-hc6c-75p4-hmq4",
+      "https://github.com/tensorflow/tensorflow/commit/a7116dd3913c4a4afd2a3a938573aa7c785fdfc6",
+      "https://github.com/tensorflow/tensorflow/security/advisories/GHSA-hc6c-75p4-hmq4"
+    ],
+    "threat_feed": "AI/ML"
+  },
+  {
+    "id": "CVE-2021-29516",
+    "description": "TensorFlow is an end-to-end open source platform for machine learning. Calling `tf.raw_ops.RaggedTensorToVariant` with arguments specifying an invalid ragged tensor results in a null pointer dereference. The implementation of `RaggedTensorToVariant` operations(https://github.com/tensorflow/tensorflow/blob/904b3926ed1c6c70380d5313d282d248a776baa1/tensorflow/core/kernels/ragged_tensor_to_variant_op.cc#L39-L40) does not validate that the ragged tensor argument is non-empty. Since `batched_ragged` contains no elements, `batched_ragged.splits` is a null vector, thus `batched_ragged.splits(0)` will result in dereferencing `nullptr`. The fix will be included in TensorFlow 2.5.0. We will also cherrypick this commit on TensorFlow 2.4.2, TensorFlow 2.3.3, TensorFlow 2.2.3 and TensorFlow 2.1.4, as these are also affected and still in supported range.",
+    "dependency_name": "Machine Learning",
+    "cvss_v3_score": 2.5,
+    "cvss_v3_vector": null,
+    "cvss_v2_score": null,
+    "cvss_v2_vector": null,
+    "published_date": "2021-05-14T20:15:11.347",
+    "last_modified_date": "2024-11-21T06:01:17.490",
+    "references": [
+      "https://github.com/tensorflow/tensorflow/commit/b055b9c474cd376259dde8779908f9eeaf097d93",
+      "https://github.com/tensorflow/tensorflow/security/advisories/GHSA-84mw-34w6-2q43",
+      "https://github.com/tensorflow/tensorflow/commit/b055b9c474cd376259dde8779908f9eeaf097d93",
+      "https://github.com/tensorflow/tensorflow/security/advisories/GHSA-84mw-34w6-2q43"
+    ],
+    "threat_feed": "AI/ML"
+  },
+  {
+    "id": "CVE-2021-29517",
+    "description": "TensorFlow is an end-to-end open source platform for machine learning. A malicious user could trigger a division by 0 in `Conv3D` implementation. The implementation(https://github.com/tensorflow/tensorflow/blob/42033603003965bffac51ae171b51801565e002d/tensorflow/core/kernels/conv_ops_3d.cc#L143-L145) does a modulo operation based on user controlled input. Thus, when `filter` has a 0 as the fifth element, this results in a division by 0. Additionally, if the shape of the two tensors is not valid, an Eigen assertion can be triggered, resulting in a program crash. The fix will be included in TensorFlow 2.5.0. We will also cherrypick this commit on TensorFlow 2.4.2, TensorFlow 2.3.3, TensorFlow 2.2.3 and TensorFlow 2.1.4, as these are also affected and still in supported range.",
+    "dependency_name": "Machine Learning",
+    "cvss_v3_score": 2.5,
+    "cvss_v3_vector": null,
+    "cvss_v2_score": null,
+    "cvss_v2_vector": null,
+    "published_date": "2021-05-14T20:15:11.390",
+    "last_modified_date": "2024-11-21T06:01:17.610",
+    "references": [
+      "https://github.com/tensorflow/tensorflow/commit/799f835a3dfa00a4d852defa29b15841eea9d64f",
+      "https://github.com/tensorflow/tensorflow/security/advisories/GHSA-772p-x54p-hjrv",
+      "https://github.com/tensorflow/tensorflow/commit/799f835a3dfa00a4d852defa29b15841eea9d64f",
+      "https://github.com/tensorflow/tensorflow/security/advisories/GHSA-772p-x54p-hjrv"
+    ],
+    "threat_feed": "AI/ML"
+  },
+  {
+    "id": "CVE-2021-29518",
+    "description": "TensorFlow is an end-to-end open source platform for machine learning. In eager mode (default in TF 2.0 and later), session operations are invalid. However, users could still call the raw ops associated with them and trigger a null pointer dereference. The implementation(https://github.com/tensorflow/tensorflow/blob/eebb96c2830d48597d055d247c0e9aebaea94cd5/tensorflow/core/kernels/session_ops.cc#L104) dereferences the session state pointer without checking if it is valid. Thus, in eager mode, `ctx->session_state()` is nullptr and the call of the member function is undefined behavior. The fix will be included in TensorFlow 2.5.0. We will also cherrypick this commit on TensorFlow 2.4.2, TensorFlow 2.3.3, TensorFlow 2.2.3 and TensorFlow 2.1.4, as these are also affected and still in supported range.",
+    "dependency_name": "Machine Learning",
+    "cvss_v3_score": 2.5,
+    "cvss_v3_vector": null,
+    "cvss_v2_score": null,
+    "cvss_v2_vector": null,
+    "published_date": "2021-05-14T20:15:11.437",
+    "last_modified_date": "2024-11-21T06:01:17.733",
+    "references": [
+      "https://github.com/tensorflow/tensorflow/commit/ff70c47a396ef1e3cb73c90513da4f5cb71bebba",
+      "https://github.com/tensorflow/tensorflow/security/advisories/GHSA-62gx-355r-9fhg",
+      "https://github.com/tensorflow/tensorflow/commit/ff70c47a396ef1e3cb73c90513da4f5cb71bebba",
+      "https://github.com/tensorflow/tensorflow/security/advisories/GHSA-62gx-355r-9fhg"
+    ],
+    "threat_feed": "AI/ML"
+  },
+  {
+    "id": "CVE-2021-29519",
+    "description": "TensorFlow is an end-to-end open source platform for machine learning. The API of `tf.raw_ops.SparseCross` allows combinations which would result in a `CHECK`-failure and denial of service. This is because the implementation(https://github.com/tensorflow/tensorflow/blob/3d782b7d47b1bf2ed32bd4a246d6d6cadc4c903d/tensorflow/core/kernels/sparse_cross_op.cc#L114-L116) is tricked to consider a tensor of type `tstring` which in fact contains integral elements. Fixing the type confusion by preventing mixing `DT_STRING` and `DT_INT64` types solves this issue. The fix will be included in TensorFlow 2.5.0. We will also cherrypick this commit on TensorFlow 2.4.2, TensorFlow 2.3.3, TensorFlow 2.2.3 and TensorFlow 2.1.4, as these are also affected and still in supported range.",
+    "dependency_name": "Machine Learning",
+    "cvss_v3_score": 2.5,
+    "cvss_v3_vector": null,
+    "cvss_v2_score": null,
+    "cvss_v2_vector": null,
+    "published_date": "2021-05-14T20:15:11.480",
+    "last_modified_date": "2024-11-21T06:01:17.850",
+    "references": [
+      "https://github.com/tensorflow/tensorflow/commit/b1cc5e5a50e7cee09f2c6eb48eb40ee9c4125025",
+      "https://github.com/tensorflow/tensorflow/security/advisories/GHSA-772j-h9xw-ffp5",
+      "https://github.com/tensorflow/tensorflow/commit/b1cc5e5a50e7cee09f2c6eb48eb40ee9c4125025",
+      "https://github.com/tensorflow/tensorflow/security/advisories/GHSA-772j-h9xw-ffp5"
+    ],
+    "threat_feed": "AI/ML"
+  },
+  {
+    "id": "CVE-2021-29520",
+    "description": "TensorFlow is an end-to-end open source platform for machine learning. Missing validation between arguments to `tf.raw_ops.Conv3DBackprop*` operations can result in heap buffer overflows. This is because the implementation(https://github.com/tensorflow/tensorflow/blob/4814fafb0ca6b5ab58a09411523b2193fed23fed/tensorflow/core/kernels/conv_grad_shape_utils.cc#L94-L153) assumes that the `input`, `filter_sizes` and `out_backprop` tensors have the same shape, as they are accessed in parallel. The fix will be included in TensorFlow 2.5.0. We will also cherrypick this commit on TensorFlow 2.4.2, TensorFlow 2.3.3, TensorFlow 2.2.3 and TensorFlow 2.1.4, as these are also affected and still in supported range.",
+    "dependency_name": "Machine Learning",
+    "cvss_v3_score": 2.5,
+    "cvss_v3_vector": null,
+    "cvss_v2_score": null,
+    "cvss_v2_vector": null,
+    "published_date": "2021-05-14T20:15:11.523",
+    "last_modified_date": "2024-11-21T06:01:17.963",
+    "references": [
+      "https://github.com/tensorflow/tensorflow/commit/8f37b52e1320d8d72a9529b2468277791a261197",
+      "https://github.com/tensorflow/tensorflow/security/advisories/GHSA-wcv5-qrj6-9pfm",
+      "https://github.com/tensorflow/tensorflow/commit/8f37b52e1320d8d72a9529b2468277791a261197",
+      "https://github.com/tensorflow/tensorflow/security/advisories/GHSA-wcv5-qrj6-9pfm"
+    ],
+    "threat_feed": "AI/ML"
+  },
+  {
+    "id": "CVE-2021-29521",
+    "description": "TensorFlow is an end-to-end open source platform for machine learning. Specifying a negative dense shape in `tf.raw_ops.SparseCountSparseOutput` results in a segmentation fault being thrown out from the standard library as `std::vector` invariants are broken. This is because the implementation(https://github.com/tensorflow/tensorflow/blob/8f7b60ee8c0206a2c99802e3a4d1bb55d2bc0624/tensorflow/core/kernels/count_ops.cc#L199-L213) assumes the first element of the dense shape is always positive and uses it to initialize a `BatchedMap<T>` (i.e., `std::vector<absl::flat_hash_map<int64,T>>`(https://github.com/tensorflow/tensorflow/blob/8f7b60ee8c0206a2c99802e3a4d1bb55d2bc0624/tensorflow/core/kernels/count_ops.cc#L27)) data structure. If the `shape` tensor has more than one element, `num_batches` is the first value in `shape`. Ensuring that the `dense_shape` argument is a valid tensor shape (that is, all elements are non-negative) solves this issue. The fix will be included in TensorFlow 2.5.0. We will also cherrypick this commit on TensorFlow 2.4.2 and TensorFlow 2.3.3.",
+    "dependency_name": "Machine Learning",
+    "cvss_v3_score": 2.5,
+    "cvss_v3_vector": null,
+    "cvss_v2_score": null,
+    "cvss_v2_vector": null,
+    "published_date": "2021-05-14T20:15:11.567",
+    "last_modified_date": "2024-11-21T06:01:18.080",
+    "references": [
+      "https://github.com/tensorflow/tensorflow/commit/c57c0b9f3a4f8684f3489dd9a9ec627ad8b599f5",
+      "https://github.com/tensorflow/tensorflow/security/advisories/GHSA-hr84-fqvp-48mm",
+      "https://github.com/tensorflow/tensorflow/commit/c57c0b9f3a4f8684f3489dd9a9ec627ad8b599f5",
+      "https://github.com/tensorflow/tensorflow/security/advisories/GHSA-hr84-fqvp-48mm"
+    ],
+    "threat_feed": "AI/ML"
+  },
+  {
+    "id": "CVE-2021-29522",
+    "description": "TensorFlow is an end-to-end open source platform for machine learning. The `tf.raw_ops.Conv3DBackprop*` operations fail to validate that the input tensors are not empty. In turn, this would result in a division by 0. This is because the implementation(https://github.com/tensorflow/tensorflow/blob/a91bb59769f19146d5a0c20060244378e878f140/tensorflow/core/kernels/conv_grad_ops_3d.cc#L430-L450) does not check that the divisor used in computing the shard size is not zero. Thus, if attacker controls the input sizes, they can trigger a denial of service via a division by zero error. The fix will be included in TensorFlow 2.5.0. We will also cherrypick this commit on TensorFlow 2.4.2, TensorFlow 2.3.3, TensorFlow 2.2.3 and TensorFlow 2.1.4, as these are also affected and still in supported range.",
+    "dependency_name": "Machine Learning",
+    "cvss_v3_score": 2.5,
+    "cvss_v3_vector": null,
+    "cvss_v2_score": null,
+    "cvss_v2_vector": null,
+    "published_date": "2021-05-14T20:15:11.617",
+    "last_modified_date": "2024-11-21T06:01:18.193",
+    "references": [
+      "https://github.com/tensorflow/tensorflow/commit/311403edbc9816df80274bd1ea8b3c0c0f22c3fa",
+      "https://github.com/tensorflow/tensorflow/security/advisories/GHSA-c968-pq7h-7fxv",
+      "https://github.com/tensorflow/tensorflow/commit/311403edbc9816df80274bd1ea8b3c0c0f22c3fa",
+      "https://github.com/tensorflow/tensorflow/security/advisories/GHSA-c968-pq7h-7fxv"
+    ],
+    "threat_feed": "AI/ML"
+  },
+  {
+    "id": "CVE-2021-29523",
+    "description": "TensorFlow is an end-to-end open source platform for machine learning. An attacker can trigger a denial of service via a `CHECK`-fail in `tf.raw_ops.AddManySparseToTensorsMap`. This is because the implementation(https://github.com/tensorflow/tensorflow/blob/6f9896890c4c703ae0a0845394086e2e1e523299/tensorflow/core/kernels/sparse_tensors_map_ops.cc#L257) takes the values specified in `sparse_shape` as dimensions for the output shape. The `TensorShape` constructor(https://github.com/tensorflow/tensorflow/blob/6f9896890c4c703ae0a0845394086e2e1e523299/tensorflow/core/framework/tensor_shape.cc#L183-L188) uses a `CHECK` operation which triggers when `InitDims`(https://github.com/tensorflow/tensorflow/blob/6f9896890c4c703ae0a0845394086e2e1e523299/tensorflow/core/framework/tensor_shape.cc#L212-L296) returns a non-OK status. This is a legacy implementation of the constructor and operations should use `BuildTensorShapeBase` or `AddDimWithStatus` to prevent `CHECK`-failures in the presence of overflows. The fix will be included in TensorFlow 2.5.0. We will also cherrypick this commit on TensorFlow 2.4.2, TensorFlow 2.3.3, TensorFlow 2.2.3 and TensorFlow 2.1.4, as these are also affected and still in supported range.",
+    "dependency_name": "Machine Learning",
+    "cvss_v3_score": 2.5,
+    "cvss_v3_vector": null,
+    "cvss_v2_score": null,
+    "cvss_v2_vector": null,
+    "published_date": "2021-05-14T20:15:11.663",
+    "last_modified_date": "2024-11-21T06:01:18.310",
+    "references": [
+      "https://github.com/tensorflow/tensorflow/commit/69c68ecbb24dff3fa0e46da0d16c821a2dd22d7c",
+      "https://github.com/tensorflow/tensorflow/security/advisories/GHSA-2cpx-427x-q2c6",
+      "https://github.com/tensorflow/tensorflow/commit/69c68ecbb24dff3fa0e46da0d16c821a2dd22d7c",
+      "https://github.com/tensorflow/tensorflow/security/advisories/GHSA-2cpx-427x-q2c6"
+    ],
+    "threat_feed": "AI/ML"
+  },
+  {
+    "id": "CVE-2021-29524",
+    "description": "TensorFlow is an end-to-end open source platform for machine learning. An attacker can trigger a division by 0 in `tf.raw_ops.Conv2DBackpropFilter`. This is because the implementation(https://github.com/tensorflow/tensorflow/blob/496c2630e51c1a478f095b084329acedb253db6b/tensorflow/core/kernels/conv_grad_shape_utils.cc#L130) does a modulus operation where the divisor is controlled by the caller. The fix will be included in TensorFlow 2.5.0. We will also cherrypick this commit on TensorFlow 2.4.2, TensorFlow 2.3.3, TensorFlow 2.2.3 and TensorFlow 2.1.4, as these are also affected and still in supported range.",
+    "dependency_name": "Machine Learning",
+    "cvss_v3_score": 2.5,
+    "cvss_v3_vector": null,
+    "cvss_v2_score": null,
+    "cvss_v2_vector": null,
+    "published_date": "2021-05-14T20:15:11.710",
+    "last_modified_date": "2024-11-21T06:01:18.430",
+    "references": [
+      "https://github.com/tensorflow/tensorflow/commit/fca9874a9b42a2134f907d2fb46ab774a831404a",
+      "https://github.com/tensorflow/tensorflow/security/advisories/GHSA-r4pj-74mg-8868",
+      "https://github.com/tensorflow/tensorflow/commit/fca9874a9b42a2134f907d2fb46ab774a831404a",
+      "https://github.com/tensorflow/tensorflow/security/advisories/GHSA-r4pj-74mg-8868"
+    ],
+    "threat_feed": "AI/ML"
+  },
+  {
+    "id": "CVE-2021-29525",
+    "description": "TensorFlow is an end-to-end open source platform for machine learning. An attacker can trigger a division by 0 in `tf.raw_ops.Conv2DBackpropInput`. This is because the implementation(https://github.com/tensorflow/tensorflow/blob/b40060c9f697b044e3107917c797ba052f4506ab/tensorflow/core/kernels/conv_grad_input_ops.h#L625-L655) does a division by a quantity that is controlled by the caller. The fix will be included in TensorFlow 2.5.0. We will also cherrypick this commit on TensorFlow 2.4.2, TensorFlow 2.3.3, TensorFlow 2.2.3 and TensorFlow 2.1.4, as these are also affected and still in supported range.",
+    "dependency_name": "Machine Learning",
+    "cvss_v3_score": 2.5,
+    "cvss_v3_vector": null,
+    "cvss_v2_score": null,
+    "cvss_v2_vector": null,
+    "published_date": "2021-05-14T20:15:11.760",
+    "last_modified_date": "2024-11-21T06:01:18.550",
+    "references": [
+      "https://github.com/tensorflow/tensorflow/commit/2be2cdf3a123e231b16f766aa0e27d56b4606535",
+      "https://github.com/tensorflow/tensorflow/security/advisories/GHSA-xm2v-8rrw-w9pm",
+      "https://github.com/tensorflow/tensorflow/commit/2be2cdf3a123e231b16f766aa0e27d56b4606535",
+      "https://github.com/tensorflow/tensorflow/security/advisories/GHSA-xm2v-8rrw-w9pm"
+    ],
+    "threat_feed": "AI/ML"
+  },
+  {
+    "id": "CVE-2021-29526",
+    "description": "TensorFlow is an end-to-end open source platform for machine learning. An attacker can trigger a division by 0 in `tf.raw_ops.Conv2D`. This is because the implementation(https://github.com/tensorflow/tensorflow/blob/988087bd83f144af14087fe4fecee2d250d93737/tensorflow/core/kernels/conv_ops.cc#L261-L263) does a division by a quantity that is controlled by the caller. The fix will be included in TensorFlow 2.5.0. We will also cherrypick this commit on TensorFlow 2.4.2, TensorFlow 2.3.3, TensorFlow 2.2.3 and TensorFlow 2.1.4, as these are also affected and still in supported range.",
+    "dependency_name": "Machine Learning",
+    "cvss_v3_score": 2.5,
+    "cvss_v3_vector": null,
+    "cvss_v2_score": null,
+    "cvss_v2_vector": null,
+    "published_date": "2021-05-14T20:15:11.807",
+    "last_modified_date": "2024-11-21T06:01:18.680",
+    "references": [
+      "https://github.com/tensorflow/tensorflow/commit/b12aa1d44352de21d1a6faaf04172d8c2508b42b",
+      "https://github.com/tensorflow/tensorflow/security/advisories/GHSA-4vf2-4xcg-65cx",
+      "https://github.com/tensorflow/tensorflow/commit/b12aa1d44352de21d1a6faaf04172d8c2508b42b",
+      "https://github.com/tensorflow/tensorflow/security/advisories/GHSA-4vf2-4xcg-65cx"
+    ],
+    "threat_feed": "AI/ML"
+  },
+  {
+    "id": "CVE-2021-29527",
+    "description": "TensorFlow is an end-to-end open source platform for machine learning. An attacker can trigger a division by 0 in `tf.raw_ops.QuantizedConv2D`. This is because the implementation(https://github.com/tensorflow/tensorflow/blob/00e9a4d67d76703fa1aee33dac582acf317e0e81/tensorflow/core/kernels/quantized_conv_ops.cc#L257-L259) does a division by a quantity that is controlled by the caller. The fix will be included in TensorFlow 2.5.0. We will also cherrypick this commit on TensorFlow 2.4.2, TensorFlow 2.3.3, TensorFlow 2.2.3 and TensorFlow 2.1.4, as these are also affected and still in supported range.",
+    "dependency_name": "Machine Learning",
+    "cvss_v3_score": 2.5,
+    "cvss_v3_vector": null,
+    "cvss_v2_score": null,
+    "cvss_v2_vector": null,
+    "published_date": "2021-05-14T20:15:11.850",
+    "last_modified_date": "2024-11-21T06:01:18.820",
+    "references": [
+      "https://github.com/tensorflow/tensorflow/commit/cfa91be9863a91d5105a3b4941096044ab32036b",
+      "https://github.com/tensorflow/tensorflow/security/advisories/GHSA-x4g7-fvjj-prg8",
+      "https://github.com/tensorflow/tensorflow/commit/cfa91be9863a91d5105a3b4941096044ab32036b",
+      "https://github.com/tensorflow/tensorflow/security/advisories/GHSA-x4g7-fvjj-prg8"
+    ],
+    "threat_feed": "AI/ML"
+  },
+  {
+    "id": "CVE-2021-29528",
+    "description": "TensorFlow is an end-to-end open source platform for machine learning. An attacker can trigger a division by 0 in `tf.raw_ops.QuantizedMul`. This is because the implementation(https://github.com/tensorflow/tensorflow/blob/55900e961ed4a23b438392024912154a2c2f5e85/tensorflow/core/kernels/quantized_mul_op.cc#L188-L198) does a division by a quantity that is controlled by the caller. The fix will be included in TensorFlow 2.5.0. We will also cherrypick this commit on TensorFlow 2.4.2, TensorFlow 2.3.3, TensorFlow 2.2.3 and TensorFlow 2.1.4, as these are also affected and still in supported range.",
+    "dependency_name": "Machine Learning",
+    "cvss_v3_score": 2.5,
+    "cvss_v3_vector": null,
+    "cvss_v2_score": null,
+    "cvss_v2_vector": null,
+    "published_date": "2021-05-14T20:15:11.893",
+    "last_modified_date": "2024-11-21T06:01:18.960",
+    "references": [
+      "https://github.com/tensorflow/tensorflow/commit/a1b11d2fdd1e51bfe18bb1ede804f60abfa92da6",
+      "https://github.com/tensorflow/tensorflow/security/advisories/GHSA-6f84-42vf-ppwp",
+      "https://github.com/tensorflow/tensorflow/commit/a1b11d2fdd1e51bfe18bb1ede804f60abfa92da6",
+      "https://github.com/tensorflow/tensorflow/security/advisories/GHSA-6f84-42vf-ppwp"
+    ],
+    "threat_feed": "AI/ML"
+  },
+  {
+    "id": "CVE-2021-29529",
+    "description": "TensorFlow is an end-to-end open source platform for machine learning. An attacker can trigger a heap buffer overflow in `tf.raw_ops.QuantizedResizeBilinear` by manipulating input values so that float rounding results in off-by-one error in accessing image elements. This is because the implementation(https://github.com/tensorflow/tensorflow/blob/44b7f486c0143f68b56c34e2d01e146ee445134a/tensorflow/core/kernels/quantized_resize_bilinear_op.cc#L62-L66) computes two integers (representing the upper and lower bounds for interpolation) by ceiling and flooring a floating point value. For some values of `in`, `interpolation->upper[i]` might be smaller than `interpolation->lower[i]`. This is an issue if `interpolation->upper[i]` is capped at `in_size-1` as it means that `interpolation->lower[i]` points outside of the image. Then, in the interpolation code(https://github.com/tensorflow/tensorflow/blob/44b7f486c0143f68b56c34e2d01e146ee445134a/tensorflow/core/kernels/quantized_resize_bilinear_op.cc#L245-L264), this would result in heap buffer overflow. The fix will be included in TensorFlow 2.5.0. We will also cherrypick this commit on TensorFlow 2.4.2, TensorFlow 2.3.3, TensorFlow 2.2.3 and TensorFlow 2.1.4, as these are also affected and still in supported range.",
+    "dependency_name": "Machine Learning",
+    "cvss_v3_score": 2.5,
+    "cvss_v3_vector": null,
+    "cvss_v2_score": null,
+    "cvss_v2_vector": null,
+    "published_date": "2021-05-14T20:15:11.937",
+    "last_modified_date": "2024-11-21T06:01:19.080",
+    "references": [
+      "https://github.com/tensorflow/tensorflow/commit/f851613f8f0fb0c838d160ced13c134f778e3ce7",
+      "https://github.com/tensorflow/tensorflow/security/advisories/GHSA-jfp7-4j67-8r3q",
+      "https://github.com/tensorflow/tensorflow/commit/f851613f8f0fb0c838d160ced13c134f778e3ce7",
+      "https://github.com/tensorflow/tensorflow/security/advisories/GHSA-jfp7-4j67-8r3q"
+    ],
+    "threat_feed": "AI/ML"
+  },
+  {
+    "id": "CVE-2021-29530",
+    "description": "TensorFlow is an end-to-end open source platform for machine learning. An attacker can trigger a null pointer dereference by providing an invalid `permutation` to `tf.raw_ops.SparseMatrixSparseCholesky`. This is because the implementation(https://github.com/tensorflow/tensorflow/blob/080f1d9e257589f78b3ffb75debf584168aa6062/tensorflow/core/kernels/sparse/sparse_cholesky_op.cc#L85-L86) fails to properly validate the input arguments. Although `ValidateInputs` is called and there are checks in the body of this function, the code proceeds to the next line in `ValidateInputs` since `OP_REQUIRES`(https://github.com/tensorflow/tensorflow/blob/080f1d9e257589f78b3ffb75debf584168aa6062/tensorflow/core/framework/op_requires.h#L41-L48) is a macro that only exits the current function. Thus, the first validation condition that fails in `ValidateInputs` will cause an early return from that function. However, the caller will continue execution from the next line. The fix is to either explicitly check `context->status()` or to convert `ValidateInputs` to return a `Status`. The fix will be included in TensorFlow 2.5.0. We will also cherrypick this commit on TensorFlow 2.4.2, TensorFlow 2.3.3, TensorFlow 2.2.3 and TensorFlow 2.1.4, as these are also affected and still in supported range.",
+    "dependency_name": "Machine Learning",
+    "cvss_v3_score": 2.5,
+    "cvss_v3_vector": null,
+    "cvss_v2_score": null,
+    "cvss_v2_vector": null,
+    "published_date": "2021-05-14T20:15:11.983",
+    "last_modified_date": "2024-11-21T06:01:19.203",
+    "references": [
+      "https://github.com/tensorflow/tensorflow/commit/e6a7c7cc18c3aaad1ae0872cb0a959f5c923d2bd",
+      "https://github.com/tensorflow/tensorflow/security/advisories/GHSA-xcwj-wfcm-m23c",
+      "https://github.com/tensorflow/tensorflow/commit/e6a7c7cc18c3aaad1ae0872cb0a959f5c923d2bd",
+      "https://github.com/tensorflow/tensorflow/security/advisories/GHSA-xcwj-wfcm-m23c"
+    ],
+    "threat_feed": "AI/ML"
+  },
+  {
+    "id": "CVE-2021-29531",
+    "description": "TensorFlow is an end-to-end open source platform for machine learning. An attacker can trigger a `CHECK` fail in PNG encoding by providing an empty input tensor as the pixel data. This is because the implementation(https://github.com/tensorflow/tensorflow/blob/e312e0791ce486a80c9d23110841525c6f7c3289/tensorflow/core/kernels/image/encode_png_op.cc#L57-L60) only validates that the total number of pixels in the image does not overflow. Thus, an attacker can send an empty matrix for encoding. However, if the tensor is empty, then the associated buffer is `nullptr`. Hence, when calling `png::WriteImageToBuffer`(https://github.com/tensorflow/tensorflow/blob/e312e0791ce486a80c9d23110841525c6f7c3289/tensorflow/core/kernels/image/encode_png_op.cc#L79-L93), the first argument (i.e., `image.flat<T>().data()`) is `NULL`. This then triggers the `CHECK_NOTNULL` in the first line of `png::WriteImageToBuffer`(https://github.com/tensorflow/tensorflow/blob/e312e0791ce486a80c9d23110841525c6f7c3289/tensorflow/core/lib/png/png_io.cc#L345-L349). Since `image` is null, this results in `abort` being called after printing the stacktrace. Effectively, this allows an attacker to mount a denial of service attack. The fix will be included in TensorFlow 2.5.0. We will also cherrypick this commit on TensorFlow 2.4.2, TensorFlow 2.3.3, TensorFlow 2.2.3 and TensorFlow 2.1.4, as these are also affected and still in supported range.",
+    "dependency_name": "Machine Learning",
+    "cvss_v3_score": 2.5,
+    "cvss_v3_vector": null,
+    "cvss_v2_score": null,
+    "cvss_v2_vector": null,
+    "published_date": "2021-05-14T20:15:12.027",
+    "last_modified_date": "2024-11-21T06:01:19.327",
+    "references": [
+      "https://github.com/tensorflow/tensorflow/commit/26eb323554ffccd173e8a79a8c05c15b685ae4d1",
+      "https://github.com/tensorflow/tensorflow/security/advisories/GHSA-3qxp-qjq7-w4hf",
+      "https://github.com/tensorflow/tensorflow/commit/26eb323554ffccd173e8a79a8c05c15b685ae4d1",
+      "https://github.com/tensorflow/tensorflow/security/advisories/GHSA-3qxp-qjq7-w4hf"
+    ],
+    "threat_feed": "AI/ML"
+  },
+  {
+    "id": "CVE-2021-29532",
+    "description": "TensorFlow is an end-to-end open source platform for machine learning. An attacker can force accesses outside the bounds of heap allocated arrays by passing in invalid tensor values to `tf.raw_ops.RaggedCross`. This is because the implementation(https://github.com/tensorflow/tensorflow/blob/efea03b38fb8d3b81762237dc85e579cc5fc6e87/tensorflow/core/kernels/ragged_cross_op.cc#L456-L487) lacks validation for the user supplied arguments. Each of the above branches call a helper function after accessing array elements via a `*_list[next_*]` pattern, followed by incrementing the `next_*` index. However, as there is no validation that the `next_*` values are in the valid range for the corresponding `*_list` arrays, this results in heap OOB reads. The fix will be included in TensorFlow 2.5.0. We will also cherrypick this commit on TensorFlow 2.4.2, TensorFlow 2.3.3, TensorFlow 2.2.3 and TensorFlow 2.1.4, as these are also affected and still in supported range.",
+    "dependency_name": "Machine Learning",
+    "cvss_v3_score": 2.5,
+    "cvss_v3_vector": null,
+    "cvss_v2_score": null,
+    "cvss_v2_vector": null,
+    "published_date": "2021-05-14T20:15:12.073",
+    "last_modified_date": "2024-11-21T06:01:19.450",
+    "references": [
+      "https://github.com/tensorflow/tensorflow/commit/44b7f486c0143f68b56c34e2d01e146ee445134a",
+      "https://github.com/tensorflow/tensorflow/security/advisories/GHSA-j47f-4232-hvv8",
+      "https://github.com/tensorflow/tensorflow/commit/44b7f486c0143f68b56c34e2d01e146ee445134a",
+      "https://github.com/tensorflow/tensorflow/security/advisories/GHSA-j47f-4232-hvv8"
+    ],
+    "threat_feed": "AI/ML"
+  },
+  {
+    "id": "CVE-2021-29533",
+    "description": "TensorFlow is an end-to-end open source platform for machine learning. An attacker can trigger a denial of service via a `CHECK` failure by passing an empty image to `tf.raw_ops.DrawBoundingBoxes`. This is because the implementation(https://github.com/tensorflow/tensorflow/blob/ea34a18dc3f5c8d80a40ccca1404f343b5d55f91/tensorflow/core/kernels/image/draw_bounding_box_op.cc#L148-L165) uses `CHECK_*` assertions instead of `OP_REQUIRES` to validate user controlled inputs. Whereas `OP_REQUIRES` allows returning an error condition back to the user, the `CHECK_*` macros result in a crash if the condition is false, similar to `assert`. In this case, `height` is 0 from the `images` input. This results in `max_box_row_clamp` being negative and the assertion being falsified, followed by aborting program execution. The fix will be included in TensorFlow 2.5.0. We will also cherrypick this commit on TensorFlow 2.4.2, TensorFlow 2.3.3, TensorFlow 2.2.3 and TensorFlow 2.1.4, as these are also affected and still in supported range.",
+    "dependency_name": "Machine Learning",
+    "cvss_v3_score": 2.5,
+    "cvss_v3_vector": null,
+    "cvss_v2_score": null,
+    "cvss_v2_vector": null,
+    "published_date": "2021-05-14T20:15:12.120",
+    "last_modified_date": "2024-11-21T06:01:19.577",
+    "references": [
+      "https://github.com/tensorflow/tensorflow/commit/b432a38fe0e1b4b904a6c222cbce794c39703e87",
+      "https://github.com/tensorflow/tensorflow/security/advisories/GHSA-393f-2jr3-cp69",
+      "https://github.com/tensorflow/tensorflow/commit/b432a38fe0e1b4b904a6c222cbce794c39703e87",
+      "https://github.com/tensorflow/tensorflow/security/advisories/GHSA-393f-2jr3-cp69"
+    ],
+    "threat_feed": "AI/ML"
+  },
+  {
+    "id": "CVE-2021-29534",
+    "description": "TensorFlow is an end-to-end open source platform for machine learning. An attacker can trigger a denial of service via a `CHECK`-fail in `tf.raw_ops.SparseConcat`. This is because the implementation(https://github.com/tensorflow/tensorflow/blob/b432a38fe0e1b4b904a6c222cbce794c39703e87/tensorflow/core/kernels/sparse_concat_op.cc#L76) takes the values specified in `shapes[0]` as dimensions for the output shape. The `TensorShape` constructor(https://github.com/tensorflow/tensorflow/blob/6f9896890c4c703ae0a0845394086e2e1e523299/tensorflow/core/framework/tensor_shape.cc#L183-L188) uses a `CHECK` operation which triggers when `InitDims`(https://github.com/tensorflow/tensorflow/blob/6f9896890c4c703ae0a0845394086e2e1e523299/tensorflow/core/framework/tensor_shape.cc#L212-L296) returns a non-OK status. This is a legacy implementation of the constructor and operations should use `BuildTensorShapeBase` or `AddDimWithStatus` to prevent `CHECK`-failures in the presence of overflows. The fix will be included in TensorFlow 2.5.0. We will also cherrypick this commit on TensorFlow 2.4.2, TensorFlow 2.3.3, TensorFlow 2.2.3 and TensorFlow 2.1.4, as these are also affected and still in supported range.",
+    "dependency_name": "Machine Learning",
+    "cvss_v3_score": 2.5,
+    "cvss_v3_vector": null,
+    "cvss_v2_score": null,
+    "cvss_v2_vector": null,
+    "published_date": "2021-05-14T20:15:12.163",
+    "last_modified_date": "2024-11-21T06:01:19.700",
+    "references": [
+      "https://github.com/tensorflow/tensorflow/commit/69c68ecbb24dff3fa0e46da0d16c821a2dd22d7c",
+      "https://github.com/tensorflow/tensorflow/security/advisories/GHSA-6j9c-grc6-5m6g",
+      "https://github.com/tensorflow/tensorflow/commit/69c68ecbb24dff3fa0e46da0d16c821a2dd22d7c",
+      "https://github.com/tensorflow/tensorflow/security/advisories/GHSA-6j9c-grc6-5m6g"
+    ],
+    "threat_feed": "AI/ML"
+  },
+  {
+    "id": "CVE-2021-29535",
+    "description": "TensorFlow is an end-to-end open source platform for machine learning. An attacker can cause a heap buffer overflow in `QuantizedMul` by passing in invalid thresholds for the quantization. This is because the implementation(https://github.com/tensorflow/tensorflow/blob/87cf4d3ea9949051e50ca3f071fc909538a51cd0/tensorflow/core/kernels/quantized_mul_op.cc#L287-L290) assumes that the 4 arguments are always valid scalars and tries to access the numeric value directly. However, if any of these tensors is empty, then `.flat<T>()` is an empty buffer and accessing the element at position 0 results in overflow. The fix will be included in TensorFlow 2.5.0. We will also cherrypick this commit on TensorFlow 2.4.2, TensorFlow 2.3.3, TensorFlow 2.2.3 and TensorFlow 2.1.4, as these are also affected and still in supported range.",
+    "dependency_name": "Machine Learning",
+    "cvss_v3_score": 2.5,
+    "cvss_v3_vector": null,
+    "cvss_v2_score": null,
+    "cvss_v2_vector": null,
+    "published_date": "2021-05-14T20:15:12.210",
+    "last_modified_date": "2024-11-21T06:01:19.823",
+    "references": [
+      "https://github.com/tensorflow/tensorflow/commit/efea03b38fb8d3b81762237dc85e579cc5fc6e87",
+      "https://github.com/tensorflow/tensorflow/security/advisories/GHSA-m3f9-w3p3-p669",
+      "https://github.com/tensorflow/tensorflow/commit/efea03b38fb8d3b81762237dc85e579cc5fc6e87",
+      "https://github.com/tensorflow/tensorflow/security/advisories/GHSA-m3f9-w3p3-p669"
+    ],
+    "threat_feed": "AI/ML"
+  },
+  {
+    "id": "CVE-2021-29536",
+    "description": "TensorFlow is an end-to-end open source platform for machine learning. An attacker can cause a heap buffer overflow in `QuantizedReshape` by passing in invalid thresholds for the quantization. This is because the implementation(https://github.com/tensorflow/tensorflow/blob/a324ac84e573fba362a5e53d4e74d5de6729933e/tensorflow/core/kernels/quantized_reshape_op.cc#L38-L55) assumes that the 2 arguments are always valid scalars and tries to access the numeric value directly. However, if any of these tensors is empty, then `.flat<T>()` is an empty buffer and accessing the element at position 0 results in overflow. The fix will be included in TensorFlow 2.5.0. We will also cherrypick this commit on TensorFlow 2.4.2, TensorFlow 2.3.3, TensorFlow 2.2.3 and TensorFlow 2.1.4, as these are also affected and still in supported range.",
+    "dependency_name": "Machine Learning",
+    "cvss_v3_score": 2.5,
+    "cvss_v3_vector": null,
+    "cvss_v2_score": null,
+    "cvss_v2_vector": null,
+    "published_date": "2021-05-14T20:15:12.260",
+    "last_modified_date": "2024-11-21T06:01:19.947",
+    "references": [
+      "https://github.com/tensorflow/tensorflow/commit/a324ac84e573fba362a5e53d4e74d5de6729933e",
+      "https://github.com/tensorflow/tensorflow/security/advisories/GHSA-2gfx-95x2-5v3x",
+      "https://github.com/tensorflow/tensorflow/commit/a324ac84e573fba362a5e53d4e74d5de6729933e",
+      "https://github.com/tensorflow/tensorflow/security/advisories/GHSA-2gfx-95x2-5v3x"
+    ],
+    "threat_feed": "AI/ML"
+  },
+  {
+    "id": "CVE-2021-29537",
+    "description": "TensorFlow is an end-to-end open source platform for machine learning. An attacker can cause a heap buffer overflow in `QuantizedResizeBilinear` by passing in invalid thresholds for the quantization. This is because the implementation(https://github.com/tensorflow/tensorflow/blob/50711818d2e61ccce012591eeb4fdf93a8496726/tensorflow/core/kernels/quantized_resize_bilinear_op.cc#L705-L706) assumes that the 2 arguments are always valid scalars and tries to access the numeric value directly. The fix will be included in TensorFlow 2.5.0. We will also cherrypick this commit on TensorFlow 2.4.2, TensorFlow 2.3.3, TensorFlow 2.2.3 and TensorFlow 2.1.4, as these are also affected and still in supported range.",
+    "dependency_name": "Machine Learning",
+    "cvss_v3_score": 2.5,
+    "cvss_v3_vector": null,
+    "cvss_v2_score": null,
+    "cvss_v2_vector": null,
+    "published_date": "2021-05-14T20:15:12.307",
+    "last_modified_date": "2024-11-21T06:01:20.060",
+    "references": [
+      "https://github.com/tensorflow/tensorflow/commit/f6c40f0c6cbf00d46c7717a26419f2062f2f8694",
+      "https://github.com/tensorflow/tensorflow/security/advisories/GHSA-8c89-2vwr-chcq",
+      "https://github.com/tensorflow/tensorflow/commit/f6c40f0c6cbf00d46c7717a26419f2062f2f8694",
+      "https://github.com/tensorflow/tensorflow/security/advisories/GHSA-8c89-2vwr-chcq"
+    ],
+    "threat_feed": "AI/ML"
+  },
+  {
+    "id": "CVE-2016-1905",
+    "description": "The API server in Kubernetes does not properly check admission control, which allows remote authenticated users to access additional resources via a crafted patched object.",
+    "dependency_name": "Kubernetes",
+    "cvss_v3_score": 7.7,
+    "cvss_v3_vector": null,
+    "cvss_v2_score": null,
+    "cvss_v2_vector": null,
+    "published_date": "2016-02-03T18:59:08.773",
+    "last_modified_date": "2025-04-12T10:46:40.837",
+    "references": [
+      "https://access.redhat.com/errata/RHSA-2016:0070",
+      "https://github.com/kubernetes/kubernetes/issues/19479",
+      "https://access.redhat.com/errata/RHSA-2016:0070",
+      "https://github.com/kubernetes/kubernetes/issues/19479"
+    ],
+    "threat_feed": "Kubernetes"
+  },
+  {
+    "id": "CVE-2015-7528",
+    "description": "Kubernetes before 1.2.0-alpha.5 allows remote attackers to read arbitrary pod logs via a container name.",
+    "dependency_name": "Kubernetes",
+    "cvss_v3_score": 5.3,
+    "cvss_v3_vector": null,
+    "cvss_v2_score": null,
+    "cvss_v2_vector": null,
+    "published_date": "2016-04-11T21:59:09.337",
+    "last_modified_date": "2025-04-12T10:46:40.837",
+    "references": [
+      "http://rhn.redhat.com/errata/RHSA-2015-2615.html",
+      "https://access.redhat.com/errata/RHSA-2015:2544",
+      "https://github.com/kubernetes/kubernetes/pull/17886",
+      "https://github.com/kubernetes/kubernetes/releases/tag/v1.2.0-alpha.5",
+      "https://github.com/openshift/origin/pull/6113",
+      "http://rhn.redhat.com/errata/RHSA-2015-2615.html",
+      "https://access.redhat.com/errata/RHSA-2015:2544",
+      "https://github.com/kubernetes/kubernetes/pull/17886",
+      "https://github.com/kubernetes/kubernetes/releases/tag/v1.2.0-alpha.5",
+      "https://github.com/openshift/origin/pull/6113"
+    ],
+    "threat_feed": "Kubernetes"
+  },
+  {
+    "id": "CVE-2016-5392",
+    "description": "The API server in Kubernetes, as used in Red Hat OpenShift Enterprise 3.2, in a multi tenant environment allows remote authenticated users with knowledge of other project names to obtain sensitive project and user information via vectors related to the watch-cache list.",
+    "dependency_name": "Kubernetes",
+    "cvss_v3_score": 6.5,
+    "cvss_v3_vector": null,
+    "cvss_v2_score": null,
+    "cvss_v2_vector": null,
+    "published_date": "2016-08-05T15:59:08.380",
+    "last_modified_date": "2025-04-12T10:46:40.837",
+    "references": [
+      "http://www.securityfocus.com/bid/91793",
+      "https://access.redhat.com/errata/RHSA-2016:1427",
+      "https://bugzilla.redhat.com/show_bug.cgi?id=1356195",
+      "http://www.securityfocus.com/bid/91793",
+      "https://access.redhat.com/errata/RHSA-2016:1427",
+      "https://bugzilla.redhat.com/show_bug.cgi?id=1356195"
+    ],
+    "threat_feed": "Kubernetes"
+  },
+  {
+    "id": "CVE-2017-1000056",
+    "description": "Kubernetes version 1.5.0-1.5.4 is vulnerable to a privilege escalation in the PodSecurityPolicy admission plugin resulting in the ability to make use of any existing PodSecurityPolicy object.",
+    "dependency_name": "Kubernetes",
+    "cvss_v3_score": 9.8,
+    "cvss_v3_vector": null,
+    "cvss_v2_score": null,
+    "cvss_v2_vector": null,
+    "published_date": "2017-07-17T13:18:17.750",
+    "last_modified_date": "2025-04-20T01:37:25.860",
+    "references": [
+      "https://github.com/kubernetes/kubernetes/issues/43459",
+      "https://github.com/kubernetes/kubernetes/issues/43459"
+    ],
+    "threat_feed": "Kubernetes"
+  },
+  {
+    "id": "CVE-2015-7561",
+    "description": "Kubernetes in OpenShift3 allows remote authenticated users to use the private images of other users should they know the name of said image.",
+    "dependency_name": "Kubernetes",
+    "cvss_v3_score": 3.1,
+    "cvss_v3_vector": null,
+    "cvss_v2_score": null,
+    "cvss_v2_vector": null,
+    "published_date": "2017-08-07T17:29:00.410",
+    "last_modified_date": "2025-04-20T01:37:25.860",
+    "references": [
+      "https://bugzilla.redhat.com/show_bug.cgi?id=1291963",
+      "https://github.com/kubernetes/kubernetes/pull/18909",
+      "https://bugzilla.redhat.com/show_bug.cgi?id=1291963",
+      "https://github.com/kubernetes/kubernetes/pull/18909"
+    ],
+    "threat_feed": "Kubernetes"
+  },
+  {
+    "id": "CVE-2017-1002100",
+    "description": "Default access permissions for Persistent Volumes (PVs) created by the Kubernetes Azure cloud provider in versions 1.6.0 to 1.6.5 are set to \"container\" which exposes a URI that can be accessed without authentication on the public internet. Access to the URI string requires privileged access to the Kubernetes cluster or authenticated access to the Azure portal.",
+    "dependency_name": "Kubernetes",
+    "cvss_v3_score": 6.5,
+    "cvss_v3_vector": null,
+    "cvss_v2_score": null,
+    "cvss_v2_vector": null,
+    "published_date": "2017-09-14T13:29:01.373",
+    "last_modified_date": "2025-04-20T01:37:25.860",
+    "references": [
+      "https://github.com/kubernetes/kubernetes/issues/47611",
+      "https://groups.google.com/d/msg/kubernetes-security-announce/n3VBg_WJZic/-ddIqKXqAAAJ",
+      "https://github.com/kubernetes/kubernetes/issues/47611",
+      "https://groups.google.com/d/msg/kubernetes-security-announce/n3VBg_WJZic/-ddIqKXqAAAJ"
+    ],
+    "threat_feed": "Kubernetes"
+  },
+  {
+    "id": "CVE-2017-1002101",
+    "description": "In Kubernetes versions 1.3.x, 1.4.x, 1.5.x, 1.6.x and prior to versions 1.7.14, 1.8.9 and 1.9.4 containers using subpath volume mounts with any volume type (including non-privileged pods, subject to file permissions) can access files/directories outside of the volume, including the host's filesystem.",
+    "dependency_name": "Kubernetes",
+    "cvss_v3_score": 8.8,
+    "cvss_v3_vector": null,
+    "cvss_v2_score": null,
+    "cvss_v2_vector": null,
+    "published_date": "2018-03-13T17:29:00.233",
+    "last_modified_date": "2024-11-21T03:04:58.560",
+    "references": [
+      "http://lists.opensuse.org/opensuse-security-announce/2020-04/msg00041.html",
+      "https://access.redhat.com/errata/RHSA-2018:0475",
+      "https://github.com/bgeesaman/subpath-exploit/",
+      "https://github.com/kubernetes/kubernetes/issues/60813",
+      "http://lists.opensuse.org/opensuse-security-announce/2020-04/msg00041.html",
+      "https://access.redhat.com/errata/RHSA-2018:0475",
+      "https://github.com/bgeesaman/subpath-exploit/",
+      "https://github.com/kubernetes/kubernetes/issues/60813"
+    ],
+    "threat_feed": "Kubernetes"
+  },
+  {
+    "id": "CVE-2017-1002102",
+    "description": "In Kubernetes versions 1.3.x, 1.4.x, 1.5.x, 1.6.x and prior to versions 1.7.14, 1.8.9 and 1.9.4 containers using a secret, configMap, projected or downwardAPI volume can trigger deletion of arbitrary files/directories from the nodes where they are running.",
+    "dependency_name": "Kubernetes",
+    "cvss_v3_score": 7.1,
+    "cvss_v3_vector": null,
+    "cvss_v2_score": null,
+    "cvss_v2_vector": null,
+    "published_date": "2018-03-13T17:29:00.280",
+    "last_modified_date": "2024-11-21T03:04:58.700",
+    "references": [
+      "https://access.redhat.com/errata/RHSA-2018:0475",
+      "https://github.com/kubernetes/kubernetes/issues/60814",
+      "https://access.redhat.com/errata/RHSA-2018:0475",
+      "https://github.com/kubernetes/kubernetes/issues/60814"
+    ],
+    "threat_feed": "Kubernetes"
+  },
+  {
+    "id": "CVE-2018-0268",
+    "description": "A vulnerability in the container management subsystem of Cisco Digital Network Architecture (DNA) Center could allow an unauthenticated, remote attacker to bypass authentication and gain elevated privileges. This vulnerability is due to an insecure default configuration of the Kubernetes container management subsystem within DNA Center. An attacker who has the ability to access the Kubernetes service port could execute commands with elevated privileges within provisioned containers. A successful exploit could result in a complete compromise of affected containers. This vulnerability affects Cisco DNA Center Software Releases 1.1.3 and prior. Cisco Bug IDs: CSCvi47253.",
+    "dependency_name": "Kubernetes",
+    "cvss_v3_score": 10.0,
+    "cvss_v3_vector": null,
+    "cvss_v2_score": null,
+    "cvss_v2_vector": null,
+    "published_date": "2018-05-17T03:29:00.263",
+    "last_modified_date": "2024-11-21T03:37:50.930",
+    "references": [
+      "http://www.securityfocus.com/bid/104192",
+      "https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20180516-dna",
+      "http://www.securityfocus.com/bid/104192",
+      "https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20180516-dna"
+    ],
+    "threat_feed": "Kubernetes"
+  },
+  {
+    "id": "CVE-2018-5256",
+    "description": "CoreOS Tectonic 1.7.x before 1.7.9-tectonic.4 and 1.8.x before 1.8.4-tectonic.3 mounts a direct proxy to the kubernetes cluster at /api/kubernetes/ which is accessible without authentication to Tectonic and allows an attacker to directly connect to the kubernetes API server. Unauthenticated users are able to list all Namespaces through the Console, resulting in an information disclosure. Tectonic's exposure of an unauthenticated API endpoint containing information regarding the internal state of the cluster can provide an attacker with information that may assist in other attacks against the cluster. For example, an attacker may not have the permissions required to list all namespaces in the cluster but can instead leverage this vulnerability to enumerate the namespaces and then begin to check each namespace for weak authorization policies that may allow further escalation of privileges.",
+    "dependency_name": "Kubernetes",
+    "cvss_v3_score": 7.5,
+    "cvss_v3_vector": null,
+    "cvss_v2_score": null,
+    "cvss_v2_vector": null,
+    "published_date": "2018-05-18T15:29:00.187",
+    "last_modified_date": "2024-11-21T04:08:26.327",
+    "references": [
+      "https://coreos.com/blog/tectonic-namespace-information-disclosure-vulnerability-patched",
+      "https://coreos.com/tectonic/releases/#1.8.4-tectonic.3",
+      "https://coreos.com/blog/tectonic-namespace-information-disclosure-vulnerability-patched",
+      "https://coreos.com/tectonic/releases/#1.8.4-tectonic.3"
+    ],
+    "threat_feed": "Kubernetes"
+  },
+  {
+    "id": "CVE-2018-1000400",
+    "description": "Kubernetes CRI-O version prior to 1.9 contains a Privilege Context Switching Error (CWE-270) vulnerability in the handling of ambient capabilities that can result in containers running with elevated privileges, allowing users abilities they should not have. This attack appears to be exploitable via container execution. This vulnerability appears to have been fixed in 1.9.",
+    "dependency_name": "Kubernetes",
+    "cvss_v3_score": 8.8,
+    "cvss_v3_vector": null,
+    "cvss_v2_score": null,
+    "cvss_v2_vector": null,
+    "published_date": "2018-05-18T18:29:00.233",
+    "last_modified_date": "2024-11-21T03:39:59.210",
+    "references": [
+      "http://www.securityfocus.com/bid/104262",
+      "https://github.com/kubernetes-incubator/cri-o/pull/1558/files",
+      "http://www.securityfocus.com/bid/104262",
+      "https://github.com/kubernetes-incubator/cri-o/pull/1558/files"
+    ],
+    "threat_feed": "Kubernetes"
+  },
+  {
+    "id": "CVE-2018-1002100",
+    "description": "In Kubernetes versions 1.5.x, 1.6.x, 1.7.x, 1.8.x, and prior to version 1.9.6, the kubectl cp command insecurely handles tar data returned from the container, and can be caused to overwrite arbitrary local files.",
+    "dependency_name": "Kubernetes",
+    "cvss_v3_score": 4.2,
+    "cvss_v3_vector": null,
+    "cvss_v2_score": null,
+    "cvss_v2_vector": null,
+    "published_date": "2018-06-02T01:29:02.110",
+    "last_modified_date": "2024-11-21T03:40:38.253",
+    "references": [
+      "https://bugzilla.redhat.com/show_bug.cgi?id=1564305",
+      "https://github.com/kubernetes/kubernetes/issues/61297",
+      "https://hansmi.ch/articles/2018-04-openshift-s2i-security",
+      "https://bugzilla.redhat.com/show_bug.cgi?id=1564305",
+      "https://github.com/kubernetes/kubernetes/issues/61297",
+      "https://hansmi.ch/articles/2018-04-openshift-s2i-security"
+    ],
+    "threat_feed": "Kubernetes"
+  },
+  {
+    "id": "CVE-2018-1000187",
+    "description": "A exposure of sensitive information vulnerability exists in Jenkins Kubernetes Plugin 1.7.0 and older in ContainerExecDecorator.java that results in sensitive variables such as passwords being written to logs.",
+    "dependency_name": "Kubernetes",
+    "cvss_v3_score": 6.5,
+    "cvss_v3_vector": null,
+    "cvss_v2_score": null,
+    "cvss_v2_vector": null,
+    "published_date": "2018-06-05T20:29:00.607",
+    "last_modified_date": "2024-11-21T03:39:53.200",
+    "references": [
+      "https://jenkins.io/security/advisory/2018-06-04/#SECURITY-883",
+      "https://jenkins.io/security/advisory/2018-06-04/#SECURITY-883"
+    ],
+    "threat_feed": "Kubernetes"
+  },
+  {
+    "id": "CVE-2018-5543",
+    "description": "The F5 BIG-IP Controller for Kubernetes 1.0.0-1.5.0 (k8s-bigip-crtl) passes BIG-IP username and password as command line parameters, which may lead to disclosure of the credentials used by the container.",
+    "dependency_name": "Kubernetes",
+    "cvss_v3_score": 8.8,
+    "cvss_v3_vector": null,
+    "cvss_v2_score": null,
+    "cvss_v2_vector": null,
+    "published_date": "2018-07-31T14:29:00.857",
+    "last_modified_date": "2024-11-21T04:09:02.333",
+    "references": [
+      "http://www.securityfocus.com/bid/104944",
+      "https://support.f5.com/csp/article/K58935003",
+      "http://www.securityfocus.com/bid/104944",
+      "https://support.f5.com/csp/article/K58935003"
+    ],
+    "threat_feed": "Kubernetes"
+  },
+  {
+    "id": "CVE-2018-1999040",
+    "description": "An exposure of sensitive information vulnerability exists in Jenkins Kubernetes Plugin 1.10.1 and earlier in KubernetesCloud.java that allows attackers to capture credentials with a known credentials ID stored in Jenkins.",
+    "dependency_name": "Kubernetes",
+    "cvss_v3_score": 8.8,
+    "cvss_v3_vector": null,
+    "cvss_v2_score": null,
+    "cvss_v2_vector": null,
+    "published_date": "2018-08-01T13:29:01.060",
+    "last_modified_date": "2024-11-21T03:57:07.093",
+    "references": [
+      "https://jenkins.io/security/advisory/2018-07-30/#SECURITY-1016",
+      "https://jenkins.io/security/advisory/2018-07-30/#SECURITY-1016"
+    ],
+    "threat_feed": "Kubernetes"
+  },
+  {
+    "id": "CVE-2016-7075",
+    "description": "It was found that Kubernetes as used by Openshift Enterprise 3 did not correctly validate X.509 client intermediate certificate host name fields. An attacker could use this flaw to bypass authentication requirements by using a specially crafted X.509 certificate.",
+    "dependency_name": "Kubernetes",
+    "cvss_v3_score": 7.5,
+    "cvss_v3_vector": null,
+    "cvss_v2_score": null,
+    "cvss_v2_vector": null,
+    "published_date": "2018-09-10T14:29:00.800",
+    "last_modified_date": "2024-11-21T02:57:24.557",
+    "references": [
+      "https://access.redhat.com/errata/RHSA-2016:2064",
+      "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2016-7075",
+      "https://github.com/kubernetes/kubernetes/issues/34517",
+      "https://access.redhat.com/errata/RHSA-2016:2064",
+      "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2016-7075",
+      "https://github.com/kubernetes/kubernetes/issues/34517"
+    ],
+    "threat_feed": "Kubernetes"
+  },
+  {
+    "id": "CVE-2018-2475",
+    "description": "Following the Gardener architecture, the Kubernetes apiserver of a Gardener managed shoot cluster resides in the corresponding seed cluster. Due to missing network isolation a shoot's apiserver can access services/endpoints in the private network of its corresponding seed cluster. Combined with other minor Kubernetes security issues, the missing network isolation theoretically can lead to compromise other shoot or seed clusters in the \"Gardener\" context. The issue is rated high due to the high impact of a potential exploitation in \"Gardener\" context. This was fixed in Gardener release 0.12.4.",
+    "dependency_name": "Kubernetes",
+    "cvss_v3_score": 8.5,
+    "cvss_v3_vector": null,
+    "cvss_v2_score": null,
+    "cvss_v2_vector": null,
+    "published_date": "2018-10-09T13:29:02.307",
+    "last_modified_date": "2024-11-21T04:03:53.027",
+    "references": [
+      "http://www.securityfocus.com/bid/105579",
+      "https://groups.google.com/forum/#%21topic/gardener/OjfKEe1LwXo",
+      "https://launchpad.support.sap.com/#/notes/2699726",
+      "https://wiki.scn.sap.com/wiki/pages/viewpage.action?pageId=500633095",
+      "http://www.securityfocus.com/bid/105579",
+      "https://groups.google.com/forum/#%21topic/gardener/OjfKEe1LwXo",
+      "https://launchpad.support.sap.com/#/notes/2699726",
+      "https://wiki.scn.sap.com/wiki/pages/viewpage.action?pageId=500633095"
+    ],
+    "threat_feed": "Kubernetes"
+  },
+  {
+    "id": "CVE-2018-18843",
+    "description": "The Kubernetes integration in GitLab Enterprise Edition 11.x before 11.2.8, 11.3.x before 11.3.9, and 11.4.x before 11.4.4 has SSRF.",
+    "dependency_name": "Kubernetes",
+    "cvss_v3_score": 10.0,
+    "cvss_v3_vector": null,
+    "cvss_v2_score": null,
+    "cvss_v2_vector": null,
+    "published_date": "2018-12-04T23:29:00.833",
+    "last_modified_date": "2024-11-21T03:56:44.267",
+    "references": [
+      "https://about.gitlab.com/2018/11/01/critical-security-release-gitlab-11-dot-4-dot-4-released/",
+      "https://gitlab.com/gitlab-org/gitlab-ce/issues/53158",
+      "https://about.gitlab.com/2018/11/01/critical-security-release-gitlab-11-dot-4-dot-4-released/",
+      "https://gitlab.com/gitlab-org/gitlab-ce/issues/53158"
+    ],
+    "threat_feed": "Kubernetes"
+  },
+  {
+    "id": "CVE-2018-1002101",
+    "description": "In Kubernetes versions 1.9.0-1.9.9, 1.10.0-1.10.5, and 1.11.0-1.11.1, user input was handled insecurely while setting up volume mounts on Windows nodes, which could lead to command line argument injection.",
+    "dependency_name": "Kubernetes",
+    "cvss_v3_score": 5.9,
+    "cvss_v3_vector": null,
+    "cvss_v2_score": null,
+    "cvss_v2_vector": null,
+    "published_date": "2018-12-05T21:29:00.293",
+    "last_modified_date": "2024-11-21T03:40:38.433",
+    "references": [
+      "http://www.securityfocus.com/bid/106238",
+      "https://github.com/kubernetes/kubernetes/issues/65750",
+      "https://security.netapp.com/advisory/ntap-20190416-0008/",
+      "http://www.securityfocus.com/bid/106238",
+      "https://github.com/kubernetes/kubernetes/issues/65750",
+      "https://security.netapp.com/advisory/ntap-20190416-0008/"
+    ],
+    "threat_feed": "Kubernetes"
+  },
+  {
+    "id": "CVE-2018-1002103",
+    "description": "In Minikube versions 0.3.0-0.29.0, minikube exposes the Kubernetes Dashboard listening on the VM IP at port 30000. In VM environments where the IP is easy to predict, the attacker can use DNS rebinding to indirectly make requests to the Kubernetes Dashboard, create a new Kubernetes Deployment running arbitrary code. If minikube mount is in use, the attacker could also directly access the host filesystem.",
+    "dependency_name": "Kubernetes",
+    "cvss_v3_score": 8.1,
+    "cvss_v3_vector": null,
+    "cvss_v2_score": null,
+    "cvss_v2_vector": null,
+    "published_date": "2018-12-05T21:29:00.357",
+    "last_modified_date": "2024-11-21T03:40:38.700",
+    "references": [
+      "https://github.com/kubernetes/minikube/issues/3208",
+      "https://github.com/kubernetes/minikube/issues/3208"
+    ],
+    "threat_feed": "Kubernetes"
+  },
+  {
+    "id": "CVE-2018-1002105",
+    "description": "In all Kubernetes versions prior to v1.10.11, v1.11.5, and v1.12.3, incorrect handling of error responses to proxied upgrade requests in the kube-apiserver allowed specially crafted requests to establish a connection through the Kubernetes API server to backend servers, then send arbitrary requests over the same connection directly to the backend, authenticated with the Kubernetes API server's TLS credentials used to establish the backend connection.",
+    "dependency_name": "Kubernetes",
+    "cvss_v3_score": 9.8,
+    "cvss_v3_vector": null,
+    "cvss_v2_score": null,
+    "cvss_v2_vector": null,
+    "published_date": "2018-12-05T21:29:00.403",
+    "last_modified_date": "2024-11-21T03:40:38.970",
+    "references": [
+      "http://lists.opensuse.org/opensuse-security-announce/2020-04/msg00041.html",
+      "http://www.openwall.com/lists/oss-security/2019/06/28/2",
+      "http://www.openwall.com/lists/oss-security/2019/07/06/3",
+      "http://www.openwall.com/lists/oss-security/2019/07/06/4",
+      "http://www.securityfocus.com/bid/106068",
+      "https://access.redhat.com/errata/RHSA-2018:3537",
+      "https://access.redhat.com/errata/RHSA-2018:3549",
+      "https://access.redhat.com/errata/RHSA-2018:3551",
+      "https://access.redhat.com/errata/RHSA-2018:3598",
+      "https://access.redhat.com/errata/RHSA-2018:3624",
+      "https://access.redhat.com/errata/RHSA-2018:3742",
+      "https://access.redhat.com/errata/RHSA-2018:3752",
+      "https://access.redhat.com/errata/RHSA-2018:3754",
+      "https://github.com/evict/poc_CVE-2018-1002105",
+      "https://github.com/kubernetes/kubernetes/issues/71411",
+      "https://groups.google.com/forum/#%21topic/kubernetes-announce/GVllWCg6L88",
+      "https://security.netapp.com/advisory/ntap-20190416-0001/",
+      "https://www.coalfire.com/The-Coalfire-Blog/December-2018/Kubernetes-Vulnerability-What-You-Can-Should-Do",
+      "https://www.exploit-db.com/exploits/46052/",
+      "https://www.exploit-db.com/exploits/46053/",
+      "http://lists.opensuse.org/opensuse-security-announce/2020-04/msg00041.html",
+      "http://www.openwall.com/lists/oss-security/2019/06/28/2",
+      "http://www.openwall.com/lists/oss-security/2019/07/06/3",
+      "http://www.openwall.com/lists/oss-security/2019/07/06/4",
+      "http://www.securityfocus.com/bid/106068",
+      "https://access.redhat.com/errata/RHSA-2018:3537",
+      "https://access.redhat.com/errata/RHSA-2018:3549",
+      "https://access.redhat.com/errata/RHSA-2018:3551",
+      "https://access.redhat.com/errata/RHSA-2018:3598",
+      "https://access.redhat.com/errata/RHSA-2018:3624",
+      "https://access.redhat.com/errata/RHSA-2018:3742",
+      "https://access.redhat.com/errata/RHSA-2018:3752",
+      "https://access.redhat.com/errata/RHSA-2018:3754",
+      "https://github.com/evict/poc_CVE-2018-1002105",
+      "https://github.com/kubernetes/kubernetes/issues/71411",
+      "https://groups.google.com/forum/#%21topic/kubernetes-announce/GVllWCg6L88",
+      "https://security.netapp.com/advisory/ntap-20190416-0001/",
+      "https://www.coalfire.com/The-Coalfire-Blog/December-2018/Kubernetes-Vulnerability-What-You-Can-Should-Do",
+      "https://www.exploit-db.com/exploits/46052/",
+      "https://www.exploit-db.com/exploits/46053/"
+    ],
+    "threat_feed": "Kubernetes"
+  },
+  {
+    "id": "CVE-2018-18264",
+    "description": "Kubernetes Dashboard before 1.10.1 allows attackers to bypass authentication and use Dashboard's Service Account for reading secrets within the cluster.",
+    "dependency_name": "Kubernetes",
+    "cvss_v3_score": 7.5,
+    "cvss_v3_vector": null,
+    "cvss_v2_score": null,
+    "cvss_v2_vector": null,
+    "published_date": "2019-01-03T01:29:00.270",
+    "last_modified_date": "2024-11-21T03:55:37.590",
+    "references": [
+      "http://www.securityfocus.com/bid/106493",
+      "https://github.com/kubernetes/dashboard/pull/3289",
+      "https://github.com/kubernetes/dashboard/pull/3400",
+      "https://github.com/kubernetes/dashboard/releases/tag/v1.10.1",
+      "https://groups.google.com/forum/#%21topic/kubernetes-announce/yBrFf5nmvfI",
+      "https://sysdig.com/blog/privilege-escalation-kubernetes-dashboard/",
+      "http://www.securityfocus.com/bid/106493",
+      "https://github.com/kubernetes/dashboard/pull/3289",
+      "https://github.com/kubernetes/dashboard/pull/3400",
+      "https://github.com/kubernetes/dashboard/releases/tag/v1.10.1",
+      "https://groups.google.com/forum/#%21topic/kubernetes-announce/yBrFf5nmvfI",
+      "https://sysdig.com/blog/privilege-escalation-kubernetes-dashboard/"
+    ],
+    "threat_feed": "Kubernetes"
+  },
+  {
+    "id": "CVE-2019-3779",
+    "description": "Cloud Foundry Container Runtime, versions prior to 0.29.0, deploys Kubernetes clusters utilize the same CA (Certificate Authority) to sign and trust certs for ETCD as used by the Kubernetes API. This could allow a user authenticated with a cluster to request a signed certificate leveraging the Kubernetes CSR capability to obtain a credential that could escalate privilege access to ETCD.",
+    "dependency_name": "Kubernetes",
+    "cvss_v3_score": 8.8,
+    "cvss_v3_vector": null,
+    "cvss_v2_score": null,
+    "cvss_v2_vector": null,
+    "published_date": "2019-03-08T16:29:00.240",
+    "last_modified_date": "2024-11-21T04:42:31.570",
+    "references": [
+      "https://www.cloudfoundry.org/blog/cve-2019-3779",
+      "https://www.cloudfoundry.org/blog/cve-2019-3779"
+    ],
+    "threat_feed": "Kubernetes"
+  },
+  {
+    "id": "CVE-2019-3869",
+    "description": "When running Tower before 3.4.3 on OpenShift or Kubernetes, application credentials are exposed to playbook job runs via environment variables. A malicious user with the ability to write playbooks could use this to gain administrative privileges.",
+    "dependency_name": "Kubernetes",
+    "cvss_v3_score": 7.2,
+    "cvss_v3_vector": null,
+    "cvss_v2_score": null,
+    "cvss_v2_vector": null,
+    "published_date": "2019-03-28T14:29:00.307",
+    "last_modified_date": "2024-11-21T04:42:45.570",
+    "references": [
+      "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2019-3869",
+      "https://github.com/ansible/awx/pull/3505",
+      "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2019-3869",
+      "https://github.com/ansible/awx/pull/3505"
+    ],
+    "threat_feed": "Kubernetes"
+  },
+  {
+    "id": "CVE-2019-1002100",
+    "description": "In all Kubernetes versions prior to v1.11.8, v1.12.6, and v1.13.4, users that are authorized to make patch requests to the Kubernetes API Server can send a specially crafted patch of type \"json-patch\" (e.g. `kubectl patch --type json` or `\"Content-Type: application/json-patch+json\"`) that consumes excessive resources while processing, causing a Denial of Service on the API Server.",
+    "dependency_name": "Kubernetes",
+    "cvss_v3_score": 6.5,
+    "cvss_v3_vector": null,
+    "cvss_v2_score": null,
+    "cvss_v2_vector": null,
+    "published_date": "2019-04-01T14:29:00.483",
+    "last_modified_date": "2024-11-21T04:17:42.613",
+    "references": [
+      "http://www.securityfocus.com/bid/107290",
+      "https://access.redhat.com/errata/RHSA-2019:1851",
+      "https://access.redhat.com/errata/RHSA-2019:3239",
+      "https://github.com/kubernetes/kubernetes/issues/74534",
+      "https://groups.google.com/forum/#%21topic/kubernetes-announce/vmUUNkYfG9g",
+      "https://security.netapp.com/advisory/ntap-20190416-0002/",
+      "http://www.securityfocus.com/bid/107290",
+      "https://access.redhat.com/errata/RHSA-2019:1851",
+      "https://access.redhat.com/errata/RHSA-2019:3239",
+      "https://github.com/kubernetes/kubernetes/issues/74534",
+      "https://groups.google.com/forum/#%21topic/kubernetes-announce/vmUUNkYfG9g",
+      "https://security.netapp.com/advisory/ntap-20190416-0002/"
+    ],
+    "threat_feed": "Kubernetes"
+  },
+  {
+    "id": "CVE-2019-1002101",
+    "description": "The kubectl cp command allows copying files between containers and the user machine. To copy files from a container, Kubernetes creates a tar inside the container, copies it over the network, and kubectl unpacks it on the user’s machine. If the tar binary in the container is malicious, it could run any code and output unexpected, malicious results. An attacker could use this to write files to any path on the user’s machine when kubectl cp is called, limited only by the system permissions of the local user. The untar function can both create and follow symbolic links. The issue is resolved in kubectl v1.11.9, v1.12.7, v1.13.5, and v1.14.0.",
+    "dependency_name": "Kubernetes",
+    "cvss_v3_score": 6.4,
+    "cvss_v3_vector": null,
+    "cvss_v2_score": null,
+    "cvss_v2_vector": null,
+    "published_date": "2019-04-01T14:29:00.640",
+    "last_modified_date": "2024-11-21T04:17:42.747",
+    "references": [
+      "http://www.openwall.com/lists/oss-security/2019/06/21/1",
+      "http://www.openwall.com/lists/oss-security/2019/08/05/5",
+      "http://www.securityfocus.com/bid/107652",
+      "https://access.redhat.com/errata/RHBA-2019:0619",
+      "https://access.redhat.com/errata/RHBA-2019:0620",
+      "https://access.redhat.com/errata/RHBA-2019:0636",
+      "https://github.com/kubernetes/kubernetes/pull/75037",
+      "https://lists.fedoraproject.org/archives/list/package-announce%40lists.fedoraproject.org/message/BPV2RE5RMOGUVP5WJMXKQJZUBBLAFZPZ/",
+      "https://lists.fedoraproject.org/archives/list/package-announce%40lists.fedoraproject.org/message/QZB7E3DOZ5WDG46XAIU6K32CXHXPXB2F/",
+      "https://www.twistlock.com/labs-blog/disclosing-directory-traversal-vulnerability-kubernetes-copy-cve-2019-1002101/",
+      "https://access.redhat.com/security/cve/cve-2019-1002101",
+      "http://www.openwall.com/lists/oss-security/2019/06/21/1",
+      "http://www.openwall.com/lists/oss-security/2019/08/05/5",
+      "http://www.securityfocus.com/bid/107652",
+      "https://access.redhat.com/errata/RHBA-2019:0619",
+      "https://access.redhat.com/errata/RHBA-2019:0620",
+      "https://access.redhat.com/errata/RHBA-2019:0636",
+      "https://github.com/kubernetes/kubernetes/pull/75037",
+      "https://lists.fedoraproject.org/archives/list/package-announce%40lists.fedoraproject.org/message/BPV2RE5RMOGUVP5WJMXKQJZUBBLAFZPZ/",
+      "https://lists.fedoraproject.org/archives/list/package-announce%40lists.fedoraproject.org/message/QZB7E3DOZ5WDG46XAIU6K32CXHXPXB2F/",
+      "https://www.twistlock.com/labs-blog/disclosing-directory-traversal-vulnerability-kubernetes-copy-cve-2019-1002101/"
+    ],
+    "threat_feed": "Kubernetes"
+  },
+  {
+    "id": "CVE-2019-9946",
+    "description": "Cloud Native Computing Foundation (CNCF) CNI (Container Networking Interface) 0.7.4 has a network firewall misconfiguration which affects Kubernetes. The CNI 'portmap' plugin, used to setup HostPorts for CNI, inserts rules at the front of the iptables nat chains; which take precedence over the KUBE- SERVICES chain. Because of this, the HostPort/portmap rule could match incoming traffic even if there were better fitting, more specific service definition rules like NodePorts later in the chain. The issue is fixed in CNI 0.7.5 and Kubernetes 1.11.9, 1.12.7, 1.13.5, and 1.14.0.",
+    "dependency_name": "Kubernetes",
+    "cvss_v3_score": 7.5,
+    "cvss_v3_vector": null,
+    "cvss_v2_score": null,
+    "cvss_v2_vector": null,
+    "published_date": "2019-04-02T18:30:26.583",
+    "last_modified_date": "2024-11-21T04:52:38.937",
+    "references": [
+      "https://access.redhat.com/errata/RHBA-2019:0862",
+      "https://github.com/containernetworking/plugins/pull/269#issuecomment-477683272",
+      "https://lists.fedoraproject.org/archives/list/package-announce%40lists.fedoraproject.org/message/FCN66VYB3XS76SYH567SO7N3I254JOCT/",
+      "https://lists.fedoraproject.org/archives/list/package-announce%40lists.fedoraproject.org/message/SGOOWAELGH3F7OXRBPH3HCNZELNLXYTW/",
+      "https://security.netapp.com/advisory/ntap-20190416-0002/",
+      "https://access.redhat.com/errata/RHBA-2019:0862",
+      "https://github.com/containernetworking/plugins/pull/269#issuecomment-477683272",
+      "https://lists.fedoraproject.org/archives/list/package-announce%40lists.fedoraproject.org/message/FCN66VYB3XS76SYH567SO7N3I254JOCT/",
+      "https://lists.fedoraproject.org/archives/list/package-announce%40lists.fedoraproject.org/message/SGOOWAELGH3F7OXRBPH3HCNZELNLXYTW/",
+      "https://security.netapp.com/advisory/ntap-20190416-0002/"
+    ],
+    "threat_feed": "Kubernetes"
+  },
+  {
+    "id": "CVE-2019-11243",
+    "description": "In Kubernetes v1.12.0-v1.12.4 and v1.13.0, the rest.AnonymousClientConfig() method returns a copy of the provided config, with credentials removed (bearer token, username/password, and client certificate/key data). In the affected versions, rest.AnonymousClientConfig() did not effectively clear service account credentials loaded using rest.InClusterConfig()",
+    "dependency_name": "Kubernetes",
+    "cvss_v3_score": 8.1,
+    "cvss_v3_vector": null,
+    "cvss_v2_score": null,
+    "cvss_v2_vector": null,
+    "published_date": "2019-04-22T15:29:00.790",
+    "last_modified_date": "2024-11-21T04:20:47.533",
+    "references": [
+      "http://www.securityfocus.com/bid/108053",
+      "https://github.com/kubernetes/kubernetes/issues/76797",
+      "https://security.netapp.com/advisory/ntap-20190509-0002/",
+      "http://www.securityfocus.com/bid/108053",
+      "https://github.com/kubernetes/kubernetes/issues/76797",
+      "https://security.netapp.com/advisory/ntap-20190509-0002/"
+    ],
+    "threat_feed": "Kubernetes"
+  },
+  {
+    "id": "CVE-2019-11244",
+    "description": "In Kubernetes v1.8.x-v1.14.x, schema info is cached by kubectl in the location specified by --cache-dir (defaulting to $HOME/.kube/http-cache), written with world-writeable permissions (rw-rw-rw-). If --cache-dir is specified and pointed at a different location accessible to other users/groups, the written files may be modified by other users/groups and disrupt the kubectl invocation.",
+    "dependency_name": "Kubernetes",
+    "cvss_v3_score": 5.0,
+    "cvss_v3_vector": null,
+    "cvss_v2_score": null,
+    "cvss_v2_vector": null,
+    "published_date": "2019-04-22T15:29:00.837",
+    "last_modified_date": "2024-11-21T04:20:47.647",
+    "references": [
+      "http://www.securityfocus.com/bid/108064",
+      "https://access.redhat.com/errata/RHSA-2019:3942",
+      "https://access.redhat.com/errata/RHSA-2020:0020",
+      "https://access.redhat.com/errata/RHSA-2020:0074",
+      "https://github.com/kubernetes/kubernetes/issues/76676",
+      "https://security.netapp.com/advisory/ntap-20190509-0002/",
+      "http://www.securityfocus.com/bid/108064",
+      "https://access.redhat.com/errata/RHSA-2019:3942",
+      "https://access.redhat.com/errata/RHSA-2020:0020",
+      "https://access.redhat.com/errata/RHSA-2020:0074",
+      "https://github.com/kubernetes/kubernetes/issues/76676",
+      "https://security.netapp.com/advisory/ntap-20190509-0002/"
+    ],
+    "threat_feed": "Kubernetes"
+  },
+  {
+    "id": "CVE-2019-4119",
+    "description": "IBM Cloud Private Kubernetes API server 2.1.0, 3.1.0, 3.1.1, and 3.1.2 can be used as an HTTP proxy to not only cluster internal but also external target IP addresses. IBM X-Force ID: 158145.",
+    "dependency_name": "Kubernetes",
+    "cvss_v3_score": 5.3,
+    "cvss_v3_vector": null,
+    "cvss_v2_score": null,
+    "cvss_v2_vector": null,
+    "published_date": "2019-05-17T16:29:03.377",
+    "last_modified_date": "2024-11-21T04:43:11.927",
+    "references": [
+      "http://www.ibm.com/support/docview.wss?uid=ibm10878460",
+      "https://exchange.xforce.ibmcloud.com/vulnerabilities/158145",
+      "http://www.ibm.com/support/docview.wss?uid=ibm10878460",
+      "https://exchange.xforce.ibmcloud.com/vulnerabilities/158145"
+    ],
+    "threat_feed": "Kubernetes"
+  },
+  {
+    "id": "CVE-2019-10338",
+    "description": "A cross-site request forgery vulnerability in Jenkins JX Resources Plugin 1.0.36 and earlier in GlobalPluginConfiguration#doValidateClient allowed attackers to have Jenkins connect to an attacker-specified Kubernetes server, potentially leaking credentials.",
+    "dependency_name": "Kubernetes",
+    "cvss_v3_score": 8.8,
+    "cvss_v3_vector": null,
+    "cvss_v2_score": null,
+    "cvss_v2_vector": null,
+    "published_date": "2019-06-11T14:29:01.103",
+    "last_modified_date": "2024-11-21T04:18:55.267",
+    "references": [
+      "http://www.openwall.com/lists/oss-security/2019/06/11/1",
+      "http://www.securityfocus.com/bid/108747",
+      "https://jenkins.io/security/advisory/2019-06-11/#SECURITY-1379",
+      "http://www.openwall.com/lists/oss-security/2019/06/11/1",
+      "http://www.securityfocus.com/bid/108747",
+      "https://jenkins.io/security/advisory/2019-06-11/#SECURITY-1379"
+    ],
+    "threat_feed": "Kubernetes"
+  },
+  {
+    "id": "CVE-2019-10339",
+    "description": "A missing permission check in Jenkins JX Resources Plugin 1.0.36 and earlier in GlobalPluginConfiguration#doValidateClient allowed users with Overall/Read access to have Jenkins connect to an attacker-specified Kubernetes server, potentially leaking credentials.",
+    "dependency_name": "Kubernetes",
+    "cvss_v3_score": 8.8,
+    "cvss_v3_vector": null,
+    "cvss_v2_score": null,
+    "cvss_v2_vector": null,
+    "published_date": "2019-06-11T14:29:01.150",
+    "last_modified_date": "2024-11-21T04:18:55.387",
+    "references": [
+      "http://www.openwall.com/lists/oss-security/2019/06/11/1",
+      "http://www.securityfocus.com/bid/108747",
+      "https://jenkins.io/security/advisory/2019-06-11/#SECURITY-1379",
+      "http://www.openwall.com/lists/oss-security/2019/06/11/1",
+      "http://www.securityfocus.com/bid/108747",
+      "https://jenkins.io/security/advisory/2019-06-11/#SECURITY-1379"
+    ],
+    "threat_feed": "Kubernetes"
+  },
+  {
+    "id": "CVE-2019-10165",
+    "description": "OpenShift Container Platform before version 4.1.3 writes OAuth tokens in plaintext to the audit logs for the Kubernetes API server and OpenShift API server. A user with sufficient privileges could recover OAuth tokens from these audit logs and use them to access other resources.",
+    "dependency_name": "Kubernetes",
+    "cvss_v3_score": 2.3,
+    "cvss_v3_vector": null,
+    "cvss_v2_score": null,
+    "cvss_v2_vector": null,
+    "published_date": "2019-07-30T23:15:12.327",
+    "last_modified_date": "2024-11-21T04:18:33.523",
+    "references": [
+      "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2019-10165",
+      "https://github.com/openshift/cluster-kube-apiserver-operator/pull/499/",
+      "https://github.com/openshift/cluster-openshift-apiserver-operator/pull/205",
+      "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2019-10165",
+      "https://github.com/openshift/cluster-kube-apiserver-operator/pull/499/",
+      "https://github.com/openshift/cluster-openshift-apiserver-operator/pull/205"
+    ],
+    "threat_feed": "Kubernetes"
+  },
+  {
+    "id": "CVE-2019-10365",
+    "description": "Jenkins Google Kubernetes Engine Plugin 0.6.2 and earlier created a temporary file containing a temporary access token in the project workspace, where it could be accessed by users with Job/Read permission.",
+    "dependency_name": "Kubernetes",
+    "cvss_v3_score": 4.3,
+    "cvss_v3_vector": null,
+    "cvss_v2_score": null,
+    "cvss_v2_vector": null,
+    "published_date": "2019-07-31T13:15:13.040",
+    "last_modified_date": "2024-11-21T04:18:58.710",
+    "references": [
+      "http://www.openwall.com/lists/oss-security/2019/07/31/1",
+      "https://jenkins.io/security/advisory/2019-07-31/#SECURITY-1345",
+      "http://www.openwall.com/lists/oss-security/2019/07/31/1",
+      "https://jenkins.io/security/advisory/2019-07-31/#SECURITY-1345"
+    ],
+    "threat_feed": "Kubernetes"
+  },
+  {
+    "id": "CVE-2019-11246",
+    "description": "The kubectl cp command allows copying files between containers and the user machine. To copy files from a container, Kubernetes runs tar inside the container to create a tar archive, copies it over the network, and kubectl unpacks it on the user’s machine. If the tar binary in the container is malicious, it could run any code and output unexpected, malicious results. An attacker could use this to write files to any path on the user’s machine when kubectl cp is called, limited only by the system permissions of the local user. Kubernetes affected versions include versions prior to 1.12.9, versions prior to 1.13.6, versions prior to 1.14.2, and versions 1.1, 1.2, 1.4, 1.4, 1.5, 1.6, 1.7, 1.8, 1.9, 1.10, 1.11.",
+    "dependency_name": "Kubernetes",
+    "cvss_v3_score": 6.5,
+    "cvss_v3_vector": null,
+    "cvss_v2_score": null,
+    "cvss_v2_vector": null,
+    "published_date": "2019-08-29T01:15:11.227",
+    "last_modified_date": "2024-11-21T04:20:47.863",
+    "references": [
+      "https://github.com/kubernetes/kubernetes/pull/76788",
+      "https://groups.google.com/forum/#%21topic/kubernetes-security-announce/NLs2TGbfPdo",
+      "https://security.netapp.com/advisory/ntap-20190919-0003/",
+      "https://github.com/kubernetes/kubernetes/pull/76788",
+      "https://groups.google.com/forum/#%21topic/kubernetes-security-announce/NLs2TGbfPdo",
+      "https://security.netapp.com/advisory/ntap-20190919-0003/"
+    ],
+    "threat_feed": "Kubernetes"
+  },
+  {
+    "id": "CVE-2019-11247",
+    "description": "The Kubernetes kube-apiserver mistakenly allows access to a cluster-scoped custom resource if the request is made as if the resource were namespaced. Authorizations for the resource accessed in this manner are enforced using roles and role bindings within the namespace, meaning that a user with access only to a resource in one namespace could create, view update or delete the cluster-scoped resource (according to their namespace role privileges). Kubernetes affected versions include versions prior to 1.13.9, versions prior to 1.14.5, versions prior to 1.15.2, and versions 1.7, 1.8, 1.9, 1.10, 1.11, 1.12.",
+    "dependency_name": "Kubernetes",
+    "cvss_v3_score": 8.1,
+    "cvss_v3_vector": null,
+    "cvss_v2_score": null,
+    "cvss_v2_vector": null,
+    "published_date": "2019-08-29T01:15:11.287",
+    "last_modified_date": "2024-11-21T04:20:47.980",
+    "references": [
+      "https://access.redhat.com/errata/RHBA-2019:2816",
+      "https://access.redhat.com/errata/RHBA-2019:2824",
+      "https://access.redhat.com/errata/RHSA-2019:2690",
+      "https://access.redhat.com/errata/RHSA-2019:2769",
+      "https://github.com/kubernetes/kubernetes/issues/80983",
+      "https://groups.google.com/d/msg/kubernetes-security-announce/vUtEcSEY6SM/v2ZZxsmtFQAJ",
+      "https://security.netapp.com/advisory/ntap-20190919-0003/",
+      "https://access.redhat.com/errata/RHBA-2019:2816",
+      "https://access.redhat.com/errata/RHBA-2019:2824",
+      "https://access.redhat.com/errata/RHSA-2019:2690",
+      "https://access.redhat.com/errata/RHSA-2019:2769",
+      "https://github.com/kubernetes/kubernetes/issues/80983",
+      "https://groups.google.com/d/msg/kubernetes-security-announce/vUtEcSEY6SM/v2ZZxsmtFQAJ",
+      "https://security.netapp.com/advisory/ntap-20190919-0003/"
+    ],
+    "threat_feed": "Kubernetes"
+  },
+  {
+    "id": "CVE-2019-11249",
+    "description": "The kubectl cp command allows copying files between containers and the user machine. To copy files from a container, Kubernetes runs tar inside the container to create a tar archive, copies it over the network, and kubectl unpacks it on the user’s machine. If the tar binary in the container is malicious, it could run any code and output unexpected, malicious results. An attacker could use this to write files to any path on the user’s machine when kubectl cp is called, limited only by the system permissions of the local user. Kubernetes affected versions include versions prior to 1.13.9, versions prior to 1.14.5, versions prior to 1.15.2, and versions 1.1, 1.2, 1.4, 1.4, 1.5, 1.6, 1.7, 1.8, 1.9, 1.10, 1.11, 1.12.",
+    "dependency_name": "Kubernetes",
+    "cvss_v3_score": 6.5,
+    "cvss_v3_vector": null,
+    "cvss_v2_score": null,
+    "cvss_v2_vector": null,
+    "published_date": "2019-08-29T01:15:11.443",
+    "last_modified_date": "2024-11-21T04:20:48.223",
+    "references": [
+      "https://access.redhat.com/errata/RHBA-2019:2794",
+      "https://access.redhat.com/errata/RHBA-2019:2816",
+      "https://access.redhat.com/errata/RHBA-2019:2824",
+      "https://access.redhat.com/errata/RHSA-2019:3239",
+      "https://access.redhat.com/errata/RHSA-2019:3811",
+      "https://github.com/kubernetes/kubernetes/issues/80984",
+      "https://groups.google.com/d/msg/kubernetes-security-announce/vUtEcSEY6SM/v2ZZxsmtFQAJ",
+      "https://security.netapp.com/advisory/ntap-20190919-0003/",
+      "https://access.redhat.com/errata/RHBA-2019:2794",
+      "https://access.redhat.com/errata/RHBA-2019:2816",
+      "https://access.redhat.com/errata/RHBA-2019:2824",
+      "https://access.redhat.com/errata/RHSA-2019:3239",
+      "https://access.redhat.com/errata/RHSA-2019:3811",
+      "https://github.com/kubernetes/kubernetes/issues/80984",
+      "https://groups.google.com/d/msg/kubernetes-security-announce/vUtEcSEY6SM/v2ZZxsmtFQAJ",
+      "https://security.netapp.com/advisory/ntap-20190919-0003/"
+    ],
+    "threat_feed": "Kubernetes"
+  },
+  {
+    "id": "CVE-2019-11250",
+    "description": "The Kubernetes client-go library logs request headers at verbosity levels of 7 or higher. This can disclose credentials to unauthorized users via logs or command output. Kubernetes components (such as kube-apiserver) prior to v1.16.0, which make use of basic or bearer token authentication, and run at high verbosity levels, are affected.",
+    "dependency_name": "Kubernetes",
+    "cvss_v3_score": 6.5,
+    "cvss_v3_vector": null,
+    "cvss_v2_score": null,
+    "cvss_v2_vector": null,
+    "published_date": "2019-08-29T01:15:11.523",
+    "last_modified_date": "2024-11-21T04:20:48.343",
+    "references": [
+      "http://www.openwall.com/lists/oss-security/2020/10/16/2",
+      "https://access.redhat.com/errata/RHSA-2019:4052",
+      "https://access.redhat.com/errata/RHSA-2019:4087",
+      "https://github.com/kubernetes/kubernetes/issues/81114",
+      "https://security.netapp.com/advisory/ntap-20190919-0003/",
+      "http://www.openwall.com/lists/oss-security/2020/10/16/2",
+      "https://access.redhat.com/errata/RHSA-2019:4052",
+      "https://access.redhat.com/errata/RHSA-2019:4087",
+      "https://github.com/kubernetes/kubernetes/issues/81114",
+      "https://security.netapp.com/advisory/ntap-20190919-0003/"
+    ],
+    "threat_feed": "Kubernetes"
+  },
+  {
+    "id": "CVE-2019-13209",
+    "description": "Rancher 2 through 2.2.4 is vulnerable to a Cross-Site Websocket Hijacking attack that allows an exploiter to gain access to clusters managed by Rancher. The attack requires a victim to be logged into a Rancher server, and then to access a third-party site hosted by the exploiter. Once that is accomplished, the exploiter is able to execute commands against the cluster's Kubernetes API with the permissions and identity of the victim.",
+    "dependency_name": "Kubernetes",
+    "cvss_v3_score": 6.1,
+    "cvss_v3_vector": null,
+    "cvss_v2_score": null,
+    "cvss_v2_vector": null,
+    "published_date": "2019-09-04T14:15:11.200",
+    "last_modified_date": "2024-11-21T04:24:27.927",
+    "references": [
+      "https://forums.rancher.com/c/announcements",
+      "https://forums.rancher.com/t/rancher-release-v2-2-5-addresses-rancher-cve-2019-13209/14801",
+      "https://forums.rancher.com/c/announcements",
+      "https://forums.rancher.com/t/rancher-release-v2-2-5-addresses-rancher-cve-2019-13209/14801"
+    ],
+    "threat_feed": "Kubernetes"
+  },
+  {
+    "id": "CVE-2019-6648",
+    "description": "On version 1.9.0, If DEBUG logging is enable, F5 Container Ingress Service (CIS) for Kubernetes and Red Hat OpenShift (k8s-bigip-ctlr) log files may contain BIG-IP secrets such as SSL Private Keys and Private key Passphrases as provided as inputs by an AS3 Declaration.",
+    "dependency_name": "Kubernetes",
+    "cvss_v3_score": 4.4,
+    "cvss_v3_vector": null,
+    "cvss_v2_score": null,
+    "cvss_v2_vector": null,
+    "published_date": "2019-09-04T16:15:11.060",
+    "last_modified_date": "2024-11-21T04:46:52.770",
+    "references": [
+      "https://support.f5.com/csp/article/K74327432",
+      "https://support.f5.com/csp/article/K74327432?utm_source=f5support&amp%3Butm_medium=RSS",
+      "https://support.f5.com/csp/article/K74327432",
+      "https://support.f5.com/csp/article/K74327432?utm_source=f5support&amp%3Butm_medium=RSS"
+    ],
+    "threat_feed": "Kubernetes"
+  },
+  {
+    "id": "CVE-2019-15728",
+    "description": "An issue was discovered in GitLab Community and Enterprise Edition 10.1 through 12.2.1. Protections against SSRF attacks on the Kubernetes integration are insufficient, which could have allowed an attacker to request any local network resource accessible from the GitLab server.",
+    "dependency_name": "Kubernetes",
+    "cvss_v3_score": 7.5,
+    "cvss_v3_vector": null,
+    "cvss_v2_score": null,
+    "cvss_v2_vector": null,
+    "published_date": "2019-09-16T17:15:13.900",
+    "last_modified_date": "2024-11-21T04:29:20.777",
+    "references": [
+      "https://about.gitlab.com/2019/08/29/security-release-gitlab-12-dot-2-dot-3-released/",
+      "https://gitlab.com/gitlab-org/gitlab-ce/issues/61314",
+      "https://about.gitlab.com/2019/08/29/security-release-gitlab-12-dot-2-dot-3-released/",
+      "https://gitlab.com/gitlab-org/gitlab-ce/issues/61314"
+    ],
+    "threat_feed": "Kubernetes"
+  },
+  {
+    "id": "CVE-2019-10417",
+    "description": "Jenkins Kubernetes :: Pipeline :: Kubernetes Steps Plugin provides a custom whitelist for script security that allowed attackers to invoke arbitrary methods, bypassing typical sandbox protection.",
+    "dependency_name": "Kubernetes",
+    "cvss_v3_score": 9.9,
+    "cvss_v3_vector": null,
+    "cvss_v2_score": null,
+    "cvss_v2_vector": null,
+    "published_date": "2019-09-25T16:15:11.477",
+    "last_modified_date": "2024-11-21T04:19:05.610",
+    "references": [
+      "http://www.openwall.com/lists/oss-security/2019/09/25/3",
+      "https://jenkins.io/security/advisory/2019-09-25/#SECURITY-920%20%281%29",
+      "http://www.openwall.com/lists/oss-security/2019/09/25/3",
+      "https://jenkins.io/security/advisory/2019-09-25/#SECURITY-920%20%281%29"
+    ],
+    "threat_feed": "Kubernetes"
+  },
+  {
+    "id": "CVE-2019-10418",
+    "description": "Jenkins Kubernetes :: Pipeline :: Arquillian Steps Plugin provides a custom whitelist for script security that allowed attackers to invoke arbitrary methods, bypassing typical sandbox protection.",
+    "dependency_name": "Kubernetes",
+    "cvss_v3_score": 9.9,
+    "cvss_v3_vector": null,
+    "cvss_v2_score": null,
+    "cvss_v2_vector": null,
+    "published_date": "2019-09-25T16:15:11.523",
+    "last_modified_date": "2024-11-21T04:19:05.733",
+    "references": [
+      "http://www.openwall.com/lists/oss-security/2019/09/25/3",
+      "https://jenkins.io/security/advisory/2019-09-25/#SECURITY-920%20%282%29",
+      "http://www.openwall.com/lists/oss-security/2019/09/25/3",
+      "https://jenkins.io/security/advisory/2019-09-25/#SECURITY-920%20%282%29"
+    ],
+    "threat_feed": "Kubernetes"
+  },
+  {
+    "id": "CVE-2019-10445",
+    "description": "A missing permission check in Jenkins Google Kubernetes Engine Plugin 0.7.0 and earlier allowed attackers with Overall/Read permission to obtain limited information about the scope of a credential with an attacker-specified credentials ID.",
+    "dependency_name": "Kubernetes",
+    "cvss_v3_score": 4.3,
+    "cvss_v3_vector": null,
+    "cvss_v2_score": null,
+    "cvss_v2_vector": null,
+    "published_date": "2019-10-16T14:15:12.510",
+    "last_modified_date": "2024-11-21T04:19:09.320",
+    "references": [
+      "http://www.openwall.com/lists/oss-security/2019/10/16/6",
+      "https://jenkins.io/security/advisory/2019-10-16/#SECURITY-1607",
+      "http://www.openwall.com/lists/oss-security/2019/10/16/6",
+      "https://jenkins.io/security/advisory/2019-10-16/#SECURITY-1607"
+    ],
+    "threat_feed": "Kubernetes"
+  },
+  {
+    "id": "CVE-2019-11253",
+    "description": "Improper input validation in the Kubernetes API server in versions v1.0-1.12 and versions prior to v1.13.12, v1.14.8, v1.15.5, and v1.16.2 allows authorized users to send malicious YAML or JSON payloads, causing the API server to consume excessive CPU or memory, potentially crashing and becoming unavailable. Prior to v1.14.0, default RBAC policy authorized anonymous users to submit requests that could trigger this vulnerability. Clusters upgraded from a version prior to v1.14.0 keep the more permissive policy by default for backwards compatibility.",
+    "dependency_name": "Kubernetes",
+    "cvss_v3_score": 7.5,
+    "cvss_v3_vector": null,
+    "cvss_v2_score": null,
+    "cvss_v2_vector": null,
+    "published_date": "2019-10-17T16:15:10.443",
+    "last_modified_date": "2024-11-21T04:20:48.703",
+    "references": [
+      "https://access.redhat.com/errata/RHSA-2019:3239",
+      "https://access.redhat.com/errata/RHSA-2019:3811",
+      "https://access.redhat.com/errata/RHSA-2019:3905",
+      "https://github.com/kubernetes/kubernetes/issues/83253",
+      "https://groups.google.com/forum/#%21topic/kubernetes-security-announce/jk8polzSUxs",
+      "https://security.netapp.com/advisory/ntap-20191031-0006/",
+      "https://access.redhat.com/errata/RHSA-2019:3239",
+      "https://access.redhat.com/errata/RHSA-2019:3811",
+      "https://access.redhat.com/errata/RHSA-2019:3905",
+      "https://github.com/kubernetes/kubernetes/issues/83253",
+      "https://groups.google.com/forum/#%21topic/kubernetes-security-announce/jk8polzSUxs",
+      "https://security.netapp.com/advisory/ntap-20191031-0006/"
+    ],
+    "threat_feed": "Kubernetes"
+  },
+  {
+    "id": "CVE-2019-10468",
+    "description": "A cross-site request forgery vulnerability in Jenkins ElasticBox Jenkins Kubernetes CI/CD Plugin allows attackers to connect to an attacker-specified URL using attacker-specified credentials IDs obtained through another method, capturing credentials stored in Jenkins.",
+    "dependency_name": "Kubernetes",
+    "cvss_v3_score": 8.8,
+    "cvss_v3_vector": null,
+    "cvss_v2_score": null,
+    "cvss_v2_vector": null,
+    "published_date": "2019-10-23T13:15:10.987",
+    "last_modified_date": "2024-11-21T04:19:12.150",
+    "references": [
+      "http://www.openwall.com/lists/oss-security/2019/10/23/2",
+      "https://jenkins.io/security/advisory/2019-10-23/#SECURITY-1005%20%281%29",
+      "http://www.openwall.com/lists/oss-security/2019/10/23/2",
+      "https://jenkins.io/security/advisory/2019-10-23/#SECURITY-1005%20%281%29"
+    ],
+    "threat_feed": "Kubernetes"
+  },
+  {
+    "id": "CVE-2019-10469",
+    "description": "A missing permission check in Jenkins ElasticBox Jenkins Kubernetes CI/CD Plugin allows attackers with Overall/Read permission to connect to an attacker-specified URL using attacker-specified credentials IDs obtained through another method, capturing credentials stored in Jenkins.",
+    "dependency_name": "Kubernetes",
+    "cvss_v3_score": 6.5,
+    "cvss_v3_vector": null,
+    "cvss_v2_score": null,
+    "cvss_v2_vector": null,
+    "published_date": "2019-10-23T13:15:11.067",
+    "last_modified_date": "2024-11-21T04:19:12.277",
+    "references": [
+      "http://www.openwall.com/lists/oss-security/2019/10/23/2",
+      "https://jenkins.io/security/advisory/2019-10-23/#SECURITY-1005%20%281%29",
+      "http://www.openwall.com/lists/oss-security/2019/10/23/2",
+      "https://jenkins.io/security/advisory/2019-10-23/#SECURITY-1005%20%281%29"
+    ],
+    "threat_feed": "Kubernetes"
+  },
+  {
+    "id": "CVE-2019-10470",
+    "description": "A missing permission check in Jenkins ElasticBox Jenkins Kubernetes CI/CD Plugin in form-related methods allowed users with Overall/Read access to enumerate credentials ID of credentials stored in Jenkins.",
+    "dependency_name": "Kubernetes",
+    "cvss_v3_score": 6.5,
+    "cvss_v3_vector": null,
+    "cvss_v2_score": null,
+    "cvss_v2_vector": null,
+    "published_date": "2019-10-23T13:15:11.143",
+    "last_modified_date": "2024-11-21T04:19:12.387",
+    "references": [
+      "http://www.openwall.com/lists/oss-security/2019/10/23/2",
+      "https://jenkins.io/security/advisory/2019-10-23/#SECURITY-1005%20%282%29",
+      "http://www.openwall.com/lists/oss-security/2019/10/23/2",
+      "https://jenkins.io/security/advisory/2019-10-23/#SECURITY-1005%20%282%29"
+    ],
+    "threat_feed": "Kubernetes"
+  },
+  {
+    "id": "CVE-2018-1002102",
+    "description": "Improper validation of URL redirection in the Kubernetes API server in versions prior to v1.14.0 allows an attacker-controlled Kubelet to redirect API server requests from streaming endpoints to arbitrary hosts. Impacted API servers will follow the redirect as a GET request with client-certificate credentials for authenticating to the Kubelet.",
+    "dependency_name": "Kubernetes",
+    "cvss_v3_score": 2.6,
+    "cvss_v3_vector": null,
+    "cvss_v2_score": null,
+    "cvss_v2_vector": null,
+    "published_date": "2019-12-05T16:15:10.427",
+    "last_modified_date": "2024-11-21T03:40:38.570",
+    "references": [
+      "https://github.com/kubernetes/kubernetes/issues/85867",
+      "https://lists.fedoraproject.org/archives/list/package-announce%40lists.fedoraproject.org/message/Q56CULSH7F7BC4NPS67ZS23ZCLL5TIVK/",
+      "https://github.com/kubernetes/kubernetes/issues/85867",
+      "https://lists.fedoraproject.org/archives/list/package-announce%40lists.fedoraproject.org/message/Q56CULSH7F7BC4NPS67ZS23ZCLL5TIVK/"
+    ],
+    "threat_feed": "Kubernetes"
+  },
+  {
+    "id": "CVE-2015-3629",
+    "description": "Libcontainer 1.6.0, as used in Docker Engine, allows local users to escape containerization (\"mount namespace breakout\") and write to arbitrary file on the host system via a symlink attack in an image when respawning a container.",
+    "dependency_name": "Docker",
+    "cvss_v3_score": 7.8,
+    "cvss_v3_vector": null,
+    "cvss_v2_score": null,
+    "cvss_v2_vector": null,
+    "published_date": "2015-05-18T15:59:15.807",
+    "last_modified_date": "2025-04-12T10:46:40.837",
+    "references": [
+      "http://lists.opensuse.org/opensuse-updates/2015-05/msg00023.html",
+      "http://packetstormsecurity.com/files/131835/Docker-Privilege-Escalation-Information-Disclosure.html",
+      "http://seclists.org/fulldisclosure/2015/May/28",
+      "http://www.securityfocus.com/bid/74558",
+      "https://groups.google.com/forum/#%21searchin/docker-user/1.6.1/docker-user/47GZrihtr-4/nwgeOOFLexIJ",
+      "http://lists.opensuse.org/opensuse-updates/2015-05/msg00023.html",
+      "http://packetstormsecurity.com/files/131835/Docker-Privilege-Escalation-Information-Disclosure.html",
+      "http://seclists.org/fulldisclosure/2015/May/28",
+      "http://www.securityfocus.com/bid/74558",
+      "https://groups.google.com/forum/#%21searchin/docker-user/1.6.1/docker-user/47GZrihtr-4/nwgeOOFLexIJ"
+    ],
+    "threat_feed": "Docker"
+  },
+  {
+    "id": "GHSA-222w-xmc5-jhp3",
+    "description": "Liferay Portal and Liferay DXP have a reflected cross-site scripting vulnerability",
+    "dependency_name": "com.liferay.portal:release.portal.bom",
+    "cvss_v3_score": null,
+    "cvss_v3_vector": null,
+    "cvss_v2_score": null,
+    "cvss_v2_vector": null,
+    "published_date": "",
+    "last_modified_date": "",
+    "references": [],
+    "threat_feed": "Java"
+  },
+  {
+    "id": "GHSA-228f-g3h7-3fj3",
+    "description": "RubyGems HTTPS to HTTP redirect",
+    "dependency_name": "rubygems-update",
+    "cvss_v3_score": null,
+    "cvss_v3_vector": null,
+    "cvss_v2_score": null,
+    "cvss_v2_vector": null,
+    "published_date": "",
+    "last_modified_date": "",
+    "references": [],
+    "threat_feed": "Ruby"
+  },
+  {
+    "id": "GHSA-2226-4v3c-cff8",
+    "description": "Stack overflow in rustc_serialize when parsing deeply nested JSON",
+    "dependency_name": "rustc-serialize",
+    "cvss_v3_score": null,
+    "cvss_v3_vector": null,
+    "cvss_v2_score": null,
+    "cvss_v2_vector": null,
+    "published_date": "",
+    "last_modified_date": "",
+    "references": [],
+    "threat_feed": "Rust"
+  }
+]

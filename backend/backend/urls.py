@@ -28,4 +28,13 @@ urlpatterns = [
     path("api/user_create",CreateUser.as_view() ),
     path('api/token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
     path('api/token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
+    
+    # CVE API endpoints
+    path('api/cves/aggregated/', get_aggregated_cves, name='get_aggregated_cves'),
+    path('api/cves/statistics/', get_cve_statistics_only, name='get_cve_statistics_only'),
+    path('api/cves/threat-feed/', get_cves_by_threat_feed, name='get_cves_by_threat_feed'),
+    
+    # CVE Explanation and WAF Rule endpoints
+    path('api/cve-explanation/', cve_explanation, name='cve_explanation'),
+    path('api/waf-rule/', waf_rule, name='waf_rule'),
 ]

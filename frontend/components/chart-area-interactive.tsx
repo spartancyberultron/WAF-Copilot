@@ -42,6 +42,7 @@ interface CVE {
   published_date: string
   last_modified_date: string
   references: string[]
+  threat_feed: string
 }
 
 interface ChartAreaInteractiveProps {
@@ -139,6 +140,19 @@ export function ChartAreaInteractive({ cveData }: ChartAreaInteractiveProps) {
     }, {} as Record<string, number>)
 
     return Object.entries(dependencyCounts)
+      .sort(([,a], [,b]) => b - a)
+      .slice(0, 10)
+      .map(([name, value]) => ({ name, value }))
+  }, [cveData])
+
+  // Top threat feeds by CVE count
+  const topThreatFeeds = React.useMemo(() => {
+    const threatFeedCounts = cveData.reduce((acc, cve) => {
+      acc[cve.threat_feed] = (acc[cve.threat_feed] || 0) + 1
+      return acc
+    }, {} as Record<string, number>)
+
+    return Object.entries(threatFeedCounts)
       .sort(([,a], [,b]) => b - a)
       .slice(0, 10)
       .map(([name, value]) => ({ name, value }))
@@ -290,6 +304,30 @@ export function ChartAreaInteractive({ cveData }: ChartAreaInteractiveProps) {
     </BarChart>
   )
 
+  const renderThreatFeedsChart = () => (
+    <BarChart data={topThreatFeeds}>
+      <CartesianGrid vertical={false} />
+      <XAxis
+        dataKey="name"
+        tickLine={false}
+        axisLine={false}
+        tickMargin={8}
+        angle={-45}
+        textAnchor="end"
+        height={80}
+      />
+      <ChartTooltip 
+        contentStyle={{
+          backgroundColor: '#1f2937',
+          border: '1px solid #374151',
+          borderRadius: '8px',
+          color: '#f9fafb'
+        }}
+      />
+      <Bar dataKey="value" fill="var(--primary)" radius={[8, 8, 0, 0]} />
+    </BarChart>
+  )
+
   return (
     <Card className="@container/card">
       <CardHeader>
@@ -311,6 +349,7 @@ export function ChartAreaInteractive({ cveData }: ChartAreaInteractiveProps) {
             <ToggleGroupItem value="trend">Trends</ToggleGroupItem>
             <ToggleGroupItem value="severity">Severity</ToggleGroupItem>
             <ToggleGroupItem value="dependencies">Dependencies</ToggleGroupItem>
+            <ToggleGroupItem value="threatfeeds">Threat Feeds</ToggleGroupItem>
           </ToggleGroup>
           <Select value={chartType} onValueChange={setChartType}>
             <SelectTrigger
@@ -324,6 +363,7 @@ export function ChartAreaInteractive({ cveData }: ChartAreaInteractiveProps) {
               <SelectItem value="trend" className="rounded-lg">Trends</SelectItem>
               <SelectItem value="severity" className="rounded-lg">Severity</SelectItem>
               <SelectItem value="dependencies" className="rounded-lg">Dependencies</SelectItem>
+              <SelectItem value="threatfeeds" className="rounded-lg">Threat Feeds</SelectItem>
             </SelectContent>
           </Select>
         </CardAction>
@@ -336,6 +376,7 @@ export function ChartAreaInteractive({ cveData }: ChartAreaInteractiveProps) {
           {chartType === "trend" && renderTrendChart()}
           {chartType === "severity" && renderPieChart()}
           {chartType === "dependencies" && renderBarChart()}
+          {chartType === "threatfeeds" && renderThreatFeedsChart()}
         </ChartContainer>
       </CardContent>
     </Card>
