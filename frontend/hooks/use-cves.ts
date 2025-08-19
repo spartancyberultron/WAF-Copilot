@@ -1,114 +1,135 @@
-import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query'
+import { useState, useEffect } from 'react'
+import { cveSchema, type CVE } from '@/components/cve-data-table'
+import { useAuth } from './use-auth'
 
-export interface CVE {
-  id: string
-  description: string
-  dependency_name: string
-  cvss_v3_score: number | null
-  cvss_v3_vector: string | null
-  cvss_v2_score: number | null
-  cvss_v2_vector: string | null
-  published_date: string
-  last_modified_date: string
-  references: string[]
-  threat_feed: string
-}
+export function useCVEs() {
+  const [cves, setCves] = useState<CVE[]>([])
+  const [loading, setLoading] = useState(true)
+  const [error, setError] = useState<string | null>(null)
+  const { makeAuthenticatedRequest, isAuthenticated } = useAuth()
 
-interface CVEResponse {
-  success: boolean
-  total_cves: number
-  statistics: {
-    by_threat_feed: Record<string, number>
-    by_severity: {
-      critical: number
-      high: number
-      medium: number
-      low: number
-      unknown: number
+  useEffect(() => {
+    if (isAuthenticated) {
+      // Add a small delay to ensure auth headers are ready
+      setTimeout(() => {
+        fetchCVEs()
+      }, 50)
+    } else {
+      setLoading(false)
+    }
+  }, [isAuthenticated])
+
+  const fetchCVEs = async () => {
+    try {
+      setLoading(true)
+      setError(null)
+      
+      // Fetch CVE data from the backend
+      const response = await makeAuthenticatedRequest('http://localhost:8000/api/user/cves/', {
+        method: 'GET',
+      })
+
+      if (!response.ok) {
+        if (response.status === 401) {
+          throw new Error('Authentication required. Please log in.')
+        }
+        throw new Error(`Failed to fetch CVEs: ${response.status}`)
+      }
+
+      const data = await response.json()
+      
+      if (data.success) {
+        // Parse and validate the CVE data
+        const validatedCves = data.cves.map((cve: any) => {
+          try {
+            return cveSchema.parse(cve)
+          } catch (err) {
+            console.warn('Invalid CVE data:', cve, err)
+            return null
+          }
+        }).filter(Boolean) as CVE[]
+        
+        setCves(validatedCves)
+      } else {
+        throw new Error(data.error || 'Failed to fetch CVEs')
+      }
+    } catch (err) {
+      console.error('Error fetching CVEs:', err)
+      setError(err instanceof Error ? err.message : 'Failed to fetch CVEs')
+      
+      // Fallback to mock data if backend is not available
+      const mockCves: CVE[] = [
+        {
+          id: "CVE-2023-1234",
+          description: "A critical vulnerability in the authentication system",
+          dependency_name: "auth-library",
+          cvss_v3_score: 9.8,
+          cvss_v3_vector: "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+          cvss_v2_score: 10.0,
+          cvss_v2_vector: "AV:N/AC:L/Au:N/C:C/I:C/A:C",
+          published_date: "2023-01-15",
+          last_modified_date: "2023-01-20",
+          references: ["https://example.com/cve-2023-1234"],
+          threat_feed: "NVD",
+          resolved: false,
+        },
+        {
+          id: "CVE-2023-5678",
+          description: "SQL injection vulnerability in user input handling",
+          dependency_name: "database-connector",
+          cvss_v3_score: 7.5,
+          cvss_v3_vector: "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+          cvss_v2_score: 7.5,
+          cvss_v2_vector: "AV:N/AC:L/Au:N/C:P/I:N/A:N",
+          published_date: "2023-02-10",
+          last_modified_date: "2023-02-15",
+          references: ["https://example.com/cve-2023-5678"],
+          threat_feed: "GitHub",
+          resolved: true,
+        },
+      ]
+      setCves(mockCves)
+    } finally {
+      setLoading(false)
     }
   }
-  cves: CVE[]
-}
 
-const fetchCVEs = async (limit: number = 100): Promise<CVEResponse> => {
-  const response = await fetch(`http://localhost:8000/api/cves/aggregated/?limit=${limit}`)
-  if (!response.ok) {
-    throw new Error('Failed to fetch CVE data')
+  const refreshCVEs = async () => {
+    try {
+      setLoading(true)
+      setError(null)
+      
+      const response = await makeAuthenticatedRequest('http://localhost:8000/api/user/cves/refresh/', {
+        method: 'POST',
+      })
+
+      if (!response.ok) {
+        if (response.status === 401) {
+          throw new Error('Authentication required. Please log in.')
+        }
+        throw new Error(`Failed to refresh CVEs: ${response.status}`)
+      }
+
+      const data = await response.json()
+      
+      if (data.success) {
+        // Fetch the updated CVE data
+        await fetchCVEs()
+      } else {
+        throw new Error(data.error || 'Failed to refresh CVEs')
+      }
+    } catch (err) {
+      console.error('Error refreshing CVEs:', err)
+      setError(err instanceof Error ? err.message : 'Failed to refresh CVEs')
+    } finally {
+      setLoading(false)
+    }
   }
-  const data = await response.json()
-  if (!data.success) {
-    throw new Error(data.error || 'Failed to fetch CVE data')
+
+  return {
+    cves,
+    loading,
+    error,
+    refreshCVEs,
   }
-  return data
-}
-
-export const useCVEs = (limit: number = 100) => {
-  return useQuery({
-    queryKey: ['cves', limit],
-    queryFn: () => fetchCVEs(limit),
-    staleTime: 5 * 60 * 1000, // 5 minutes
-    refetchInterval: 10 * 60 * 1000, // Refetch every 10 minutes
-  })
-}
-
-export const useCVEStatistics = (limit: number = 100) => {
-  return useQuery({
-    queryKey: ['cve-statistics', limit],
-    queryFn: async () => {
-      const response = await fetch(`http://localhost:8000/api/cves/statistics/?limit=${limit}`)
-      if (!response.ok) {
-        throw new Error('Failed to fetch CVE statistics')
-      }
-      const data = await response.json()
-      if (!data.success) {
-        throw new Error(data.error || 'Failed to fetch CVE statistics')
-      }
-      return data.statistics
-    },
-    staleTime: 5 * 60 * 1000, // 5 minutes
-  })
-}
-
-export const useCVEsByThreatFeed = (threatFeed: string, limit: number = 100) => {
-  return useQuery({
-    queryKey: ['cves-by-threat-feed', threatFeed, limit],
-    queryFn: async () => {
-      const response = await fetch(`http://localhost:8000/api/cves/threat-feed/?threat_feed=${encodeURIComponent(threatFeed)}&limit=${limit}`)
-      if (!response.ok) {
-        throw new Error('Failed to fetch CVE data by threat feed')
-      }
-      const data = await response.json()
-      if (!data.success) {
-        throw new Error(data.error || 'Failed to fetch CVE data by threat feed')
-      }
-      return data.cves as CVE[]
-    },
-    enabled: !!threatFeed,
-    staleTime: 5 * 60 * 1000, // 5 minutes
-  })
-}
-
-// Mutation hook for refreshing CVE data
-export const useRefreshCVEs = () => {
-  const queryClient = useQueryClient()
-  
-  return useMutation({
-    mutationFn: async (limit: number = 100) => {
-      const response = await fetch(`http://localhost:8000/api/cves/aggregated/?limit=${limit}`)
-      if (!response.ok) {
-        throw new Error('Failed to refresh CVE data')
-      }
-      const data = await response.json()
-      if (!data.success) {
-        throw new Error(data.error || 'Failed to refresh CVE data')
-      }
-      return data
-    },
-    onSuccess: (data, limit) => {
-      // Invalidate and refetch all CVE queries
-      queryClient.invalidateQueries({ queryKey: ['cves'] })
-      queryClient.invalidateQueries({ queryKey: ['cve-statistics'] })
-      queryClient.invalidateQueries({ queryKey: ['cves-by-threat-feed'] })
-    },
-  })
 }

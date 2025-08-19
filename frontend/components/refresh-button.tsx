@@ -2,7 +2,7 @@
 
 import { Button } from "@/components/ui/button"
 import { RefreshCw } from "lucide-react"
-import { useRefreshCVEs } from "@/hooks/use-cves"
+import { useCVEs } from "@/hooks/use-cves"
 
 interface RefreshButtonProps {
   limit?: number
@@ -10,22 +10,22 @@ interface RefreshButtonProps {
 }
 
 export function RefreshButton({ limit = 500, className = "" }: RefreshButtonProps) {
-  const refreshMutation = useRefreshCVEs()
+  const { refreshCVEs, loading } = useCVEs()
 
   const handleRefresh = () => {
-    refreshMutation.mutate(limit)
+    refreshCVEs()
   }
 
   return (
     <Button
       onClick={handleRefresh}
-      disabled={refreshMutation.isPending}
+      disabled={loading}
       variant="outline"
       size="sm"
       className={className}
     >
-      <RefreshCw className={`h-4 w-4 mr-2 ${refreshMutation.isPending ? 'animate-spin' : ''}`} />
-      {refreshMutation.isPending ? 'Refreshing...' : 'Refresh Data'}
+      <RefreshCw className={`h-4 w-4 mr-2 ${loading ? 'animate-spin' : ''}`} />
+      {loading ? 'Refreshing...' : 'Refresh Data'}
     </Button>
   )
 }

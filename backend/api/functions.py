@@ -33,11 +33,13 @@ def generate_cve_description_and_mermaid(cve_id: str, description: str, severity
 
     Return ONLY a JSON object with keys:
     - explanation
-    - mermaid
+    - mermaid 
+
+    And make sure the mermaid code is valid.
     """
 
     response = client.chat.completions.parse(
-        model="gpt-4o-mini",
+        model="o1",
         messages=[{"role": "user", "content": prompt}],
         response_format={"type": "json_schema", "json_schema": {
             "name": "cve_explanation_mermaid",
