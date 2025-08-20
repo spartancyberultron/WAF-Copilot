@@ -17,8 +17,8 @@ WAF Copilot is an intelligent automation platform for Web Application Firewall (
 
 - **Version:** 1.0.0  
 - **Created:** August 2025  
-- **Author:** Megha S D  
-- **Team Lead:** Nikhil Shivanath  
+- **Author:** __________  
+- **Team Lead:** __________ 
 
 ---
 
@@ -341,10 +341,6 @@ A: See [docs/deployment/](docs/deployment/).
 
 - Maintained by: Technical Writing, Product, and Security Teams
 - **Last Updated:** August 19, 2025  
-- **Next Review:** September 19, 2025
+- **Next Review:** September 10, 2025
 
 ---
-
-**Built with ❤️ by the Security Automation Team**
-
-_Protecting your web applications, one rule at a time._
