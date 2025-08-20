@@ -106,7 +106,7 @@ For manual installation, see [Installation & Setup](#-installation--setup).
 
 ---
 
-## 🏗️ Architecture Overview
+## Architecture Overview
 
 ```
 ┌─────────────────┐    ┌──────────────────┐    ┌─────────────────┐
