@@ -16,16 +16,42 @@ Including another URLconf
 """
 
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
+from rest_framework.routers import DefaultRouter
 from rest_framework_simplejwt.views import (
     TokenObtainPairView,
     TokenRefreshView,
 )
-from api.views import * 
+from api.views import (
+    LoginView, RegisterView, get_user_cves, refresh_user_cves, 
+    toggle_cve_resolved, get_aggregated_cves, get_cve_statistics_only,
+    get_cves_by_threat_feed, cve_explanation, waf_rule, get_user_profile
+)
 
 urlpatterns = [
     path("admin/", admin.site.urls),
-    path("api/user_create",CreateUser.as_view() ),
+    
+    # JWT Token endpoints
     path('api/token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
     path('api/token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
+    
+    # Authentication endpoints
+    path('api/auth/login/', LoginView.as_view(), name='login'),
+    path('api/auth/register/', RegisterView.as_view(), name='register'),
+    
+    # CVE endpoints
+    path('api/cves/aggregated/', get_aggregated_cves, name='get_aggregated_cves'),
+    path('api/cves/statistics/', get_cve_statistics_only, name='get_cve_statistics'),
+    path('api/cves/threat-feed/', get_cves_by_threat_feed, name='get_cves_by_threat_feed'),
+    path('api/cve-explanation/', cve_explanation, name='cve_explanation'),
+    path('api/waf-rule/', waf_rule, name='waf_rule'),
+    
+    # User-specific CVE endpoints
+    path('api/user/cves/', get_user_cves, name='get_user_cves'),
+    path('api/user/cves/refresh/', refresh_user_cves, name='refresh_user_cves'),
+    path('api/user/cves/toggle-resolved/', toggle_cve_resolved, name='toggle_cve_resolved'),
+    
+    # User profile endpoint
+    path('api/user/profile/', get_user_profile, name='get_user_profile'),
+    
 ]

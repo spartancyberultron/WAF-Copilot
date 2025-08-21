@@ -1,7 +1,7 @@
 "use client"
 
 import * as React from "react"
-import { Area, AreaChart, CartesianGrid, XAxis } from "recharts"
+import { Area, AreaChart, CartesianGrid, XAxis, BarChart, Bar, PieChart, Pie, Cell } from "recharts"
 
 import { useIsMobile } from "@/hooks/use-mobile"
 import {
@@ -30,129 +30,139 @@ import {
   ToggleGroupItem,
 } from "@/components/ui/toggle-group"
 
-export const description = "An interactive area chart"
+// CVE data type
+interface CVE {
+  id: string
+  description: string
+  dependency_name: string
+  cvss_v3_score: number | null
+  cvss_v3_vector: string | null
+  cvss_v2_score: number | null
+  cvss_v2_vector: string | null
+  published_date: string
+  last_modified_date: string
+  references: string[]
+  threat_feed: string
+}
 
-const chartData = [
-  { date: "2024-04-01", desktop: 222, mobile: 150 },
-  { date: "2024-04-02", desktop: 97, mobile: 180 },
-  { date: "2024-04-03", desktop: 167, mobile: 120 },
-  { date: "2024-04-04", desktop: 242, mobile: 260 },
-  { date: "2024-04-05", desktop: 373, mobile: 290 },
-  { date: "2024-04-06", desktop: 301, mobile: 340 },
-  { date: "2024-04-07", desktop: 245, mobile: 180 },
-  { date: "2024-04-08", desktop: 409, mobile: 320 },
-  { date: "2024-04-09", desktop: 59, mobile: 110 },
-  { date: "2024-04-10", desktop: 261, mobile: 190 },
-  { date: "2024-04-11", desktop: 327, mobile: 350 },
-  { date: "2024-04-12", desktop: 292, mobile: 210 },
-  { date: "2024-04-13", desktop: 342, mobile: 380 },
-  { date: "2024-04-14", desktop: 137, mobile: 220 },
-  { date: "2024-04-15", desktop: 120, mobile: 170 },
-  { date: "2024-04-16", desktop: 138, mobile: 190 },
-  { date: "2024-04-17", desktop: 446, mobile: 360 },
-  { date: "2024-04-18", desktop: 364, mobile: 410 },
-  { date: "2024-04-19", desktop: 243, mobile: 180 },
-  { date: "2024-04-20", desktop: 89, mobile: 150 },
-  { date: "2024-04-21", desktop: 137, mobile: 200 },
-  { date: "2024-04-22", desktop: 224, mobile: 170 },
-  { date: "2024-04-23", desktop: 138, mobile: 230 },
-  { date: "2024-04-24", desktop: 387, mobile: 290 },
-  { date: "2024-04-25", desktop: 215, mobile: 250 },
-  { date: "2024-04-26", desktop: 75, mobile: 130 },
-  { date: "2024-04-27", desktop: 383, mobile: 420 },
-  { date: "2024-04-28", desktop: 122, mobile: 180 },
-  { date: "2024-04-29", desktop: 315, mobile: 240 },
-  { date: "2024-04-30", desktop: 454, mobile: 380 },
-  { date: "2024-05-01", desktop: 165, mobile: 220 },
-  { date: "2024-05-02", desktop: 293, mobile: 310 },
-  { date: "2024-05-03", desktop: 247, mobile: 190 },
-  { date: "2024-05-04", desktop: 385, mobile: 420 },
-  { date: "2024-05-05", desktop: 481, mobile: 390 },
-  { date: "2024-05-06", desktop: 498, mobile: 520 },
-  { date: "2024-05-07", desktop: 388, mobile: 300 },
-  { date: "2024-05-08", desktop: 149, mobile: 210 },
-  { date: "2024-05-09", desktop: 227, mobile: 180 },
-  { date: "2024-05-10", desktop: 293, mobile: 330 },
-  { date: "2024-05-11", desktop: 335, mobile: 270 },
-  { date: "2024-05-12", desktop: 197, mobile: 240 },
-  { date: "2024-05-13", desktop: 197, mobile: 160 },
-  { date: "2024-05-14", desktop: 448, mobile: 490 },
-  { date: "2024-05-15", desktop: 473, mobile: 380 },
-  { date: "2024-05-16", desktop: 338, mobile: 400 },
-  { date: "2024-05-17", desktop: 499, mobile: 420 },
-  { date: "2024-05-18", desktop: 315, mobile: 350 },
-  { date: "2024-05-19", desktop: 235, mobile: 180 },
-  { date: "2024-05-20", desktop: 177, mobile: 230 },
-  { date: "2024-05-21", desktop: 82, mobile: 140 },
-  { date: "2024-05-22", desktop: 81, mobile: 120 },
-  { date: "2024-05-23", desktop: 252, mobile: 290 },
-  { date: "2024-05-24", desktop: 294, mobile: 220 },
-  { date: "2024-05-25", desktop: 201, mobile: 250 },
-  { date: "2024-05-26", desktop: 213, mobile: 170 },
-  { date: "2024-05-27", desktop: 420, mobile: 460 },
-  { date: "2024-05-28", desktop: 233, mobile: 190 },
-  { date: "2024-05-29", desktop: 78, mobile: 130 },
-  { date: "2024-05-30", desktop: 340, mobile: 280 },
-  { date: "2024-05-31", desktop: 178, mobile: 230 },
-  { date: "2024-06-01", desktop: 178, mobile: 200 },
-  { date: "2024-06-02", desktop: 470, mobile: 410 },
-  { date: "2024-06-03", desktop: 103, mobile: 160 },
-  { date: "2024-06-04", desktop: 439, mobile: 380 },
-  { date: "2024-06-05", desktop: 88, mobile: 140 },
-  { date: "2024-06-06", desktop: 294, mobile: 250 },
-  { date: "2024-06-07", desktop: 323, mobile: 370 },
-  { date: "2024-06-08", desktop: 385, mobile: 320 },
-  { date: "2024-06-09", desktop: 438, mobile: 480 },
-  { date: "2024-06-10", desktop: 155, mobile: 200 },
-  { date: "2024-06-11", desktop: 92, mobile: 150 },
-  { date: "2024-06-12", desktop: 492, mobile: 420 },
-  { date: "2024-06-13", desktop: 81, mobile: 130 },
-  { date: "2024-06-14", desktop: 426, mobile: 380 },
-  { date: "2024-06-15", desktop: 307, mobile: 350 },
-  { date: "2024-06-16", desktop: 371, mobile: 310 },
-  { date: "2024-06-17", desktop: 475, mobile: 520 },
-  { date: "2024-06-18", desktop: 107, mobile: 170 },
-  { date: "2024-06-19", desktop: 341, mobile: 290 },
-  { date: "2024-06-20", desktop: 408, mobile: 450 },
-  { date: "2024-06-21", desktop: 169, mobile: 210 },
-  { date: "2024-06-22", desktop: 317, mobile: 270 },
-  { date: "2024-06-23", desktop: 480, mobile: 530 },
-  { date: "2024-06-24", desktop: 132, mobile: 180 },
-  { date: "2024-06-25", desktop: 141, mobile: 190 },
-  { date: "2024-06-26", desktop: 434, mobile: 380 },
-  { date: "2024-06-27", desktop: 448, mobile: 490 },
-  { date: "2024-06-28", desktop: 149, mobile: 200 },
-  { date: "2024-06-29", desktop: 103, mobile: 160 },
-  { date: "2024-06-30", desktop: 446, mobile: 400 },
-]
+interface ChartAreaInteractiveProps {
+  cveData: CVE[]
+}
+
+export const description = "CVE vulnerability statistics and trends"
 
 const chartConfig = {
-  visitors: {
-    label: "Visitors",
+  critical: {
+    label: "Critical (9.0+)",
+    color: "hsl(var(--primary))",
   },
-  desktop: {
-    label: "Desktop",
-    color: "var(--primary)",
+  high: {
+    label: "High (7.0-8.9)",
+    color: "hsl(var(--primary))",
   },
-  mobile: {
-    label: "Mobile",
-    color: "var(--primary)",
+  medium: {
+    label: "Medium (4.0-6.9)",
+    color: "hsl(var(--muted-foreground))",
+  },
+  low: {
+    label: "Low (0.1-3.9)",
+    color: "hsl(var(--primary))",
   },
 } satisfies ChartConfig
 
-export function ChartAreaInteractive() {
+const COLORS = ['#6b7280', '#9ca3af', '#d1d5db', '#e5e7eb']
+
+export function ChartAreaInteractive({ cveData }: ChartAreaInteractiveProps) {
   const isMobile = useIsMobile()
+  const [chartType, setChartType] = React.useState("trend")
   const [timeRange, setTimeRange] = React.useState("90d")
 
   React.useEffect(() => {
     if (isMobile) {
-      setTimeRange("7d")
+      setTimeRange("30d")
     }
   }, [isMobile])
 
+  // Process CVE data for charts
+  const processCVEData = () => {
+    // Group CVEs by month for trend analysis
+    const monthlyData = cveData.reduce((acc, cve) => {
+      const date = new Date(cve.published_date)
+      const monthKey = `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, '0')}`
+      
+      if (!acc[monthKey]) {
+        acc[monthKey] = {
+          month: monthKey,
+          critical: 0,
+          high: 0,
+          medium: 0,
+          low: 0,
+          total: 0
+        }
+      }
+      
+      const score = cve.cvss_v3_score
+      if (score) {
+        if (score >= 9.0) acc[monthKey].critical++
+        else if (score >= 7.0) acc[monthKey].high++
+        else if (score >= 4.0) acc[monthKey].medium++
+        else acc[monthKey].low++
+      }
+      acc[monthKey].total++
+      
+      return acc
+    }, {} as Record<string, any>)
+
+    // Convert to array and sort by date
+    return Object.values(monthlyData).sort((a, b) => a.month.localeCompare(b.month))
+  }
+
+  // Severity distribution for pie chart
+  const severityDistribution = React.useMemo(() => {
+    const critical = cveData.filter(cve => cve.cvss_v3_score && cve.cvss_v3_score >= 9.0).length
+    const high = cveData.filter(cve => cve.cvss_v3_score && cve.cvss_v3_score >= 7.0 && cve.cvss_v3_score < 9.0).length
+    const medium = cveData.filter(cve => cve.cvss_v3_score && cve.cvss_v3_score >= 4.0 && cve.cvss_v3_score < 7.0).length
+    const low = cveData.filter(cve => cve.cvss_v3_score && cve.cvss_v3_score > 0 && cve.cvss_v3_score < 4.0).length
+
+    return [
+      { name: 'Critical', value: critical, color: COLORS[0] },
+      { name: 'High', value: high, color: COLORS[1] },
+      { name: 'Medium', value: medium, color: COLORS[2] },
+      { name: 'Low', value: low, color: COLORS[3] },
+    ].filter(item => item.value > 0)
+  }, [cveData])
+
+  // Top dependencies by CVE count
+  const topDependencies = React.useMemo(() => {
+    const dependencyCounts = cveData.reduce((acc, cve) => {
+      acc[cve.dependency_name] = (acc[cve.dependency_name] || 0) + 1
+      return acc
+    }, {} as Record<string, number>)
+
+    return Object.entries(dependencyCounts)
+      .sort(([,a], [,b]) => b - a)
+      .slice(0, 10)
+      .map(([name, value]) => ({ name, value }))
+  }, [cveData])
+
+  // Top threat feeds by CVE count
+  const topThreatFeeds = React.useMemo(() => {
+    const threatFeedCounts = cveData.reduce((acc, cve) => {
+      acc[cve.threat_feed] = (acc[cve.threat_feed] || 0) + 1
+      return acc
+    }, {} as Record<string, number>)
+
+    return Object.entries(threatFeedCounts)
+      .sort(([,a], [,b]) => b - a)
+      .slice(0, 10)
+      .map(([name, value]) => ({ name, value }))
+  }, [cveData])
+
+  const chartData = processCVEData()
+
   const filteredData = chartData.filter((item) => {
-    const date = new Date(item.date)
-    const referenceDate = new Date("2024-06-30")
+    const date = new Date(item.month + "-01")
+    const referenceDate = new Date()
     let daysToSubtract = 90
     if (timeRange === "30d") {
       daysToSubtract = 30
@@ -164,46 +174,196 @@ export function ChartAreaInteractive() {
     return date >= startDate
   })
 
+  const renderTrendChart = () => (
+    <AreaChart data={filteredData}>
+      <defs>
+        <linearGradient id="fillCritical" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="5%" stopColor="#6b7280" stopOpacity={0.6} />
+          <stop offset="95%" stopColor="#6b7280" stopOpacity={0.05} />
+        </linearGradient>
+        <linearGradient id="fillHigh" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="5%" stopColor="#9ca3af" stopOpacity={0.6} />
+          <stop offset="95%" stopColor="#9ca3af" stopOpacity={0.05} />
+        </linearGradient>
+        <linearGradient id="fillMedium" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="5%" stopColor="#d1d5db" stopOpacity={0.6} />
+          <stop offset="95%" stopColor="#d1d5db" stopOpacity={0.05} />
+        </linearGradient>
+        <linearGradient id="fillLow" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="5%" stopColor="#e5e7eb" stopOpacity={0.6} />
+          <stop offset="95%" stopColor="#e5e7eb" stopOpacity={0.05} />
+        </linearGradient>
+      </defs>
+      <CartesianGrid vertical={false} stroke="#f3f4f6" strokeDasharray="3 3" strokeOpacity={0.15} />
+      <XAxis
+        dataKey="month"
+        tickLine={false}
+        axisLine={false}
+        tickMargin={8}
+        minTickGap={32}
+        tick={{ fill: '#6b7280', fontSize: 12 }}
+        tickFormatter={(value) => {
+          const date = new Date(value + "-01")
+          return date.toLocaleDateString("en-US", {
+            month: "short",
+            year: "2-digit",
+          })
+        }}
+      />
+      <ChartTooltip
+        cursor={false}
+        content={
+          <ChartTooltipContent
+            labelFormatter={(value) => {
+              const date = new Date(value + "-01")
+              return date.toLocaleDateString("en-US", {
+                month: "long",
+                year: "numeric",
+              })
+            }}
+            indicator="dot"
+          />
+        }
+      />
+      <Area
+        dataKey="critical"
+        type="natural"
+        fill="url(#fillCritical)"
+        stroke="#6b7280"
+        strokeWidth={2}
+        stackId="a"
+      />
+      <Area
+        dataKey="high"
+        type="natural"
+        fill="url(#fillHigh)"
+        stroke="#9ca3af"
+        strokeWidth={2}
+        stackId="a"
+      />
+      <Area
+        dataKey="medium"
+        type="natural"
+        fill="url(#fillMedium)"
+        stroke="#d1d5db"
+        strokeWidth={2}
+        stackId="a"
+      />
+      <Area
+        dataKey="low"
+        type="natural"
+        fill="url(#fillLow)"
+        stroke="#e5e7eb"
+        strokeWidth={2}
+        stackId="a"
+      />
+    </AreaChart>
+  )
+
+  const renderPieChart = () => (
+    <PieChart>
+      <Pie
+        data={severityDistribution}
+        cx="50%"
+        cy="50%"
+        labelLine={false}
+        label={({ name, percent }) => `${name} ${(percent * 100).toFixed(0)}%`}
+        outerRadius={80}
+        fill="#8884d8"
+        dataKey="value"
+      >
+        {severityDistribution.map((entry, index) => (
+          <Cell key={`cell-${index}`} fill={entry.color} />
+        ))}
+      </Pie>
+      <ChartTooltip />
+    </PieChart>
+  )
+
+  const renderBarChart = () => (
+    <BarChart data={topDependencies}>
+      <CartesianGrid vertical={false} />
+      <XAxis
+        dataKey="name"
+        tickLine={false}
+        axisLine={false}
+        tickMargin={8}
+        angle={-45}
+        textAnchor="end"
+        height={80}
+      />
+      <ChartTooltip 
+        contentStyle={{
+          backgroundColor: '#1f2937',
+          border: '1px solid #374151',
+          borderRadius: '8px',
+          color: '#f9fafb'
+        }}
+      />
+      <Bar dataKey="value" fill="var(--primary)" radius={[8, 8, 0, 0]} />
+    </BarChart>
+  )
+
+  const renderThreatFeedsChart = () => (
+    <BarChart data={topThreatFeeds}>
+      <CartesianGrid vertical={false} />
+      <XAxis
+        dataKey="name"
+        tickLine={false}
+        axisLine={false}
+        tickMargin={8}
+        angle={-45}
+        textAnchor="end"
+        height={80}
+      />
+      <ChartTooltip 
+        contentStyle={{
+          backgroundColor: '#1f2937',
+          border: '1px solid #374151',
+          borderRadius: '8px',
+          color: '#f9fafb'
+        }}
+      />
+      <Bar dataKey="value" fill="var(--primary)" radius={[8, 8, 0, 0]} />
+    </BarChart>
+  )
+
   return (
     <Card className="@container/card">
       <CardHeader>
-        <CardTitle>Total Visitors</CardTitle>
+        <CardTitle>CVE Vulnerability Analysis</CardTitle>
         <CardDescription>
           <span className="hidden @[540px]/card:block">
-            Total for the last 3 months
+            Vulnerability trends and severity distribution
           </span>
-          <span className="@[540px]/card:hidden">Last 3 months</span>
+          <span className="@[540px]/card:hidden">CVE analysis</span>
         </CardDescription>
         <CardAction>
           <ToggleGroup
             type="single"
-            value={timeRange}
-            onValueChange={setTimeRange}
+            value={chartType}
+            onValueChange={setChartType}
             variant="outline"
-            className="hidden *:data-[slot=toggle-group-item]:!px-4 @[767px]/card:flex"
+            className="hidden *:data-[slot=toggle-group-item]:!px-6 @[767px]/card:flex"
           >
-            <ToggleGroupItem value="90d">Last 3 months</ToggleGroupItem>
-            <ToggleGroupItem value="30d">Last 30 days</ToggleGroupItem>
-            <ToggleGroupItem value="7d">Last 7 days</ToggleGroupItem>
+            <ToggleGroupItem value="trend">Trends</ToggleGroupItem>
+            <ToggleGroupItem value="severity">Severity</ToggleGroupItem>
+            <ToggleGroupItem value="dependencies">Dependencies</ToggleGroupItem>
+            <ToggleGroupItem value="threatfeeds">Threat Feeds</ToggleGroupItem>
           </ToggleGroup>
-          <Select value={timeRange} onValueChange={setTimeRange}>
+          <Select value={chartType} onValueChange={setChartType}>
             <SelectTrigger
               className="flex w-40 **:data-[slot=select-value]:block **:data-[slot=select-value]:truncate @[767px]/card:hidden"
               size="sm"
-              aria-label="Select a value"
+              aria-label="Select chart type"
             >
-              <SelectValue placeholder="Last 3 months" />
+              <SelectValue placeholder="Trends" />
             </SelectTrigger>
             <SelectContent className="rounded-xl">
-              <SelectItem value="90d" className="rounded-lg">
-                Last 3 months
-              </SelectItem>
-              <SelectItem value="30d" className="rounded-lg">
-                Last 30 days
-              </SelectItem>
-              <SelectItem value="7d" className="rounded-lg">
-                Last 7 days
-              </SelectItem>
+              <SelectItem value="trend" className="rounded-lg">Trends</SelectItem>
+              <SelectItem value="severity" className="rounded-lg">Severity</SelectItem>
+              <SelectItem value="dependencies" className="rounded-lg">Dependencies</SelectItem>
+              <SelectItem value="threatfeeds" className="rounded-lg">Threat Feeds</SelectItem>
             </SelectContent>
           </Select>
         </CardAction>
@@ -211,79 +371,12 @@ export function ChartAreaInteractive() {
       <CardContent className="px-2 pt-4 sm:px-6 sm:pt-6">
         <ChartContainer
           config={chartConfig}
-          className="aspect-auto h-[250px] w-full"
+          className="aspect-auto h-[250px] w-full bg-stone-50 dark:bg-stone-900 rounded-lg p-4"
         >
-          <AreaChart data={filteredData}>
-            <defs>
-              <linearGradient id="fillDesktop" x1="0" y1="0" x2="0" y2="1">
-                <stop
-                  offset="5%"
-                  stopColor="var(--color-desktop)"
-                  stopOpacity={1.0}
-                />
-                <stop
-                  offset="95%"
-                  stopColor="var(--color-desktop)"
-                  stopOpacity={0.1}
-                />
-              </linearGradient>
-              <linearGradient id="fillMobile" x1="0" y1="0" x2="0" y2="1">
-                <stop
-                  offset="5%"
-                  stopColor="var(--color-mobile)"
-                  stopOpacity={0.8}
-                />
-                <stop
-                  offset="95%"
-                  stopColor="var(--color-mobile)"
-                  stopOpacity={0.1}
-                />
-              </linearGradient>
-            </defs>
-            <CartesianGrid vertical={false} />
-            <XAxis
-              dataKey="date"
-              tickLine={false}
-              axisLine={false}
-              tickMargin={8}
-              minTickGap={32}
-              tickFormatter={(value) => {
-                const date = new Date(value)
-                return date.toLocaleDateString("en-US", {
-                  month: "short",
-                  day: "numeric",
-                })
-              }}
-            />
-            <ChartTooltip
-              cursor={false}
-              content={
-                <ChartTooltipContent
-                  labelFormatter={(value) => {
-                    return new Date(value).toLocaleDateString("en-US", {
-                      month: "short",
-                      day: "numeric",
-                    })
-                  }}
-                  indicator="dot"
-                />
-              }
-            />
-            <Area
-              dataKey="mobile"
-              type="natural"
-              fill="url(#fillMobile)"
-              stroke="var(--color-mobile)"
-              stackId="a"
-            />
-            <Area
-              dataKey="desktop"
-              type="natural"
-              fill="url(#fillDesktop)"
-              stroke="var(--color-desktop)"
-              stackId="a"
-            />
-          </AreaChart>
+          {chartType === "trend" && renderTrendChart()}
+          {chartType === "severity" && renderPieChart()}
+          {chartType === "dependencies" && renderBarChart()}
+          {chartType === "threatfeeds" && renderThreatFeedsChart()}
         </ChartContainer>
       </CardContent>
     </Card>
