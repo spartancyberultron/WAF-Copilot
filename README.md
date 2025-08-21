@@ -10,6 +10,8 @@ AI-powered assistant for security teams and developers: Instantly understand CVE
 
 - [Features](#features)
 - [How It Works](#how-it-works)
+- [Architecture Flowchart](#architecture-flowchart)
+- [User Flow](#user-flow)
 - [Quick Start](#quick-start)
 - [Tech Stack](#tech-stack)
 - [Contribution](#contribution)
@@ -36,6 +38,7 @@ AI-powered assistant for security teams and developers: Instantly understand CVE
 3. **Protect Fast**: Generate and copy a ready-to-deploy WAF rule for your preferred cloud provider.
 
 ---
+
 ## Architecture Flowchart
 
 ```mermaid
@@ -67,8 +70,6 @@ flowchart LR
 
 ---
 
-
-
 ## Quick Start
 
 ```bash
@@ -91,7 +92,7 @@ npm run dev
 
 ---
 
-##  Tech Stack
+## Tech Stack
 
 - **Frontend:** Next.js, React (TypeScript)
 - **Backend:** Django REST Framework, Python, OpenAI LLMs
