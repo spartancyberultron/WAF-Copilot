@@ -38,14 +38,14 @@ AI-powered assistant for security teams and developers: Instantly understand CVE
 3. **Protect Fast**: Generate and copy a ready-to-deploy WAF rule for your preferred cloud provider.
 
 ---
-##  Architecture Flowchart
+## Architecture Flowchart
 
 ```mermaid
 flowchart TD
-    A[Frontend <br/>(Next.js/React)] --> B[Backend <br/>(Django/DRF)]
+    A[Frontend (Next.js/React)] --> B[Backend (Django/DRF)]
     B --> C[OpenAI API]
-    B --> D[(SQLite)]
-    B --> E[WAF Providers <br/>(AWS, Azure, GCP, Cloudflare)]
+    B --> D[SQLite]
+    B --> E[WAF Providers (AWS, Azure, GCP, Cloudflare)]
     B --> A
 ```
 
@@ -57,12 +57,12 @@ flowchart TD
 flowchart LR
     U[User] --> F[Frontend UI]
     F --> B[Backend API]
-    B --> CVE[CVE Explanation & Diagram]
-    CVE --> B
+    B --> X[CVE Explanation & Diagram]
+    X --> B
     B --> F
     F --> B
-    B --> WAF[WAF Rule]
-    WAF --> B
+    B --> W[WAF Rule]
+    W --> B
     B --> F
     F --> U
 ```
