@@ -25,7 +25,7 @@ from rest_framework_simplejwt.views import (
 from api.views import (
     LoginView, RegisterView, get_user_cves, refresh_user_cves, 
     toggle_cve_resolved, get_aggregated_cves, get_cve_statistics_only,
-    get_cves_by_threat_feed, cve_explanation, waf_rule
+    get_cves_by_threat_feed, cve_explanation, waf_rule, get_user_profile
 )
 
 urlpatterns = [
@@ -50,5 +50,8 @@ urlpatterns = [
     path('api/user/cves/', get_user_cves, name='get_user_cves'),
     path('api/user/cves/refresh/', refresh_user_cves, name='refresh_user_cves'),
     path('api/user/cves/toggle-resolved/', toggle_cve_resolved, name='toggle_cve_resolved'),
+    
+    # User profile endpoint
+    path('api/user/profile/', get_user_profile, name='get_user_profile'),
     
 ]

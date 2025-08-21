@@ -33,7 +33,7 @@ def generate_cve_description_and_mermaid(cve_id: str, description: str, severity
 
     Return ONLY a JSON object with keys:
     - explanation
-    - mermaid 
+    - mermaid.js code must be flowchart TD code
 
     And make sure the mermaid code is valid.
     """

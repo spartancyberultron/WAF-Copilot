@@ -4,6 +4,12 @@ interface User {
   id: number
   username: string
   email: string
+  first_name?: string
+  last_name?: string
+  date_joined?: string
+  last_login?: string
+  is_staff?: boolean
+  is_superuser?: boolean
 }
 
 interface AuthTokens {
@@ -16,6 +22,19 @@ interface AuthState {
   tokens: AuthTokens | null
   isAuthenticated: boolean
   loading: boolean
+}
+
+interface UserStatistics {
+  total_cves: number
+  resolved_cves: number
+  unresolved_cves: number
+}
+
+interface UserProfile {
+  success: boolean
+  user: User
+  statistics: UserStatistics
+  error?: string
 }
 
 export function useAuth() {
@@ -246,6 +265,36 @@ export function useAuth() {
     return response
   }, [getAuthHeaders, refreshToken])
 
+  const fetchUserProfile = useCallback(async () => {
+    try {
+      const response = await makeAuthenticatedRequest('http://localhost:8000/api/user/profile/')
+      
+      if (!response.ok) {
+        throw new Error('Failed to fetch user profile')
+      }
+
+      const profileData: UserProfile = await response.json()
+      
+      if (profileData.success) {
+        // Update the user state with the fetched profile data
+        setAuthState(prev => ({
+          ...prev,
+          user: profileData.user,
+        }))
+        
+        // Update localStorage with the new user data
+        localStorage.setItem('auth_user', JSON.stringify(profileData.user))
+        
+        return { success: true, profile: profileData }
+      } else {
+        throw new Error(profileData.error || 'Failed to fetch profile')
+      }
+    } catch (error) {
+      console.error('Error fetching user profile:', error)
+      return { success: false, error: error instanceof Error ? error.message : 'Failed to fetch profile' }
+    }
+  }, [makeAuthenticatedRequest])
+
   return {
     ...authState,
     login,
@@ -254,5 +303,6 @@ export function useAuth() {
     refreshToken,
     getAuthHeaders,
     makeAuthenticatedRequest,
+    fetchUserProfile,
   }
 }

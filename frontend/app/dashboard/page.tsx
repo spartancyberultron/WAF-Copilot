@@ -13,14 +13,11 @@ import {
 import { useState, useEffect } from "react"
 import { useCVEs } from "@/hooks/use-cves"
 import { useAuth } from "@/hooks/use-auth"
-import { type CVE } from "@/components/cve-data-table"
 import { Loading } from "@/components/ui/loading"
 import { RefreshButton } from "@/components/refresh-button"
 import { useRouter } from "next/navigation"
 
 export default function Page() {
-  const [selectedCVE, setSelectedCVE] = useState<CVE | null>(null)
-  const [isDrawerOpen, setIsDrawerOpen] = useState(false)
   const { isAuthenticated, loading: authLoading, logout } = useAuth()
   const router = useRouter()
   
@@ -34,17 +31,6 @@ export default function Page() {
     }
   }, [isAuthenticated, authLoading, router])
 
-
-
-  const handleCVEClick = (cve: CVE) => {
-    setSelectedCVE(cve)
-    setIsDrawerOpen(true)
-  }
-  
-  const handleCloseDrawer = () => {
-    setIsDrawerOpen(false)
-    setSelectedCVE(null)
-  }
 
   if (authLoading || loading) {
     return (
@@ -95,7 +81,7 @@ export default function Page() {
               <ChartAreaInteractive cveData={cves} />
             </div>
             <div className="w-[98%] px-5">
-              <CVEDataTable data={cves} onCVEClick={handleCVEClick} />
+              <CVEDataTable data={cves} />
             </div>
           </div>
         </div>

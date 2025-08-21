@@ -485,6 +485,46 @@ def cve_explanation(request):
             "error": str(e)
         }, status=500)
 
+@api_view(['GET'])
+@authentication_classes([JWTAuthentication])
+@permission_classes([IsAuthenticated])
+def get_user_profile(request):
+    """Get profile details for the authenticated user"""
+    try:
+        user = request.user
+        
+        # Get additional user statistics if needed
+        cve_count = CVE.objects.filter(user=user).count()
+        resolved_cve_count = CVE.objects.filter(user=user, resolved=True).count()
+        
+        profile_data = {
+            "success": True,
+            "user": {
+                "id": user.id,
+                "username": user.username,
+                "email": user.email,
+                "first_name": user.first_name or "",
+                "last_name": user.last_name or "",
+                "date_joined": user.date_joined.isoformat() if user.date_joined else None,
+                "last_login": user.last_login.isoformat() if user.last_login else None,
+                "is_staff": user.is_staff,
+                "is_superuser": user.is_superuser,
+            },
+            "statistics": {
+                "total_cves": cve_count,
+                "resolved_cves": resolved_cve_count,
+                "unresolved_cves": cve_count - resolved_cve_count,
+            }
+        }
+        
+        return Response(profile_data)
+        
+    except Exception as e:
+        return Response({
+            "success": False,
+            "error": str(e)
+        }, status=500)
+
 @api_view(['POST'])
 @authentication_classes([JWTAuthentication])
 @permission_classes([IsAuthenticated])
