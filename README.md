@@ -10,8 +10,7 @@ AI-powered assistant for security teams and developers: Instantly understand CVE
 
 - [Features](#features)
 - [How It Works](#how-it-works)
-- [Architecture Flowchart](#architecture-flowchart)
-- [User Flow](#user-flow)
+- [Architecture & User Flow](#architecture--user-flow)
 - [Quick Start](#quick-start)
 - [Tech Stack](#tech-stack)
 - [Contribution](#contribution)
@@ -23,11 +22,11 @@ AI-powered assistant for security teams and developers: Instantly understand CVE
 
 | Feature                | Description                                                                                       |
 |------------------------|---------------------------------------------------------------------------------------------------|
-| AI-Powered Analysis | Get instant, expert-level explanations for vulnerabilities with clear visual diagrams.            |
-| WAF Rule Generation | Generate valid WAF rules for AWS, Azure, GCP, and Cloudflare (in JSON or cURL format).            |
-| Multi-Platform      | Supports AWS WAF, Azure Front Door, GCP Cloud Armor, and Cloudflare.                              |
-| Visual Flowcharts   | Mermaid.js diagrams illustrate vulnerability impact and mitigation.                               |
-| Real-Time Defense   | Create and deploy security rules on demand to defend against emerging threats.                    |
+| AI-Powered Analysis    | Get instant, expert-level explanations for vulnerabilities with clear visual diagrams.            |
+| WAF Rule Generation    | Generate valid WAF rules for AWS, Azure, GCP, and Cloudflare (in JSON or cURL format).            |
+| Multi-Platform         | Supports AWS WAF, Azure Front Door, GCP Cloud Armor, and Cloudflare.                              |
+| Visual Flowcharts      | Mermaid.js diagrams illustrate vulnerability impact and mitigation.                               |
+| Real-Time Defense      | Create and deploy security rules on demand to defend against emerging threats.                    |
 
 ---
 
@@ -38,44 +37,42 @@ AI-powered assistant for security teams and developers: Instantly understand CVE
 3. **Protect Fast**: Generate and copy a ready-to-deploy WAF rule for your preferred cloud provider.
 
 ---
-## Architecture Flowchart
+
+## Architecture & User Flow
 
 ```mermaid
 flowchart TD
-    A[Frontend] --> B[Backend API]
-    B --> C[OpenAI]
-    B --> D[Database]
-    B --> E[WAF Providers]
-    B --> A
+    subgraph User Journey
+      U[User] --> F[Frontend]
+      F --> B[Backend API]
+      B --> U
+    end
+
+    subgraph Backend Logic
+      B --> DB[Database]
+      B --> OAI[OpenAI API]
+      B --> WAF[WAF Providers]
+    end
+
+    %% Data directions for clarity
+    F <-->|UI/API Responses| B
+    B <-->|WAF Rules| WAF
+    B <-->|CVE Explanations| OAI
+    B <-->|Store/Retrieve Data| DB
 ```
 
-<!-- 
-Legend:
-A: Frontend (Next.js/React)
-B: Backend API (Django/DRF)
-C: OpenAI (LLM)
-D: Database (SQLite)
-E: WAF Providers (AWS, Azure, GCP, Cloudflare)
--->
-```
+**Legend:**
+- **Frontend:** Next.js/React interface for user interaction.
+- **Backend API:** Django/DRF server handling logic, AI requests, and rule generation.
+- **OpenAI API:** Used for CVE explanations and diagram generation.
+- **Database:** SQLite for storing data.
+- **WAF Providers:** AWS WAF, Azure Front Door, GCP Cloud Armor, Cloudflare.
 
----
-
-## User Flow
-
-```mermaid
-flowchart LR
-    U[User] --> F[Frontend UI]
-    F --> B[Backend API]
-    B --> X[CVE Explanation & Diagram]
-    X --> B
-    B --> F
-    F --> B
-    B --> W[WAF Rule]
-    W --> B
-    B --> F
-    F --> U
-```
+**User Journey:**
+- Users interact with the Frontend (search CVEs, request explanations/rules).
+- The Frontend communicates with the Backend API.
+- The Backend queries the database, calls OpenAI for explanations/diagrams, and generates WAF rules for selected providers.
+- Results are returned to the user for review and deployment.
 
 ---
 
