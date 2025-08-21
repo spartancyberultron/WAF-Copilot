@@ -2,8 +2,7 @@ import os
 from openai import OpenAI
 
 # Initialize OpenAI client
-client = OpenAI(api_key=os.getenv("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
-"))
+client = OpenAI(api_key=os.getenv(""))
 
 def generate_cve_description_and_mermaid(cve_id: str, description: str, severity: str):
     """
