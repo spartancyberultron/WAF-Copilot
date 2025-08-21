@@ -17,19 +17,19 @@ AI-powered assistant for security teams and developers: Instantly understand CVE
 
 ---
 
-## 🚀 Features
+## Features
 
 | Feature                | Description                                                                                       |
 |------------------------|---------------------------------------------------------------------------------------------------|
-| 🧠 AI-Powered Analysis | Get instant, expert-level explanations for vulnerabilities with clear visual diagrams.            |
-| 🔒 WAF Rule Generation | Generate valid WAF rules for AWS, Azure, GCP, and Cloudflare (in JSON or cURL format).            |
-| 🌐 Multi-Platform      | Supports AWS WAF, Azure Front Door, GCP Cloud Armor, and Cloudflare.                              |
-| 📊 Visual Flowcharts   | Mermaid.js diagrams illustrate vulnerability impact and mitigation.                               |
-| ⚡ Real-Time Defense   | Create and deploy security rules on demand to defend against emerging threats.                    |
+| AI-Powered Analysis | Get instant, expert-level explanations for vulnerabilities with clear visual diagrams.            |
+| WAF Rule Generation | Generate valid WAF rules for AWS, Azure, GCP, and Cloudflare (in JSON or cURL format).            |
+| Multi-Platform      | Supports AWS WAF, Azure Front Door, GCP Cloud Armor, and Cloudflare.                              |
+| Visual Flowcharts   | Mermaid.js diagrams illustrate vulnerability impact and mitigation.                               |
+| Real-Time Defense   | Create and deploy security rules on demand to defend against emerging threats.                    |
 
 ---
 
-## 💡 How It Works
+## How It Works
 
 1. **Find a CVE**: Search or select a vulnerability.
 2. **Understand Instantly**: Get an AI-generated, plain-English explanation and visual diagram.
@@ -37,7 +37,7 @@ AI-powered assistant for security teams and developers: Instantly understand CVE
 
 ---
 
-## ⚡ Quick Start
+## Quick Start
 
 ```bash
 # Clone the repo
@@ -59,7 +59,7 @@ npm run dev
 
 ---
 
-## 🛠️ Tech Stack
+##  Tech Stack
 
 - **Frontend:** Next.js, React (TypeScript)
 - **Backend:** Django REST Framework, Python, OpenAI LLMs
@@ -67,14 +67,14 @@ npm run dev
 
 ---
 
-## 🙌 Contribution
+## Contribution
 
 We welcome PRs and feedback!  
 Open an issue or submit a pull request to improve WAF Copilot.
 
 ---
 
-## 📝 License
+## License
 
 MIT License
 
