@@ -42,11 +42,21 @@ AI-powered assistant for security teams and developers: Instantly understand CVE
 
 ```mermaid
 flowchart TD
-    A[Frontend (Next.js/React)] --> B[Backend (Django/DRF)]
-    B --> C[OpenAI API]
-    B --> D[SQLite]
-    B --> E[WAF Providers (AWS, Azure, GCP, Cloudflare)]
+    A[Frontend] --> B[Backend API]
+    B --> C[OpenAI]
+    B --> D[Database]
+    B --> E[WAF Providers]
     B --> A
+```
+
+<!-- 
+Legend:
+A: Frontend (Next.js/React)
+B: Backend API (Django/DRF)
+C: OpenAI (LLM)
+D: Database (SQLite)
+E: WAF Providers (AWS, Azure, GCP, Cloudflare)
+-->
 ```
 
 ---
