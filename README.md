@@ -38,16 +38,15 @@ AI-powered assistant for security teams and developers: Instantly understand CVE
 3. **Protect Fast**: Generate and copy a ready-to-deploy WAF rule for your preferred cloud provider.
 
 ---
-
-## Architecture Flowchart
+##  Architecture Flowchart
 
 ```mermaid
 flowchart TD
-    A[Frontend (Next.js/React)] -->|API calls| B[Backend (Django/DRF)]
-    B -->|LLM Request| C[OpenAI API]
-    B -->|DB Queries| D[(SQLite)]
-    B -->|WAF Rule Generation| E[WAF Providers (AWS, Azure, GCP, Cloudflare)]
-    A <-->|Responses (CVE Info, WAF Rules, Diagrams)| B
+    A[Frontend <br/>(Next.js/React)] --> B[Backend <br/>(Django/DRF)]
+    B --> C[OpenAI API]
+    B --> D[(SQLite)]
+    B --> E[WAF Providers <br/>(AWS, Azure, GCP, Cloudflare)]
+    B --> A
 ```
 
 ---
@@ -56,16 +55,16 @@ flowchart TD
 
 ```mermaid
 flowchart LR
-    U[User] --> |Searches for CVE| F[Frontend UI]
-    F --> |Requests| B[Backend API]
-    B --> |Fetches/Generates| CVE[CVE Explanation & Mermaid Diagram]
+    U[User] --> F[Frontend UI]
+    F --> B[Backend API]
+    B --> CVE[CVE Explanation & Diagram]
     CVE --> B
     B --> F
-    F --> |User selects WAF| B
-    B --> |Generates| WAF[WAF Rule (JSON/cURL)]
+    F --> B
+    B --> WAF[WAF Rule]
     WAF --> B
     B --> F
-    F --> |User copies rule| U
+    F --> U
 ```
 
 ---
