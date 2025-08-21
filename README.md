@@ -37,6 +37,36 @@ AI-powered assistant for security teams and developers: Instantly understand CVE
 
 ---
 
+## Architecture Flowchart
+
+```mermaid
+flowchart TD
+    A[Frontend (Next.js/React)] -->|API calls| B[Backend (Django/DRF)]
+    B -->|LLM Request| C[OpenAI API]
+    B -->|DB Queries| D[(SQLite)]
+    B -->|WAF Rule Generation| E[WAF Providers (AWS, Azure, GCP, Cloudflare)]
+    A <-->|Responses (CVE Info, WAF Rules, Diagrams)| B
+```
+
+---
+
+## User Flow
+
+```mermaid
+flowchart LR
+    U[User] --> |Searches for CVE| F[Frontend UI]
+    F --> |Requests| B[Backend API]
+    B --> |Fetches/Generates| CVE[CVE Explanation & Mermaid Diagram]
+    CVE --> B
+    B --> F
+    F --> |User selects WAF| B
+    B --> |Generates| WAF[WAF Rule (JSON/cURL)]
+    WAF --> B
+    B --> F
+    F --> |User copies rule| U
+```
+
+
 ## Quick Start
 
 ```bash
