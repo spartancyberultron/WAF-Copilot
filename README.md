@@ -10,7 +10,8 @@ AI-powered assistant for security teams and developers: Instantly understand CVE
 
 - [Features](#features)
 - [How It Works](#how-it-works)
-- [Architecture & User Flow](#architecture--user-flow)
+- [Architecture](#architecture)
+- [User Flow](#user-flow)
 - [Quick Start](#quick-start)
 - [Tech Stack](#tech-stack)
 - [Contribution](#contribution)
@@ -38,41 +39,47 @@ AI-powered assistant for security teams and developers: Instantly understand CVE
 
 ---
 
-## Architecture & User Flow
+## Architecture
 
 ```mermaid
 flowchart TD
-    subgraph User Journey
-      U[User] --> F[Frontend]
-      F --> B[Backend API]
-      B --> U
-    end
+    F[Frontend]
+    B[Backend API]
+    OAI[OpenAI API]
+    DB[Database]
+    WAF[WAF Providers]
 
-    subgraph Backend Logic
-      B --> DB[Database]
-      B --> OAI[OpenAI API]
-      B --> WAF[WAF Providers]
-    end
-
-    %% Data directions for clarity
-    F <-->|UI/API Responses| B
-    B <-->|WAF Rules| WAF
-    B <-->|CVE Explanations| OAI
-    B <-->|Store/Retrieve Data| DB
+    F --> B
+    B --> OAI
+    B --> DB
+    B --> WAF
+    B --> F
 ```
 
-**Legend:**
-- **Frontend:** Next.js/React interface for user interaction.
-- **Backend API:** Django/DRF server handling logic, AI requests, and rule generation.
-- **OpenAI API:** Used for CVE explanations and diagram generation.
-- **Database:** SQLite for storing data.
-- **WAF Providers:** AWS WAF, Azure Front Door, GCP Cloud Armor, Cloudflare.
+**Legend:**  
+- **Frontend:** Next.js/React interface for user interaction  
+- **Backend API:** Django/DRF server handling logic, AI requests, and rule generation  
+- **OpenAI API:** Used for CVE explanations and diagram generation  
+- **Database:** SQLite for storing data  
+- **WAF Providers:** AWS WAF, Azure Front Door, GCP Cloud Armor, Cloudflare  
 
-**User Journey:**
-- Users interact with the Frontend (search CVEs, request explanations/rules).
-- The Frontend communicates with the Backend API.
-- The Backend queries the database, calls OpenAI for explanations/diagrams, and generates WAF rules for selected providers.
-- Results are returned to the user for review and deployment.
+---
+
+## User Flow
+
+```mermaid
+flowchart LR
+    U[User] --> F[Frontend UI]
+    F --> B[Backend API]
+    B --> X[CVE Explanation & Diagram]
+    X --> B
+    B --> F
+    F --> B
+    B --> W[WAF Rule]
+    W --> B
+    B --> F
+    F --> U
+```
 
 ---
 
