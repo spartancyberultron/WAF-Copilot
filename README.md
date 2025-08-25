@@ -1,4 +1,6 @@
-# WAF-Copilot
+# ZAPISEC WAF CoPilot
+
+![ZAPISEC Logo](Logo-ZAPISEC.jpg)
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Python](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
@@ -10,14 +12,14 @@
 
 ## About
 
-WAF-Copilot is an advanced AI-powered platform designed to revolutionize web application security management. Built for security professionals, DevOps teams, and developers, it transforms the complex process of vulnerability assessment and WAF rule generation into an intelligent, automated workflow.
+ZAPISEC WAF CoPilot is an automated AI-powered security framework for web applications with a focus on highly configurable streamlined vulnerability assessment process via AI engines, CVE data correlation and organization, continuous monitoring, backed by a database, and simple yet intuitive User Interface. ZAPISEC WAF CoPilot makes it easy for security professionals to generate WAF rules and testing code with intelligent automation.
 
 ### Core Mission
-Our mission is to bridge the gap between vulnerability discovery and actionable security implementation. WAF-Copilot leverages cutting-edge AI technology to analyze Common Vulnerabilities and Exposures (CVEs), generate platform-specific WAF rules, and provide educational testing code for comprehensive security understanding.
+Our mission is to bridge the gap between vulnerability discovery and actionable security implementation. ZAPISEC WAF CoPilot leverages cutting-edge AI technology to analyze Common Vulnerabilities and Exposures (CVEs), generate platform-specific WAF rules, and provide educational testing code for comprehensive security understanding.
 
 ### Key Capabilities
 - **Intelligent CVE Analysis**: AI-powered vulnerability assessment with detailed explanations and severity analysis
-- **Multi-Platform WAF Integration**: Generate deployable rules for major cloud providers and WAF solutions
+- **Multi-Platform WAF Integration**: Generate deployable rules for major cloud providers and WAF solutions ([AWS WAF](https://aws.amazon.com/waf/), [Azure Front Door](https://azure.microsoft.com/en-us/services/frontdoor/), [Google Cloud Armor](https://cloud.google.com/armor), [Cloudflare](https://www.cloudflare.com/waf/))
 - **Educational Testing Framework**: Create safe, educational testing environments for vulnerability simulation
 - **Real-time Security Workflow**: Streamline security operations from detection to deployment
 - **Compliance-Ready Documentation**: Generate comprehensive security reports and audit trails
@@ -28,11 +30,17 @@ Our mission is to bridge the gap between vulnerability discovery and actionable 
 - **Security Researchers**: Educational testing and vulnerability analysis
 - **Compliance Officers**: Automated reporting and audit documentation
 
+
+
+**External Link**: [Zapisec Application Security](https://zapisec.ai)
+
+**Tags**: `waf` `security` `ai` `cve` `vulnerability-assessment` `penetration-testing` `infosec` `pentesting` `web-security` `automation` `cloud-security` `aws` `azure` `gcp` `cloudflare` `testing-code` `security-tools` `zapisec-waf-copilot`
+
 ## 🎥 Demo Video
 
 https://github.com/user-attachments/assets/dd8f3e6c-42f3-4db1-a5f8-592c4678b45a
 
-*Watch the demo video above to see WAF-Copilot in action!*
+*Watch the demo video above to see ZAPISEC WAF CoPilot in action!*
 
 ## Features
 
@@ -401,6 +409,22 @@ npm run dev
 - 📧 Email: [nikhil@cyberultron.com]
 - 🐛 Issues: [GitHub Issues](https://github.com/CyberUltron-Nikhil/WAF-Copilot/issues)
 
+## More on ZAPISEC 
+
+![ZAPISEC Application Security Platform](Banner-ZAPISEC-JPG.jpg)
+
+*ZAPISEC - Application Security Platform*
+
+## Get Involved
+
+We welcome contributions from developers, researchers, and security professionals alike. Here's how to participate:
+
+- 💬 **[Start or Join a Discussion](https://github.com/CyberUltron-Nikhil/WAF-Copilot/discussions)**: Share ideas and get help from the community
+- 🐛 **[Report Bugs](https://github.com/CyberUltron-Nikhil/WAF-Copilot/issues/new?template=bug_report.md)**: Help us improve by reporting issues you encounter
+- ⭐ **[Request Features](https://github.com/CyberUltron-Nikhil/WAF-Copilot/issues/new?template=feature_request.md)**: Suggest new capabilities and improvements
+- 💻 **[Contribute Code or Docs](https://github.com/CyberUltron-Nikhil/WAF-Copilot/blob/main/CONTRIBUTING.md)**: Help build and document WAF-Copilot
+- 📧 **[Stay Updated](https://github.com/CyberUltron-Nikhil/WAF-Copilot/releases)**: Follow our releases for latest updates
+
 ---
 
-**WAF-Copilot** - Making web application security management simple and intelligent.
+**ZAPISEC WAF CoPilot** - Making web application security management simple and intelligent.
