@@ -8,7 +8,15 @@ WAF-Copilot is a comprehensive Web Application Firewall (WAF) management and CVE
 
 ## 🎥 Demo
 
-<div style="position: relative; box-sizing: content-box; max-height: 80vh; max-height: 80svh; width: 100%; aspect-ratio: 2.323651452282158; padding: 40px 0 40px 0;"><iframe src="https://app.supademo.com/embed/cmeqqouup3ca2v9kqyfthvc4z?embed_v=2&utm_source=embed" loading="lazy" title="Supademo Demo" allow="clipboard-write" frameborder="0" webkitallowfullscreen="true" mozallowfullscreen="true" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
+[![WAF-Copilot Demo](https://img.shields.io/badge/▶️%20Play%20Demo-WAF-Copilot%20Interactive%20Demo-red?style=for-the-badge&logo=youtube)](https://app.supademo.com/embed/cmeqqouup3ca2v9kqyfthvc4z?embed_v=2&utm_source=embed)
+
+**Click the play button above to watch an interactive demo of WAF-Copilot in action!**
+
+<div align="center">
+  <a href="https://app.supademo.com/embed/cmeqqouup3ca2v9kqyfthvc4z?embed_v=2&utm_source=embed" target="_blank">
+    <img src="https://img.shields.io/badge/🎬%20Watch%20Full%20Demo-Click%20to%20Play-orange?style=for-the-badge&logo=play" alt="WAF-Copilot Demo" />
+  </a>
+</div>
 
 ## Features
 
