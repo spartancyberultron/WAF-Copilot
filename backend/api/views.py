@@ -23,7 +23,7 @@ from datetime import datetime
 sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 
 from .aggregate import fetch_all_cves, get_cve_statistics, save_aggregated_cves
-from .functions import generate_cve_description_and_mermaid, generate_waf_rule
+from .functions import generate_cve_description_and_mermaid, generate_waf_rule, generate_testing_code
 
 # Authentication Views
 class LoginView(APIView):
@@ -154,7 +154,7 @@ class RegisterView(APIView):
                         'last_modified_date': last_modified_date,
                         'references': cve_data.get('references', []),
                         'threat_feed': cve_data['threat_feed'],
-                        'resolved': False  # Default to unresolved
+                        'status': 'not_started'  # Default to not started
                     }
                 )
                 
@@ -256,7 +256,7 @@ def refresh_user_cves(request):
                     'last_modified_date': last_modified_date,
                     'references': cve_data.get('references', []),
                     'threat_feed': cve_data['threat_feed'],
-                    'resolved': False  # Default to unresolved
+                    'status': 'not_started'  # Default to not started
                 }
             )
             
@@ -287,16 +287,31 @@ def refresh_user_cves(request):
 @api_view(['POST'])
 @authentication_classes([JWTAuthentication])
 @permission_classes([IsAuthenticated])
-def toggle_cve_resolved(request):
-    """Toggle the resolved status of a CVE for the authenticated user"""
+def update_cve_status(request):
+    """Update the status of a CVE for the authenticated user"""
     
     try:
         cve_id = request.data.get('cve_id')
+        new_status = request.data.get('status')
         
         if not cve_id:
             return Response({
                 "success": False,
                 "error": "cve_id is required"
+            }, status=400)
+            
+        if not new_status:
+            return Response({
+                "success": False,
+                "error": "status is required"
+            }, status=400)
+        
+        # Validate status choices
+        valid_statuses = ['not_started', 'started', 'in_progress', 'closed']
+        if new_status not in valid_statuses:
+            return Response({
+                "success": False,
+                "error": f"Invalid status. Must be one of: {', '.join(valid_statuses)}"
             }, status=400)
         
         # Get the CVE for the current user
@@ -306,17 +321,17 @@ def toggle_cve_resolved(request):
             return Response({
                 "success": False,
                 "error": "CVE not found for this user"
-            }, status=404)
+            }, status=400)
         
-        # Toggle the resolved status
-        cve.resolved = not cve.resolved
+        # Update the status
+        cve.status = new_status
         cve.save()
         
         return Response({
             "success": True,
             "cve_id": cve_id,
-            "resolved": cve.resolved,
-            "message": f"CVE {cve_id} marked as {'resolved' if cve.resolved else 'unresolved'}"
+            "status": cve.status,
+            "message": f"CVE {cve_id} status updated to {cve.get_status_display()}"
         })
     except Exception as e:
         return Response({
@@ -495,7 +510,10 @@ def get_user_profile(request):
         
         # Get additional user statistics if needed
         cve_count = CVE.objects.filter(user=user).count()
-        resolved_cve_count = CVE.objects.filter(user=user, resolved=True).count()
+        closed_cve_count = CVE.objects.filter(user=user, status='closed').count()
+        in_progress_cve_count = CVE.objects.filter(user=user, status='in_progress').count()
+        started_cve_count = CVE.objects.filter(user=user, status='started').count()
+        not_started_cve_count = CVE.objects.filter(user=user, status='not_started').count()
         
         profile_data = {
             "success": True,
@@ -512,8 +530,10 @@ def get_user_profile(request):
             },
             "statistics": {
                 "total_cves": cve_count,
-                "resolved_cves": resolved_cve_count,
-                "unresolved_cves": cve_count - resolved_cve_count,
+                "closed_cves": closed_cve_count,
+                "in_progress_cves": in_progress_cve_count,
+                "started_cves": started_cve_count,
+                "not_started_cves": not_started_cve_count,
             }
         }
         
@@ -551,6 +571,37 @@ def waf_rule(request):
         return Response({
             "success": True,
             "waf_rule": result.get("waf_rule")
+        })
+    except Exception as e:
+        return Response({
+            "success": False,
+            "error": str(e)
+        }, status=500)
+
+@api_view(['POST'])
+@authentication_classes([JWTAuthentication])
+@permission_classes([IsAuthenticated])
+def generate_cve_testing_code(request):
+    """
+    API endpoint to generate Python testing code for a CVE.
+    """
+    try:
+        cve_id = request.data.get('cve_id')
+        description = request.data.get('description')
+        severity = request.data.get('severity')
+        
+        if not all([cve_id, description, severity]):
+            return Response({
+                "success": False,
+                "error": "cve_id, description, and severity are required"
+            }, status=400)
+        
+        # Generate testing code using the function from functions.py
+        result = generate_testing_code(cve_id, description, severity)
+        
+        return Response({
+            "success": True,
+            "python_code": result.get("python_code")
         })
     except Exception as e:
         return Response({

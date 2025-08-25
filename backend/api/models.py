@@ -17,7 +17,18 @@ class CVE(models.Model):
     last_modified_date = models.DateField()
     references = models.JSONField(default=list)  # Store as JSON array
     threat_feed = models.CharField(max_length=100)
-    resolved = models.BooleanField(default=False, help_text="Whether this CVE has been resolved by the user")
+    STATUS_CHOICES = [
+        ('not_started', 'Not Started'),
+        ('started', 'Started'),
+        ('in_progress', 'In Progress'),
+        ('closed', 'Closed'),
+    ]
+    status = models.CharField(
+        max_length=20, 
+        choices=STATUS_CHOICES, 
+        default='not_started',
+        help_text="Current status of this CVE"
+    )
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
@@ -29,7 +40,7 @@ class CVE(models.Model):
             models.Index(fields=['dependency_name']),
             models.Index(fields=['cvss_v3_score']),
             models.Index(fields=['published_date']),
-            models.Index(fields=['resolved']),
+            models.Index(fields=['status']),
         ]
 
     def __str__(self):
