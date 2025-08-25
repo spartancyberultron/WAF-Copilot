@@ -114,14 +114,12 @@ export default function LandingPage() {
                 <ArrowRight className="ml-2 w-5 h-5" />
               </Button>
             </Link>
-            <Link href="/login">
-              <Button variant="outline" size="lg" className="px-8 py-3 text-lg border-stone-700 text-stone-300 hover:bg-stone-800 hover:text-stone-100 cursor-pointer">
-                View Demo
-              </Button>
-            </Link>
+
           </div>
         </div>
       </section>
+
+
 
       {/* Features Section */}
       <section className="py-16 px-4 sm:px-6 lg:px-8">
