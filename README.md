@@ -1,7 +1,5 @@
 # WAF-Copilot
 
-![WAF Copilot Banner](https://raw.githubusercontent.com/CyberUltron-Nikhil/WAF-Copilot/main/assets/banner.png)
-
 ## Overview
 
 WAF-Copilot is a comprehensive Web Application Firewall (WAF) management and CVE vulnerability assessment platform that helps security professionals and developers manage, analyze, and remediate security vulnerabilities in their applications.
