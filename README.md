@@ -14,7 +14,7 @@ WAF-Copilot is a comprehensive Web Application Firewall (WAF) management and CVE
 
 ## 🎥 Demo Video
 
-![Demo Video](demo.mp4)
+https://github.com/user-attachments/assets/dd8f3e6c-42f3-4db1-a5f8-592c4678b45a
 
 *Watch the demo video above to see WAF-Copilot in action!*
 
