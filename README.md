@@ -6,6 +6,10 @@
 
 WAF-Copilot is a comprehensive Web Application Firewall (WAF) management and CVE vulnerability assessment platform that helps security professionals and developers manage, analyze, and remediate security vulnerabilities in their applications. The platform provides automated CVE analysis, WAF rule generation, and testing code generation capabilities.
 
+## 🎥 Demo
+
+<div style="position: relative; box-sizing: content-box; max-height: 80vh; max-height: 80svh; width: 100%; aspect-ratio: 2.323651452282158; padding: 40px 0 40px 0;"><iframe src="https://app.supademo.com/embed/cmeqqouup3ca2v9kqyfthvc4z?embed_v=2&utm_source=embed" loading="lazy" title="Supademo Demo" allow="clipboard-write" frameborder="0" webkitallowfullscreen="true" mozallowfullscreen="true" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
+
 ## Features
 
 ### 🔒 **CVE Management & Analysis**
