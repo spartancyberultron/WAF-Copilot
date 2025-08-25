@@ -12,6 +12,12 @@
 
 WAF-Copilot is a comprehensive Web Application Firewall (WAF) management and CVE vulnerability assessment platform that helps security professionals and developers manage, analyze, and remediate security vulnerabilities in their applications.
 
+## 🎥 Demo Video
+
+![Demo Video](demo.mp4)
+
+*Watch the demo video above to see WAF-Copilot in action!*
+
 
 
 ## Features
