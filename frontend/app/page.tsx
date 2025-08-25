@@ -114,59 +114,12 @@ export default function LandingPage() {
                 <ArrowRight className="ml-2 w-5 h-5" />
               </Button>
             </Link>
-            <Link href="/login">
-              <Button variant="outline" size="lg" className="px-8 py-3 text-lg border-stone-700 text-stone-300 hover:bg-stone-800 hover:text-stone-100 cursor-pointer">
-                View Demo
-              </Button>
-            </Link>
+
           </div>
         </div>
       </section>
 
-      {/* Demo Section */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-stone-900/50">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-stone-100 mb-4">
-              See WAF Copilot in Action
-            </h2>
-            <p className="text-xl text-stone-300 max-w-2xl mx-auto">
-              Watch how WAF Copilot transforms CVE analysis into actionable security rules in real-time.
-            </p>
-          </div>
-          
-          <div className="relative w-full max-w-6xl mx-auto">
-            <div 
-              style={{ 
-                position: 'relative', 
-                boxSizing: 'content-box', 
-                maxHeight: '80vh', 
-                width: '100%', 
-                aspectRatio: '2.323651452282158', 
-                padding: '40px 0 40px 0' 
-              }}
-            >
-              <iframe 
-                src="https://app.supademo.com/embed/cmeqqouup3ca2v9kqyfthvc4z?embed_v=2&utm_source=embed" 
-                loading="lazy" 
-                title="Supademo Demo" 
-                allow="clipboard-write" 
-                frameBorder="0" 
-                allowFullScreen 
-                style={{ 
-                  position: 'absolute', 
-                  top: 0, 
-                  left: 0, 
-                  width: '100%', 
-                  height: '100%',
-                  borderRadius: '12px',
-                  boxShadow: '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)'
-                }}
-              />
-            </div>
-          </div>
-        </div>
-      </section>
+
 
       {/* Features Section */}
       <section className="py-16 px-4 sm:px-6 lg:px-8">
