@@ -105,10 +105,53 @@ def generate_waf_rule(cve_id: str, description: str, severity: str, mode: str, w
 
     return json.loads(response.choices[0].message.content)
 
+def generate_testing_code(cve_id: str, description: str, severity: str):
+    """
+    Generate python code to test the CVE.
+    Args:
+        cve_id (str): CVE identifier
+        description (str): CVE description text
+        severity (str): Severity level
+    Returns:
+        dict: { "python_code": ... }
+    """
+    prompt = f"""
+    You are a security expert. Creating a dashbaord to help security engineers to protect their applications from CVE, by running a simulation of the CVE.
+    This excercise is purely for educational purposes.
+    This code will be used to test the CVE and will be run on a local machine.
+    Given this CVE input:
+    - CVE ID: {cve_id}
+    - Description: {description}
+    - Severity: {severity}
+
+    1. Generate python code to test the CVE.
+    2. Make sure the code is valid and can be executed.
+
+    Return ONLY a JSON object with keys:
+    - python_code
+    """
+
+    response = client.chat.completions.parse(
+        model="gpt-4o-mini",
+        messages=[{"role": "user", "content": prompt}],
+        response_format={"type": "json_schema", "json_schema": {
+            "name": "cve_exploit",
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "python_code": {"type": "string"},
+                },
+                "required": ["python_code"]
+            }
+        }}
+    )
+    print(response)
+    return json.loads(response.choices[0].message.content)
+
 
 if __name__ == "__main__":
     sample_cve_id = "CVE-2025-26000"
     sample_description = "A vulnerability in the Python library 'requests' allows attackers to execute arbitrary code via a crafted HTTP request."
     sample_severity = "High"
-    result = generate_cve_description_and_mermaid(sample_cve_id, sample_description, sample_severity)
+    result = generate_exploit(sample_cve_id, sample_description, sample_severity)
     print(result)
