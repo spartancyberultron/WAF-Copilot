@@ -4,12 +4,12 @@ from .models import CVE
 # Register your models here.
 @admin.register(CVE)
 class CVEAdmin(admin.ModelAdmin):
-    list_display = ['cve_id', 'dependency_name', 'user', 'cvss_v3_score', 'threat_feed', 'resolved', 'published_date']
-    list_filter = ['threat_feed', 'cvss_v3_score', 'resolved', 'published_date', 'user']
+    list_display = ['cve_id', 'dependency_name', 'user', 'cvss_v3_score', 'threat_feed', 'status', 'published_date']
+    list_filter = ['threat_feed', 'cvss_v3_score', 'status', 'published_date', 'user']
     search_fields = ['cve_id', 'dependency_name', 'description']
     readonly_fields = ['created_at', 'updated_at']
     date_hierarchy = 'published_date'
-    list_editable = ['resolved']
+    list_editable = ['status']
     
     fieldsets = (
         ('Basic Information', {
@@ -22,7 +22,7 @@ class CVEAdmin(admin.ModelAdmin):
             'fields': ('published_date', 'last_modified_date')
         }),
         ('Additional Info', {
-            'fields': ('references', 'threat_feed', 'resolved')
+            'fields': ('references', 'threat_feed', 'status')
         }),
         ('System', {
             'fields': ('created_at', 'updated_at'),

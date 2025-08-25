@@ -24,8 +24,9 @@ from rest_framework_simplejwt.views import (
 )
 from api.views import (
     LoginView, RegisterView, get_user_cves, refresh_user_cves, 
-    toggle_cve_resolved, get_aggregated_cves, get_cve_statistics_only,
-    get_cves_by_threat_feed, cve_explanation, waf_rule, get_user_profile
+    update_cve_status, get_aggregated_cves, get_cve_statistics_only,
+    get_cves_by_threat_feed, cve_explanation, waf_rule, get_user_profile,
+    generate_cve_testing_code
 )
 
 urlpatterns = [
@@ -45,11 +46,12 @@ urlpatterns = [
     path('api/cves/threat-feed/', get_cves_by_threat_feed, name='get_cves_by_threat_feed'),
     path('api/cve-explanation/', cve_explanation, name='cve_explanation'),
     path('api/waf-rule/', waf_rule, name='waf_rule'),
+    path('api/generate-testing-code/', generate_cve_testing_code, name='generate_cve_testing_code'),
     
     # User-specific CVE endpoints
     path('api/user/cves/', get_user_cves, name='get_user_cves'),
     path('api/user/cves/refresh/', refresh_user_cves, name='refresh_user_cves'),
-    path('api/user/cves/toggle-resolved/', toggle_cve_resolved, name='toggle_cve_resolved'),
+    path('api/user/cves/update-status/', update_cve_status, name='update_cve_status'),
     
     # User profile endpoint
     path('api/user/profile/', get_user_profile, name='get_user_profile'),

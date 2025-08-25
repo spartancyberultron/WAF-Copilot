@@ -28,5 +28,5 @@ class CVESerializer(ModelSerializer):
             'id', 'description', 'dependency_name', 
             'cvss_v3_score', 'cvss_v3_vector', 'cvss_v2_score', 
             'cvss_v2_vector', 'published_date', 'last_modified_date', 
-            'references', 'threat_feed', 'resolved'
+            'references', 'threat_feed', 'status'
         ]
