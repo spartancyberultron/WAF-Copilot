@@ -1,14 +1,34 @@
 # ZAPISEC WAF CoPilot
 
-![ZAPISEC Logo](logo.jpg)
-
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Python](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
-[![Node.js](https://img.shields.io/badge/node.js-18+-green.svg)](https://nodejs.org/)
-[![Django](https://img.shields.io/badge/Django-4.x-green.svg)](https://www.djangoproject.com/)
-[![Next.js](https://img.shields.io/badge/Next.js-14-black.svg)](https://nextjs.org/)
-[![TypeScript](https://img.shields.io/badge/TypeScript-5.0-blue.svg)](https://www.typescriptlang.org/)
-[![OpenAI](https://img.shields.io/badge/OpenAI-GPT--4-purple.svg)](https://openai.com/)
+<div align="center">
+  <img src="logo.jpg" alt="ZAPISEC Logo" width="200" height="auto" />
+  
+  <br />
+  
+  <div align="center">
+    <a href="https://opensource.org/licenses/MIT">
+      <img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="License: MIT" />
+    </a>
+    <a href="https://www.python.org/downloads/">
+      <img src="https://img.shields.io/badge/python-3.8+-blue.svg" alt="Python" />
+    </a>
+    <a href="https://nodejs.org/">
+      <img src="https://img.shields.io/badge/node.js-18+-green.svg" alt="Node.js" />
+    </a>
+    <a href="https://www.djangoproject.com/">
+      <img src="https://img.shields.io/badge/Django-4.x-green.svg" alt="Django" />
+    </a>
+    <a href="https://nextjs.org/">
+      <img src="https://img.shields.io/badge/Next.js-14-black.svg" alt="Next.js" />
+    </a>
+    <a href="https://www.typescriptlang.org/">
+      <img src="https://img.shields.io/badge/TypeScript-5.0-blue.svg" alt="TypeScript" />
+    </a>
+    <a href="https://openai.com/">
+      <img src="https://img.shields.io/badge/OpenAI-GPT--4-purple.svg" alt="OpenAI" />
+    </a>
+  </div>
+</div>
 
 ## About
 
