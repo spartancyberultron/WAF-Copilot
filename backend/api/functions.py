@@ -2,10 +2,12 @@ import json
 import os
 from openai import OpenAI
 from dotenv import load_dotenv
+
 load_dotenv()
 
-# Initialize OpenAI clien
-client = OpenAI()
+# Initialize OpenAI client
+client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
+
 
 def generate_cve_description_and_mermaid(cve_id: str, description: str, severity: str):
     """
@@ -53,7 +55,6 @@ def generate_cve_description_and_mermaid(cve_id: str, description: str, severity
             }
         }}
     )
-    # print(response)
     return json.loads(response.choices[0].message.content)
 
 
