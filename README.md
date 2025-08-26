@@ -57,7 +57,7 @@ Our mission is to bridge the gap between vulnerability discovery and actionable 
 
 ## 🎥 Demo Video
 
-https://github.com/user-attachments/assets/dd8f3e6c-42f3-4db1-a5f8-592c4678b45a
+https://github.com/user-attachments/assets/36b681ba-f5aa-47af-af4f-c3ac08e4eba7
 
 *Watch the demo video above to see ZAPISEC WAF CoPilot in action!*
 
