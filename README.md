@@ -52,9 +52,8 @@ Our mission is to bridge the gap between vulnerability discovery and actionable 
 
 
 
-**External Link**: [Zapisec Application Security](https://zapisec.ai)
+**Our Services**: [Visit zapisec.ai](https://zapisec.ai)
 
-**Tags**: `waf` `security` `ai` `cve` `vulnerability-assessment` `penetration-testing` `infosec` `pentesting` `web-security` `automation` `cloud-security` `aws` `azure` `gcp` `cloudflare` `testing-code` `security-tools` `zapisec-waf-copilot`
 
 ## 🎥 Demo Video
 
@@ -429,9 +428,7 @@ npm run dev
 - 📧 Email: [nikhil@cyberultron.com]
 - 🐛 Issues: [GitHub Issues](https://github.com/CyberUltron-Nikhil/WAF-Copilot/issues)
 
-## More on ZAPISEC 
 
-![ZAPISEC Application Security Platform](Banner-ZAPISEC-JPG.jpg)
 
 *ZAPISEC - Application Security Platform*
 
