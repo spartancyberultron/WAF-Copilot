@@ -30,12 +30,32 @@
   </div>
 </div>
 
+## Table of Contents
+
+- [About](#about)
+- [Core Mission](#core-mission)
+- [Key Capabilities](#key-capabilities)
+- [Target Users](#target-users)
+- [Demo Video](#-walkthrough-of-the-waf-copilot-in-action)
+- [Features](#features)
+- [WAF Compatibility](#waf-compatibility)
+- [Example Workflows](#example-workflows)
+- [Use Cases](#use-cases)
+- [Tech Stack](#tech-stack)
+- [Quick Start](#quick-start)
+- [Installation](#installation)
+- [Usage](#usage)
+- [API Endpoints](#api-endpoints)
+- [Contributing](#contributing)
+- [Support](#support)
+- [Get Involved](#get-involved)
+
 ## About
 
-ZAPISEC WAF CoPilot is an automated AI-powered security framework for web applications with a focus on highly configurable streamlined vulnerability assessment process via AI engines, CVE data correlation and organization, continuous monitoring, backed by a database, and simple yet intuitive User Interface. ZAPISEC WAF CoPilot makes it easy for security professionals to generate WAF rules and testing code with intelligent automation.
+[ZAPISEC](https://zapisec.ai) WAF CoPilot is an automated AI-powered security framework for web applications with a focus on highly configurable streamlined vulnerability assessment process via AI engines, CVE data correlation and organization, continuous monitoring, backed by a database, and simple yet intuitive User Interface. [ZAPISEC](https://zapisec.ai) WAF CoPilot makes it easy for security professionals to generate WAF rules and testing code with intelligent automation.
 
 ### Core Mission
-Our mission is to bridge the gap between vulnerability discovery and actionable security implementation. ZAPISEC WAF CoPilot leverages cutting-edge AI technology to analyze Common Vulnerabilities and Exposures (CVEs), generate platform-specific WAF rules, and provide educational testing code for comprehensive security understanding.
+Our mission is to bridge the gap between vulnerability discovery and actionable security implementation. [ZAPISEC](https://zapisec.ai) WAF CoPilot leverages cutting-edge AI technology to analyze Common Vulnerabilities and Exposures (CVEs), generate platform-specific WAF rules, and provide educational testing code for comprehensive security understanding.
 
 ### Key Capabilities
 - **Intelligent CVE Analysis**: AI-powered vulnerability assessment with detailed explanations and severity analysis
@@ -52,14 +72,14 @@ Our mission is to bridge the gap between vulnerability discovery and actionable 
 
 
 
-**Our Services**: [Visit zapisec.ai](https://zapisec.ai)
+**Our Services**: [zapisec.ai](https://zapisec.ai)
 
 
-## 🎥 Demo Video
+## 🎥 Walkthrough of the WAF Copilot in action.
 
 https://github.com/user-attachments/assets/36b681ba-f5aa-47af-af4f-c3ac08e4eba7
 
-*Watch the demo video above to see ZAPISEC WAF CoPilot in action!*
+*Watch the demo video above to see [ZAPISEC](https://zapisec.ai) WAF CoPilot in action!*
 
 ## Features
 
@@ -408,12 +428,78 @@ npm run dev
 
 ## API Endpoints
 
-- `POST /api/auth/register/` - User registration
-- `POST /api/auth/login/` - User authentication
-- `GET /api/user/cves/` - Get user's CVE list
-- `POST /api/user/cves/update-status/` - Update CVE status
-- `POST /api/waf-rule/` - Generate WAF rules
-- `POST /api/generate-testing-code/` - Generate testing code
+Below are the primary routes used by the app, with descriptions and basic usage. All endpoints return JSON.
+
+- **POST `/api/auth/register/`**: Create a new user and initialize CVE data for that user
+  - Auth: Not required
+  - Request body: `{ "username": string, "password": string, "email"?: string }`
+  - Success response: 201 with `{ message, user_id, access_token, refresh_token, user }`
+  - Notes: Seeds the user's CVEs and returns JWT tokens
+
+- **POST `/api/auth/login/`**: Authenticate a user and issue JWT tokens
+  - Auth: Not required
+  - Request body: `{ "username": string, "password": string }`
+  - Success response: 200 with `{ access_token, refresh_token, user }`
+
+- **GET `/api/user/cves/`**: List CVEs associated with the authenticated user
+  - Auth: Bearer token required (JWT)
+  - Request: No body
+  - Success response: 200 with `{ success: true, cves: CVE[], total }`
+
+- **POST `/api/user/cves/update-status/`**: Update workflow status for a specific CVE
+  - Auth: Bearer token required (JWT)
+  - Request body: `{ "cve_id": string, "status": "not_started" | "started" | "in_progress" | "closed" }`
+  - Success response: 200 with `{ success: true, cve_id, status, message }`
+  - Errors: 400 for missing/invalid fields or CVE not found for user
+
+- **POST `/api/waf-rule/`**: Generate a WAF rule for a CVE via AI
+  - Auth: Bearer token required (JWT)
+  - Request body: `{ "cve_id": string, "description": string, "severity": string, "mode": string, "waf": "aws" | "azure" | "gcp" | "cloudflare" }`
+  - Success response: 200 with `{ success: true, waf_rule }`
+
+- **POST `/api/generate-testing-code/`**: Generate educational Python testing code for a CVE
+  - Auth: Bearer token required (JWT)
+  - Request body: `{ "cve_id": string, "description": string, "severity": string }`
+  - Success response: 200 with `{ success: true, python_code }`
+
+- **GET `/api/cves/aggregated/`**: Fetch aggregated CVEs from all sources with optional save
+  - Auth: Not required
+  - Query params: `limit?=number` (default 500), `api_key?=string`, `save?=true|false`
+  - Success response: 200 with `{ success: true, total_cves, statistics, cves }`
+
+- **GET `/api/cves/statistics/`**: Fetch only statistics for aggregated CVEs
+  - Auth: Not required
+  - Query params: `limit?=number` (default 500), `api_key?=string`
+  - Success response: 200 with `{ success: true, total_cves, statistics }`
+
+- **GET `/api/cves/threat-feed/`**: Fetch CVEs filtered by a specific threat feed
+  - Auth: Not required
+  - Query params: `threat_feed=string` (required), `limit?=number` (default 500), `api_key?=string`
+  - Success response: 200 with `{ success: true, threat_feed, total_cves, statistics, cves }`
+  - Errors: 400 if `threat_feed` is missing
+
+- **POST `/api/cve-explanation/`**: Generate a CVE explanation and Mermaid diagram via AI
+  - Auth: Bearer token required (JWT)
+  - Request body: `{ "cve_id": string, "description": string, "severity": string }`
+  - Success response: 200 with `{ success: true, explanation, mermaid }`
+
+- **GET `/api/user/profile/`**: Get authenticated user profile and CVE statistics
+  - Auth: Bearer token required (JWT)
+  - Success response: 200 with `{ success: true, user, statistics }`
+
+- **POST `/api/user/cves/refresh/`**: Refresh and reseed the user's CVE dataset
+  - Auth: Bearer token required (JWT)
+  - Success response: 200 with `{ success: true, message }`
+
+- **POST `/api/token/`**: Obtain JWT access and refresh tokens (SimpleJWT)
+  - Auth: Not required
+  - Request body: `{ "username": string, "password": string }`
+  - Success response: 200 with `{ access, refresh }`
+
+- **POST `/api/token/refresh/`**: Refresh the JWT access token
+  - Auth: Not required
+  - Request body: `{ "refresh": string }`
+  - Success response: 200 with `{ access }`
 
 ## Contributing
 
@@ -430,7 +516,7 @@ npm run dev
 
 
 
-*ZAPISEC - Application Security Platform*
+*[ZAPISEC](https://zapisec.ai) - Application Security Platform*
 
 ## Get Involved
 
@@ -444,4 +530,8 @@ We welcome contributions from developers, researchers, and security professional
 
 ---
 
-**ZAPISEC WAF CoPilot** - Making web application security management simple and intelligent.
+**[ZAPISEC](https://zapisec.ai) WAF CoPilot** - Making web application security management simple and intelligent.
+
+---
+
+**License and Intellectual Property Rights**: All rights reserved. This software and its documentation are the intellectual property of CyberUltron Consulting Private Limited.
