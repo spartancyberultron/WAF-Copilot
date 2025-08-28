@@ -30,12 +30,32 @@
   </div>
 </div>
 
+## Table of Contents
+
+- [About](#about)
+- [Core Mission](#core-mission)
+- [Key Capabilities](#key-capabilities)
+- [Target Users](#target-users)
+- [Demo Video](#-walkthrough-of-the-waf-copilot-in-action)
+- [Features](#features)
+- [WAF Compatibility](#waf-compatibility)
+- [Example Workflows](#example-workflows)
+- [Use Cases](#use-cases)
+- [Tech Stack](#tech-stack)
+- [Quick Start](#quick-start)
+- [Installation](#installation)
+- [Usage](#usage)
+- [API Endpoints](#api-endpoints)
+- [Contributing](#contributing)
+- [Support](#support)
+- [Get Involved](#get-involved)
+
 ## About
 
-ZAPISEC WAF CoPilot is an automated AI-powered security framework for web applications with a focus on highly configurable streamlined vulnerability assessment process via AI engines, CVE data correlation and organization, continuous monitoring, backed by a database, and simple yet intuitive User Interface. ZAPISEC WAF CoPilot makes it easy for security professionals to generate WAF rules and testing code with intelligent automation.
+[ZAPISEC](https://zapisec.ai) WAF CoPilot is an automated AI-powered security framework for web applications with a focus on highly configurable streamlined vulnerability assessment process via AI engines, CVE data correlation and organization, continuous monitoring, backed by a database, and simple yet intuitive User Interface. [ZAPISEC](https://zapisec.ai) WAF CoPilot makes it easy for security professionals to generate WAF rules and testing code with intelligent automation.
 
 ### Core Mission
-Our mission is to bridge the gap between vulnerability discovery and actionable security implementation. ZAPISEC WAF CoPilot leverages cutting-edge AI technology to analyze Common Vulnerabilities and Exposures (CVEs), generate platform-specific WAF rules, and provide educational testing code for comprehensive security understanding.
+Our mission is to bridge the gap between vulnerability discovery and actionable security implementation. [ZAPISEC](https://zapisec.ai) WAF CoPilot leverages cutting-edge AI technology to analyze Common Vulnerabilities and Exposures (CVEs), generate platform-specific WAF rules, and provide educational testing code for comprehensive security understanding.
 
 ### Key Capabilities
 - **Intelligent CVE Analysis**: AI-powered vulnerability assessment with detailed explanations and severity analysis
@@ -52,14 +72,14 @@ Our mission is to bridge the gap between vulnerability discovery and actionable 
 
 
 
-**Our Services**: [Visit zapisec.ai](https://zapisec.ai)
+**Our Services**: [zapisec.ai](https://zapisec.ai)
 
 
-## 🎥 Demo Video
+## 🎥 Walkthrough of the WAF Copilot in action.
 
 https://github.com/user-attachments/assets/36b681ba-f5aa-47af-af4f-c3ac08e4eba7
 
-*Watch the demo video above to see ZAPISEC WAF CoPilot in action!*
+*Watch the demo video above to see [ZAPISEC](https://zapisec.ai) WAF CoPilot in action!*
 
 ## Features
 
@@ -496,7 +516,7 @@ Below are the primary routes used by the app, with descriptions and basic usage.
 
 
 
-*ZAPISEC - Application Security Platform*
+*[ZAPISEC](https://zapisec.ai) - Application Security Platform*
 
 ## Get Involved
 
@@ -510,4 +530,8 @@ We welcome contributions from developers, researchers, and security professional
 
 ---
 
-**ZAPISEC WAF CoPilot** - Making web application security management simple and intelligent.
+**[ZAPISEC](https://zapisec.ai) WAF CoPilot** - Making web application security management simple and intelligent.
+
+---
+
+**License and Intellectual Property Rights**: All rights reserved. This software and its documentation are the intellectual property of CyberUltron Consulting Private Limited.
