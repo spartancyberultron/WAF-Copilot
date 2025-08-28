@@ -72,7 +72,7 @@ Our mission is to bridge the gap between vulnerability discovery and actionable 
 
 
 
-**Our Services**: [zapisec.ai](https://zapisec.ai)
+**Services offered:**: [zapisec.ai](https://zapisec.ai)
 
 
 ## 🎥 Walkthrough of the WAF Copilot in action.
