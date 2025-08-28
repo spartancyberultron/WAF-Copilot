@@ -408,12 +408,78 @@ npm run dev
 
 ## API Endpoints
 
-- `POST /api/auth/register/` - User registration
-- `POST /api/auth/login/` - User authentication
-- `GET /api/user/cves/` - Get user's CVE list
-- `POST /api/user/cves/update-status/` - Update CVE status
-- `POST /api/waf-rule/` - Generate WAF rules
-- `POST /api/generate-testing-code/` - Generate testing code
+Below are the primary routes used by the app, with descriptions and basic usage. All endpoints return JSON.
+
+- **POST `/api/auth/register/`**: Create a new user and initialize CVE data for that user
+  - Auth: Not required
+  - Request body: `{ "username": string, "password": string, "email"?: string }`
+  - Success response: 201 with `{ message, user_id, access_token, refresh_token, user }`
+  - Notes: Seeds the user's CVEs and returns JWT tokens
+
+- **POST `/api/auth/login/`**: Authenticate a user and issue JWT tokens
+  - Auth: Not required
+  - Request body: `{ "username": string, "password": string }`
+  - Success response: 200 with `{ access_token, refresh_token, user }`
+
+- **GET `/api/user/cves/`**: List CVEs associated with the authenticated user
+  - Auth: Bearer token required (JWT)
+  - Request: No body
+  - Success response: 200 with `{ success: true, cves: CVE[], total }`
+
+- **POST `/api/user/cves/update-status/`**: Update workflow status for a specific CVE
+  - Auth: Bearer token required (JWT)
+  - Request body: `{ "cve_id": string, "status": "not_started" | "started" | "in_progress" | "closed" }`
+  - Success response: 200 with `{ success: true, cve_id, status, message }`
+  - Errors: 400 for missing/invalid fields or CVE not found for user
+
+- **POST `/api/waf-rule/`**: Generate a WAF rule for a CVE via AI
+  - Auth: Bearer token required (JWT)
+  - Request body: `{ "cve_id": string, "description": string, "severity": string, "mode": string, "waf": "aws" | "azure" | "gcp" | "cloudflare" }`
+  - Success response: 200 with `{ success: true, waf_rule }`
+
+- **POST `/api/generate-testing-code/`**: Generate educational Python testing code for a CVE
+  - Auth: Bearer token required (JWT)
+  - Request body: `{ "cve_id": string, "description": string, "severity": string }`
+  - Success response: 200 with `{ success: true, python_code }`
+
+- **GET `/api/cves/aggregated/`**: Fetch aggregated CVEs from all sources with optional save
+  - Auth: Not required
+  - Query params: `limit?=number` (default 500), `api_key?=string`, `save?=true|false`
+  - Success response: 200 with `{ success: true, total_cves, statistics, cves }`
+
+- **GET `/api/cves/statistics/`**: Fetch only statistics for aggregated CVEs
+  - Auth: Not required
+  - Query params: `limit?=number` (default 500), `api_key?=string`
+  - Success response: 200 with `{ success: true, total_cves, statistics }`
+
+- **GET `/api/cves/threat-feed/`**: Fetch CVEs filtered by a specific threat feed
+  - Auth: Not required
+  - Query params: `threat_feed=string` (required), `limit?=number` (default 500), `api_key?=string`
+  - Success response: 200 with `{ success: true, threat_feed, total_cves, statistics, cves }`
+  - Errors: 400 if `threat_feed` is missing
+
+- **POST `/api/cve-explanation/`**: Generate a CVE explanation and Mermaid diagram via AI
+  - Auth: Bearer token required (JWT)
+  - Request body: `{ "cve_id": string, "description": string, "severity": string }`
+  - Success response: 200 with `{ success: true, explanation, mermaid }`
+
+- **GET `/api/user/profile/`**: Get authenticated user profile and CVE statistics
+  - Auth: Bearer token required (JWT)
+  - Success response: 200 with `{ success: true, user, statistics }`
+
+- **POST `/api/user/cves/refresh/`**: Refresh and reseed the user's CVE dataset
+  - Auth: Bearer token required (JWT)
+  - Success response: 200 with `{ success: true, message }`
+
+- **POST `/api/token/`**: Obtain JWT access and refresh tokens (SimpleJWT)
+  - Auth: Not required
+  - Request body: `{ "username": string, "password": string }`
+  - Success response: 200 with `{ access, refresh }`
+
+- **POST `/api/token/refresh/`**: Refresh the JWT access token
+  - Auth: Not required
+  - Request body: `{ "refresh": string }`
+  - Success response: 200 with `{ access }`
 
 ## Contributing
 
