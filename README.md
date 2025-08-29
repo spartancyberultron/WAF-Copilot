@@ -492,14 +492,9 @@ docker-compose up --build
 
 #### 📹 Installation Guide Video
 
-<div align="center">
-  
-  [![Installation Guide Video](https://img.shields.io/badge/📹-Watch%20Installation%20Guide%20Video-red?style=for-the-badge&logo=video&logoColor=white)](https://cyberultron-nikhil.github.io/Assets/Installation%20Guide%20Video.mp4)
-  
-  
-  *Watch the installation guide video for step-by-step instructions!*
-  
-</div>
+https://youtu.be/ndpABdwIK0w
+
+*Watch the installation guide video above for step-by-step instructions!*
 
 
 ```bash
