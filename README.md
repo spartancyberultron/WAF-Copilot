@@ -490,6 +490,18 @@ docker-compose up --build
 
 ### Installation
 
+#### 📹 Installation Guide Video
+
+<div align="center">
+  <video width="100%" controls>
+    <source src="https://cyberultron-nikhil.github.io/Assets/Installation%20Guide%20Video.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+</div>
+
+*Watch the installation guide video above for step-by-step instructions!*
+
+
 ```bash
 # Clone and setup backend
 git clone https://github.com/CyberUltron-Nikhil/WAF-Copilot.git
@@ -507,7 +519,6 @@ npm install
 npm run dev
 ```
 
-https://cyberultron-nikhil.github.io/Assets/Installation%20Guide%20Video.mp4
 
 ### Access
 - Frontend: `http://localhost:3000`
