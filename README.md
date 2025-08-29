@@ -492,7 +492,7 @@ docker-compose up --build
 
 #### 📹 Installation Guide Video
 
-https://youtu.be/ndpABdwIK0w
+<iframe width="560" height="315" src="https://www.youtube.com/embed/ndpABdwIK0w" frameborder="0" allowfullscreen></iframe>
 
 *Watch the installation guide video above for step-by-step instructions!*
 
