@@ -502,17 +502,23 @@ docker-compose up --build
   
 </div>
 
-#### 📹 Additional Demo Video
+#### 📹 Demo Video
 
 <div align="center">
   
-  [![Vimeo Demo Video](https://img.shields.io/badge/📹-Watch%20Demo%20Video-blue?style=for-the-badge&logo=vimeo&logoColor=white)](https://vimeo.com/1114176780?share=copy)
+  [![YouTube Demo Video](https://img.shields.io/badge/📹-Watch%20Demo%20Video-red?style=for-the-badge&logo=youtube&logoColor=white)](https://youtu.be/ndpABdwIK0w)
   
-  **[🎬 Click here to watch the Demo Video on Vimeo](https://vimeo.com/1114176780?share=copy)**
+  **[🎬 Click here to watch the Demo Video on YouTube](https://youtu.be/ndpABdwIK0w)**
   
-  *Watch the additional demo video for more insights!*
+  *Watch the demo video for more insights!*
   
 </div>
+
+#### 📹 Inline Demo Video
+
+https://youtu.be/ndpABdwIK0w
+
+*Watch the demo video above for more insights!*
 
 
 ```bash
