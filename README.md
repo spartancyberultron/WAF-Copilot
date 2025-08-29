@@ -43,6 +43,7 @@
 - [Use Cases](#use-cases)
 - [Tech Stack](#tech-stack)
 - [Quick Start](#quick-start)
+- [Docker Deployment](#docker-deployment-recommended)
 - [Installation](#installation)
 - [Usage](#usage)
 - [API Endpoints](#api-endpoints)
@@ -356,6 +357,99 @@ python3 printnightmare_test.py 192.168.1.100
 - **Database**: SQLite (configurable for production)
 
 ## Quick Start
+
+### Docker Deployment (Recommended)
+
+For quick deployment and consistent environments, you can use Docker to run the ZAPISEC WAF CoPilot backend.
+
+#### Prerequisites for Docker
+- **Docker**: Install Docker Desktop or Docker Engine
+  - [Download Docker Desktop](https://www.docker.com/products/docker-desktop/)
+  - Verify installation: `docker --version`
+- **System Requirements**:
+  - **Windows**: Docker Desktop installed, Windows virtualization enabled, WSL updated
+  - **macOS**: Docker Desktop installed
+  - **Linux**: Docker Engine installed
+- **OpenAI API Key**: Required for AI-powered analysis
+  - Sign up at [OpenAI Platform](https://platform.openai.com/)
+  - Generate API key in your account settings
+
+#### Docker Setup
+
+1. **Navigate to the backend directory**:
+   ```bash
+   cd backend
+   ```
+
+2. **Build the Docker image**:
+   ```bash
+   docker build --tag waf-copilot-image .
+   ```
+
+3. **Run the container**:
+   ```bash
+   docker run --publish 8000:8000 waf-copilot-image
+   ```
+
+#### Container Management
+
+**Stop the container**:
+```bash
+docker container stop <CONTAINER_ID>
+```
+
+**Find container ID**:
+```bash
+docker ps
+```
+
+**Remove stopped containers**:
+```bash
+docker container prune
+```
+
+#### Docker Configuration
+
+The Dockerfile uses:
+- **Base Image**: Python 3.10-slim (lightweight)
+- **Port**: 8000 (Django development server)
+- **Working Directory**: `/app`
+- **Dependencies**: Installed from `requirements.txt`
+
+#### Environment Variables
+
+To configure the application, you can pass environment variables when running the container:
+
+```bash
+docker run --publish 8000:8000 \
+  -e OPENAI_API_KEY=your_api_key_here \
+  -e DEBUG=True \
+  waf-copilot-image
+```
+
+#### Docker Compose (Optional)
+
+For more complex deployments, you can create a `docker-compose.yml` file:
+
+```yaml
+version: '3.8'
+services:
+  waf-copilot-backend:
+    build: ./backend
+    ports:
+      - "8000:8000"
+    environment:
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+      - DEBUG=True
+    volumes:
+      - ./backend:/app
+    restart: unless-stopped
+```
+
+Then run with:
+```bash
+docker-compose up --build
+```
 
 ### Prerequisites
 
