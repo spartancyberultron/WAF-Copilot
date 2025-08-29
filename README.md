@@ -507,6 +507,8 @@ npm install
 npm run dev
 ```
 
+https://cyberultron-nikhil.github.io/Assets/Installation%20Guide%20Video.mp4
+
 ### Access
 - Frontend: `http://localhost:3000`
 - Backend API: `http://localhost:8000`
