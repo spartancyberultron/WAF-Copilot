@@ -496,8 +496,21 @@ docker-compose up --build
   
   [![Installation Guide Video](https://img.shields.io/badge/📹-Watch%20Installation%20Guide%20Video-red?style=for-the-badge&logo=video&logoColor=white)](https://cyberultron-nikhil.github.io/Assets/Installation%20Guide%20Video.mp4)
   
+  **[🎬 Click here to watch the Installation Guide Video](https://cyberultron-nikhil.github.io/Assets/Installation%20Guide%20Video.mp4)**
   
   *Watch the installation guide video for step-by-step instructions!*
+  
+</div>
+
+#### 📹 Additional Demo Video
+
+<div align="center">
+  
+  [![Vimeo Demo Video](https://img.shields.io/badge/📹-Watch%20Demo%20Video-blue?style=for-the-badge&logo=vimeo&logoColor=white)](https://vimeo.com/1114176780?share=copy)
+  
+  **[🎬 Click here to watch the Demo Video on Vimeo](https://vimeo.com/1114176780?share=copy)**
+  
+  *Watch the additional demo video for more insights!*
   
 </div>
 
