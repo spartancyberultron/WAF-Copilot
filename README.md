@@ -637,4 +637,4 @@ We welcome contributions from developers, researchers, and security professional
 
 ---
 
-**License and Intellectual Property Rights**: All rights reserved. This software and its documentation are the intellectual property of CyberUltron Consulting Private Limited.
+**License and Intellectual Property Rights**: All rights reserved. This software and its documentation are the intellectual property of [CyberUltron Consulting Private Limited](https://cyberultron.com).
