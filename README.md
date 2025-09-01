@@ -53,10 +53,12 @@
 
 ## About
 
-[ZAPISEC](https://zapisec.ai) WAF CoPilot is an automated AI-powered security framework for web applications with a focus on highly configurable streamlined vulnerability assessment process via AI engines, CVE data correlation and organization, continuous monitoring, backed by a database, and simple yet intuitive User Interface. [ZAPISEC](https://zapisec.ai) WAF CoPilot makes it easy for security professionals to generate WAF rules and testing code with intelligent automation.
+[ZAPISEC](https://zapisec.ai) WAF CoPilot is an is an AI-powered security tool that helps protect applications. Instead of security teams manually checking for vulnerabilities and writing rules, CoPilot automates the process. It connects vulnerability data (CVE reports), organizes it, and turns it into ready-to-use firewall rules and test code. The system also includes continuous monitoring, a supporting database, and an easy-to-use interface so professionals can secure applications faster and with less effort.
 
 ### Core Mission
-Our mission is to bridge the gap between vulnerability discovery and actionable security implementation. [ZAPISEC](https://zapisec.ai) WAF CoPilot leverages cutting-edge AI technology to analyze Common Vulnerabilities and Exposures (CVEs), generate platform-specific WAF rules, and provide educational testing code for comprehensive security understanding.
+Our mission is to make the path from “finding a security problem” to “fixing it” much quicker and simpler. CoPilot uses AI to study known vulnerabilities (CVEs), create firewall rules for specific platforms, and generate test code. This way, security teams don’t just patch issues—they also learn how and why the rules work, strengthening both protection and understanding.
+
+Because CoPilot integrates with existing firewall providers, users don’t need to manually switch on rules every time a new CVE is reported. The tool reduces routine monitoring work for security teams (L1 and L2) to nearly zero. It works with any application, making protection seamless, automated, and scalable.
 
 ### Key Capabilities
 - **Intelligent CVE Analysis**: AI-powered vulnerability assessment with detailed explanations and severity analysis
