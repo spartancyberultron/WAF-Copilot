@@ -1,4 +1,4 @@
-# ZAPISEC WAF CoPilot
+# ZAPISEC WAF-CoPilot
 
 <div align="center">
   <img src="logo.jpg" alt="ZAPISEC Logo" width="200" height="auto" />
