@@ -519,9 +519,9 @@ npm run dev
 
 
 ### Access
-- Frontend: `http://localhost:3000`
-- Backend API: `http://localhost:8000`
-- Admin: `http://localhost:8000/admin`
+- Frontend URL: `http://localhost:3000`
+- Backend API URL: `http://localhost:8000`
+- Administrative URL: `http://localhost:8000/admin`
 
 ## Usage
 
