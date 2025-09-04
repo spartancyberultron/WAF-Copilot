@@ -24,8 +24,7 @@ from rest_framework_simplejwt.views import (
 )
 from api.views import (
     LoginView, RegisterView, get_user_cves, refresh_user_cves, 
-    update_cve_status, get_aggregated_cves, get_cve_statistics_only,
-    get_cves_by_threat_feed, cve_explanation, waf_rule, get_user_profile,
+    update_cve_status, cve_explanation, waf_rule, get_user_profile,
     generate_cve_testing_code
 )
 
@@ -41,9 +40,6 @@ urlpatterns = [
     path('api/auth/register/', RegisterView.as_view(), name='register'),
     
     # CVE endpoints
-    path('api/cves/aggregated/', get_aggregated_cves, name='get_aggregated_cves'),
-    path('api/cves/statistics/', get_cve_statistics_only, name='get_cve_statistics'),
-    path('api/cves/threat-feed/', get_cves_by_threat_feed, name='get_cves_by_threat_feed'),
     path('api/cve-explanation/', cve_explanation, name='cve_explanation'),
     path('api/waf-rule/', waf_rule, name='waf_rule'),
     path('api/generate-testing-code/', generate_cve_testing_code, name='generate_cve_testing_code'),

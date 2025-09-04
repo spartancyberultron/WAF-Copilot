@@ -87,6 +87,10 @@ def generate_waf_rule(cve_id: str, description: str, severity: str, mode: str, w
 
     Return ONLY a JSON object with key:
     - waf_rule
+
+    IMPORTANT:
+    - Make sure the WAF rule is valid for the chosen WAF.
+    - Make sure the WAF rule is valid for the chosen mode ( JSON or cURL).
     """
 
     response = client.chat.completions.parse(
