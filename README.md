@@ -564,21 +564,6 @@ Below are the primary routes used by the app, with descriptions and basic usage.
   - Request body: `{ "cve_id": string, "description": string, "severity": string }`
   - Success response: 200 with `{ success: true, python_code }`
 
-- **GET `/api/cves/aggregated/`**: Fetch aggregated CVEs from all sources with optional save
-  - Auth: Not required
-  - Query params: `limit?=number` (default 500), `api_key?=string`, `save?=true|false`
-  - Success response: 200 with `{ success: true, total_cves, statistics, cves }`
-
-- **GET `/api/cves/statistics/`**: Fetch only statistics for aggregated CVEs
-  - Auth: Not required
-  - Query params: `limit?=number` (default 500), `api_key?=string`
-  - Success response: 200 with `{ success: true, total_cves, statistics }`
-
-- **GET `/api/cves/threat-feed/`**: Fetch CVEs filtered by a specific threat feed
-  - Auth: Not required
-  - Query params: `threat_feed=string` (required), `limit?=number` (default 500), `api_key?=string`
-  - Success response: 200 with `{ success: true, threat_feed, total_cves, statistics, cves }`
-  - Errors: 400 if `threat_feed` is missing
 
 - **POST `/api/cve-explanation/`**: Generate a CVE explanation and Mermaid diagram via AI
   - Auth: Bearer token required (JWT)

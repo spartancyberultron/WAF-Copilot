@@ -22,7 +22,7 @@ from datetime import datetime
 # Add the current directory to Python path to import our modules
 sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 
-from .aggregate import fetch_all_cves, get_cve_statistics, save_aggregated_cves
+from .aggregate import fetch_all_cves
 from .functions import generate_cve_description_and_mermaid, generate_waf_rule, generate_testing_code
 
 # Authentication Views
@@ -348,129 +348,6 @@ def update_cve_status(request):
             "error": str(e)
         }, status=500)
 
-@api_view(['GET'])
-@permission_classes([AllowAny])
-def get_aggregated_cves(request):
-    """
-    API endpoint to fetch aggregated CVEs from all sources.
-    
-    Query parameters:
-    - limit: Number of CVEs per category (default: 50)
-    - api_key: Optional NVD API key for higher rate limits
-    - save: Whether to save to file (default: false)
-    """
-    try:
-        # Get query parameters
-        limit = int(request.GET.get('limit', 500))
-        api_key = request.GET.get('api_key', None)
-        save_to_file = request.GET.get('save', 'false').lower() == 'true'
-        
-        # Fetch CVEs
-        cves = fetch_all_cves(limit_per_category=limit, api_key=api_key)
-        
-        # Get statistics
-        stats = get_cve_statistics(cves)
-        
-        # Save to file if requested
-        if save_to_file:
-            save_aggregated_cves(cves, "aggregated_cves.json")
-        
-        # Prepare response
-        response_data = {
-            "success": True,
-            "total_cves": len(cves),
-            "statistics": stats,
-            "cves": cves
-        }
-
-        print(cves[:10])
-        
-        return Response(response_data)
-        
-    except Exception as e:
-        return Response({
-            "success": False,
-            "error": str(e)
-        }, status=500)
-
-@api_view(['GET'])
-@permission_classes([AllowAny])
-def get_cve_statistics_only(request):
-    """
-    API endpoint to get only CVE statistics without the full CVE data.
-    """
-    try:
-        # Get query parameters
-        limit = int(request.GET.get('limit', 500))
-        api_key = request.GET.get('api_key', None)
-        
-        # Fetch CVEs
-        cves = fetch_all_cves(limit_per_category=limit, api_key=api_key)
-        
-        # Get statistics
-        stats = get_cve_statistics(cves)
-        
-        # Prepare response
-        response_data = {
-            "success": True,
-            "total_cves": len(cves),
-            "statistics": stats
-        }
-        
-        return Response(response_data)
-        
-    except Exception as e:
-        return Response({
-            "success": False,
-            "error": str(e)
-        }, status=500)
-
-@api_view(['GET'])
-@permission_classes([AllowAny])
-def get_cves_by_threat_feed(request):
-    """
-    API endpoint to get CVEs filtered by threat feed.
-    
-    Query parameters:
-    - threat_feed: Specific threat feed to filter by
-    - limit: Number of CVEs per category (default: 50)
-    - api_key: Optional NVD API key
-    """
-    try:
-        threat_feed = request.GET.get('threat_feed', None)
-        limit = int(request.GET.get('limit', 500))
-        api_key = request.GET.get('api_key', None)
-        
-        if not threat_feed:
-            return Response({
-                "success": False,
-                "error": "threat_feed parameter is required"
-            }, status=400)
-        
-        # Fetch all CVEs
-        cves = fetch_all_cves(limit_per_category=limit, api_key=api_key)
-        
-        # Filter by threat feed
-        filtered_cves = [cve for cve in cves if cve.get('threat_feed') == threat_feed]
-        
-        # Get statistics for filtered CVEs
-        stats = get_cve_statistics(filtered_cves)
-        
-        response_data = {
-            "success": True,
-            "threat_feed": threat_feed,
-            "total_cves": len(filtered_cves),
-            "statistics": stats,
-            "cves": filtered_cves
-        }
-        
-        return Response(response_data)
-        
-    except Exception as e:
-        return Response({
-            "success": False,
-            "error": str(e)
-        }, status=500)
 
 @api_view(['POST'])
 @authentication_classes([JWTAuthentication])
