@@ -66,7 +66,7 @@ def generate_waf_rule(cve_id: str, description: str, severity: str, mode: str, w
         description (str): CVE description
         severity (str): CVSS/impact level
         mode (str): "JSON" or "cURL"
-        waf (str): Target WAF provider ("AWS", "Azure", "GCP", "Cloudflare")
+        waf (str): Target WAF provider ("AWS", "Azure", "GCP", "Cloudflare", "Akamai", "Imperva")
     Returns:
         dict: { "waf_rule": ... }
     """
@@ -154,5 +154,5 @@ if __name__ == "__main__":
     sample_cve_id = "CVE-2025-26000"
     sample_description = "A vulnerability in the Python library 'requests' allows attackers to execute arbitrary code via a crafted HTTP request."
     sample_severity = "High"
-    result = generate_exploit(sample_cve_id, sample_description, sample_severity)
+    result = generate_testing_code(sample_cve_id, sample_description, sample_severity)
     print(result)

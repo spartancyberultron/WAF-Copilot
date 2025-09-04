@@ -114,8 +114,17 @@ class RegisterView(APIView):
                     }
                 }, status=status.HTTP_201_CREATED)
         else:
+            # Format validation errors for better frontend handling
+            formatted_errors = {}
+            for field, errors in serializer.errors.items():
+                if isinstance(errors, list):
+                    formatted_errors[field] = [str(error) for error in errors]
+                else:
+                    formatted_errors[field] = [str(errors)]
+            
             return Response({
-                "message": f"User Not Created {serializer.errors}"
+                "message": "User registration failed",
+                "errors": formatted_errors
             }, status=status.HTTP_400_BAD_REQUEST)
     
     def _store_cve_data_for_user(self, user):

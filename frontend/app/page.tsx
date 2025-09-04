@@ -30,7 +30,7 @@ export default function LandingPage() {
     {
       icon: Code,
       title: "WAF Rule Generation",
-      description: "Automatically generate WAF rules for AWS, Azure, GCP, and Cloudflare to protect your applications."
+      description: "Automatically generate WAF rules for AWS, Azure, GCP, Cloudflare, Akamai, and Imperva to protect your applications."
     },
     {
       icon: BarChart3,
@@ -48,7 +48,9 @@ export default function LandingPage() {
     { name: "AWS WAF", icon: Cloud, color: "bg-amber-800" },
     { name: "Azure Front Door", icon: Cloud, color: "bg-amber-800" },
     { name: "Google Cloud Armor", icon: Cloud, color: "bg-amber-800" },
-    { name: "Cloudflare", icon: Cloud, color: "bg-amber-800" }
+    { name: "Cloudflare", icon: Cloud, color: "bg-amber-800" },
+    { name: "Akamai", icon: Cloud, color: "bg-amber-800" },
+    { name: "Imperva", icon: Cloud, color: "bg-amber-800" }
   ]
 
   const benefits = [
