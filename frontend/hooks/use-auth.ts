@@ -75,6 +75,11 @@ export function useAuth() {
   }, [])
 
   const login = useCallback(async (username: string, password: string) => {
+    // Prevent login if already authenticated
+    if (authState.isAuthenticated) {
+      return { success: true, message: 'Already logged in' }
+    }
+    
     try {
       const response = await fetch('http://localhost:8000/api/auth/login/', {
         method: 'POST',
@@ -85,11 +90,29 @@ export function useAuth() {
       })
 
       if (!response.ok) {
-        const errorData = await response.json()
-        throw new Error(errorData.error || 'Login failed')
+        let errorMessage = 'Login failed'
+        try {
+          const errorData = await response.json()
+          errorMessage = errorData.error || errorMessage
+        } catch (parseError) {
+          // If we can't parse the error response, use a generic message
+          if (response.status === 401) {
+            errorMessage = 'Invalid username or password'
+          } else if (response.status === 500) {
+            errorMessage = 'Server error. Please try again later.'
+          } else {
+            errorMessage = `Login failed (${response.status})`
+          }
+        }
+        return { success: false, error: errorMessage }
       }
 
       const data = await response.json()
+      
+      // Validate response data
+      if (!data.access_token || !data.refresh_token || !data.user) {
+        return { success: false, error: 'Invalid response from server' }
+      }
       
       // Store tokens and user data
       localStorage.setItem('auth_tokens', JSON.stringify({
@@ -113,7 +136,7 @@ export function useAuth() {
       console.error('Login error:', error)
       return { success: false, error: error instanceof Error ? error.message : 'Login failed' }
     }
-  }, [])
+  }, [authState.isAuthenticated])
 
   const register = useCallback(async (username: string, password: string, email?: string) => {
     try {
@@ -126,11 +149,101 @@ export function useAuth() {
       })
 
       if (!response.ok) {
-        const errorData = await response.json()
-        throw new Error(errorData.message || 'Registration failed')
+        let errorMessage = 'Registration failed'
+        try {
+          const errorData = await response.json()
+          
+          // Handle Django validation errors
+          if (errorData.errors) {
+            // New format from improved backend
+            if (errorData.errors.username && Array.isArray(errorData.errors.username)) {
+              const usernameError = errorData.errors.username[0]
+              if (usernameError.includes('already exists')) {
+                errorMessage = 'This username is already taken. Please choose a different one.'
+              } else {
+                errorMessage = usernameError
+              }
+            } else if (errorData.errors.email && Array.isArray(errorData.errors.email)) {
+              const emailError = errorData.errors.email[0]
+              if (emailError.includes('already exists')) {
+                errorMessage = 'This email is already registered. Please use a different email or try logging in.'
+              } else {
+                errorMessage = emailError
+              }
+            } else if (errorData.errors.password && Array.isArray(errorData.errors.password)) {
+              const passwordError = errorData.errors.password[0]
+              if (passwordError.includes('too common')) {
+                errorMessage = 'This password is too common. Please choose a stronger password.'
+              } else if (passwordError.includes('too short')) {
+                errorMessage = 'Password is too short. Please choose a longer password.'
+              } else {
+                errorMessage = passwordError
+              }
+            } else {
+              // Get the first error from any field
+              const firstField = Object.keys(errorData.errors)[0]
+              if (firstField && Array.isArray(errorData.errors[firstField])) {
+                errorMessage = errorData.errors[firstField][0]
+              }
+            }
+          } else if (errorData.username && Array.isArray(errorData.username)) {
+            // Legacy format
+            const usernameError = errorData.username[0]
+            if (usernameError && usernameError.includes('already exists')) {
+              errorMessage = 'This username is already taken. Please choose a different one.'
+            } else {
+              errorMessage = usernameError || 'Username already exists'
+            }
+          } else if (errorData.email && Array.isArray(errorData.email)) {
+            const emailError = errorData.email[0]
+            if (emailError && emailError.includes('already exists')) {
+              errorMessage = 'This email is already registered. Please use a different email or try logging in.'
+            } else {
+              errorMessage = emailError || 'Email already exists'
+            }
+          } else if (errorData.password && Array.isArray(errorData.password)) {
+            const passwordError = errorData.password[0]
+            if (passwordError && passwordError.includes('too common')) {
+              errorMessage = 'This password is too common. Please choose a stronger password.'
+            } else if (passwordError && passwordError.includes('too short')) {
+              errorMessage = 'Password is too short. Please choose a longer password.'
+            } else {
+              errorMessage = passwordError || 'Password validation failed'
+            }
+          } else if (errorData.message) {
+            errorMessage = errorData.message
+          } else if (errorData.error) {
+            errorMessage = errorData.error
+          } else {
+            // Handle non-array validation errors
+            if (typeof errorData === 'object') {
+              const firstError = Object.values(errorData)[0]
+              if (Array.isArray(firstError) && firstError.length > 0) {
+                errorMessage = firstError[0]
+              } else if (typeof firstError === 'string') {
+                errorMessage = firstError
+              }
+            }
+          }
+        } catch (parseError) {
+          // If we can't parse the error response, use a generic message
+          if (response.status === 400) {
+            errorMessage = 'Invalid registration data. Please check your input.'
+          } else if (response.status === 500) {
+            errorMessage = 'Server error. Please try again later.'
+          } else {
+            errorMessage = `Registration failed (${response.status})`
+          }
+        }
+        return { success: false, error: errorMessage }
       }
 
       const data = await response.json()
+      
+      // Validate response data
+      if (!data.access_token || !data.refresh_token || !data.user) {
+        return { success: false, error: 'Invalid response from server' }
+      }
       
       // Store tokens and user data
       localStorage.setItem('auth_tokens', JSON.stringify({

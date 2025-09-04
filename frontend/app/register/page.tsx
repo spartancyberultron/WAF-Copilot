@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { useRouter } from "next/navigation"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
@@ -15,12 +15,25 @@ export default function RegisterPage() {
   const [email, setEmail] = useState("")
   const [error, setError] = useState("")
   const [loading, setLoading] = useState(false)
-  const { register } = useAuth()
+  const { register, isAuthenticated, loading: authLoading } = useAuth()
   const router = useRouter()
+
+  // Redirect if already authenticated
+  useEffect(() => {
+    if (!authLoading && isAuthenticated) {
+      router.push("/dashboard")
+    }
+  }, [isAuthenticated, authLoading, router])
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setError("")
+    
+    // Prevent multiple registration attempts
+    if (loading) {
+      return
+    }
+    
     setLoading(true)
 
     try {
@@ -28,16 +41,38 @@ export default function RegisterPage() {
       if (result.success) {
         // Add a small delay to ensure authentication state is properly set
         setTimeout(() => {
-          router.push("/dashboard")
+          try {
+            router.push("/dashboard")
+          } catch (navigationError) {
+            console.error("Navigation error:", navigationError)
+            // If navigation fails, the useEffect will handle the redirect
+          }
         }, 100)
       } else {
-        setError(result.error || "Registration failed")
+        setError(result.error || "Registration failed. Please try again.")
       }
     } catch (err) {
-      setError("An unexpected error occurred")
+      console.error("Registration error:", err)
+      setError("An unexpected error occurred. Please try again later.")
     } finally {
       setLoading(false)
     }
+  }
+
+  // Show loading state while checking authentication
+  if (authLoading) {
+    return (
+      <div className="min-h-screen flex items-center justify-center bg-black">
+        <Card className="w-full max-w-md">
+          <CardContent className="flex items-center justify-center py-8">
+            <div className="flex flex-col items-center gap-2">
+              <div className="h-8 w-8 animate-spin rounded-full border-2 border-gray-300 border-t-gray-600"></div>
+              <p className="text-sm text-muted-foreground">Checking authentication...</p>
+            </div>
+          </CardContent>
+        </Card>
+      </div>
+    )
   }
 
   return (
@@ -84,7 +119,9 @@ export default function RegisterPage() {
               />
             </div>
             {error && (
-              <div className="text-red-600 text-sm text-center">{error}</div>
+              <div className="bg-red-50 border border-red-200 rounded-lg p-3">
+                <div className="text-red-800 text-sm text-center">{error}</div>
+              </div>
             )}
             <Button
               type="submit"
