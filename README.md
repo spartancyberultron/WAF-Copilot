@@ -601,7 +601,7 @@ Below are the primary routes used by the app, with descriptions and basic usage.
 
 ## Support
 
-- 📧 Email: [nikhil@cyberultron.com]
+- 📧 Email: [spartan@cyberultron.com]
 - 🐛 Issues: [GitHub Issues](https://github.com/CyberUltron-Nikhil/WAF-Copilot/issues)
 
 
